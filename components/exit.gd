@@ -7,4 +7,4 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "player":
-		G.goto_exit()
+		G.goto_last_level()

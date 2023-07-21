@@ -57,8 +57,9 @@ func goto_level(to_level):
 		next_level = to_level
 		get_tree().change_scene_to_packed(loading)
 		
-func goto_exit():
-	get_tree().change_scene_to_packed(lastloading)
+func goto_last_level():
+	goto_level("kosckhei")
+	
 
 
 
