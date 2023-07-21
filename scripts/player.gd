@@ -14,7 +14,6 @@ var x = G.player_posx
 @onready var zindex = $AnimatedSprite2D
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
-@onready var player = $player
 @onready var cleaner_label = $CleanerHP
 
 
