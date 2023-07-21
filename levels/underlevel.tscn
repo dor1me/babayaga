@@ -8,7 +8,7 @@
 [node name="level" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("2_lbpf6")]
-position = Vector2(255, -52)
+position = Vector2(257, 40)
 
 [node name="Node2D" parent="." instance=ExtResource("1_7c3ol")]
 
