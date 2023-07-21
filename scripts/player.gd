@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-var SPEED = G.player_speed
+var H_SPEED = G.player_speed
+var V_SPEED = G.player_speed
+var F_SPEED = G.player_speed
 var JUMP_VELOCITY = G.jump_velocity
 var health = G.player_hp
 var attack = G.player_attack
@@ -27,69 +29,44 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
+	
+	var flying = Input.is_action_pressed("shift")
+	
 	if Input.is_action_pressed("ui_right"):
-		x += velocity.x
+		velocity.x = H_SPEED 
 		_animated_sprite.play("run")
 	elif Input.is_action_pressed("ui_left"):
-		x -= velocity.x
+		velocity.x = -H_SPEED
 		_animated_sprite.play("flipped run")
 	else: 
 		_animated_sprite.play("idle")
-		
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
+		velocity.x = 0
+	
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
-	if Input.is_action_pressed("shift"):
-		_animated_sprite.play("run")
 		
-		
-		
-	if Input.is_action_pressed("shift"):
-		JUMP_VELOCITY = 0
-		gravity = 0
+	if flying:
 		_animated_sprite.play("fly")
-		if Input.is_action_pressed("ui_up"):
-			velocity.y -= SPEED * delta
-		if Input.is_action_pressed("ui_down"):
-			velocity.y += SPEED * delta
- 
-	JUMP_VELOCITY = G.jump_velocity
-	#gravity = 10
+		velocity.y = F_SPEED * (Input.get_action_strength("ui_down")-Input.get_action_strength("ui_up"))
+		velocity.x = F_SPEED * (Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left"))
 		
-
-	move_and_slide()
-
+	#not flying
+	else: 
+		velocity.x = H_SPEED * (Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left"))
+		if is_on_floor():
+			if Input.is_action_pressed("ui_right"):
+				_animated_sprite.play("run")
+			elif Input.is_action_pressed("ui_left"):
+				_animated_sprite.play("flipped run")
+			else: 
+				_animated_sprite.play("idle")
+			
+		else:	
+			velocity.y += gravity * delta
 	
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	#if Input.is_action_just_pressed("ui_text_completion_replace"):
-		#_animated_sprite.play("jump")
-		#velocity.y += JUMP_VELOCITY
-		#velocity.x += 150
-		#while 
-		#velocity.y += JUMP_VELOCITY
-		#velocity.x += SPEED
-		#zindex.z_index = 5
-		#shape.disabled = true
-		
-
-		
-	##if Input.is_action_pressed("shift"):
-		##status = "flying"
-		#flying()
-	#else:
-	#	status = "running"
-	#	running()
-		
-		
-
+	
+	move_and_slide()
 
 	
 
