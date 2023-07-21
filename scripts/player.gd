@@ -44,6 +44,21 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("shift"):
 		_animated_sprite.play("run")
+		
+		
+		
+	if Input.is_action_pressed("shift"):
+		JUMP_VELOCITY = 0
+		gravity = 0
+		_animated_sprite.play("fly")
+		if Input.is_action_pressed("ui_up"):
+			velocity.y -= SPEED * delta
+		if Input.is_action_pressed("ui_down"):
+			velocity.y += SPEED * delta
+ 
+	JUMP_VELOCITY = G.jump_velocity
+	gravity = 10
+		
 
 	move_and_slide()
 
