@@ -17,5 +17,6 @@ position = Vector2(61, 231)
 scale = Vector2(0.6, 0.6)
 
 [node name="portal" parent="." instance=ExtResource("4_yp610")]
-position = Vector2(522, 232)
+position = Vector2(687, 28)
+scale = Vector2(6.00014, 6.28538)
 to_level = "hotline"

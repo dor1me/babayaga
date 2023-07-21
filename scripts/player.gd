@@ -32,7 +32,7 @@ func _physics_process(delta):
 		_animated_sprite.play("run")
 	elif Input.is_action_pressed("ui_left"):
 		x -= velocity.x
-		_animated_sprite.play("run")
+		_animated_sprite.play("flipped run")
 	else: 
 		_animated_sprite.play("idle")
 		
@@ -41,6 +41,9 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_pressed("shift"):
+		_animated_sprite.play("run")
 
 	move_and_slide()
 
