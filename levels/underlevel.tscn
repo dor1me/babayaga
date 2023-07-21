@@ -13,7 +13,7 @@ position = Vector2(257, 40)
 [node name="Node2D" parent="." instance=ExtResource("1_7c3ol")]
 
 [node name="enemykolobok" parent="." instance=ExtResource("3_eb0d2")]
-position = Vector2(73, 234)
+position = Vector2(73, 241)
 
 [node name="portal" parent="." instance=ExtResource("4_yp610")]
 position = Vector2(687, 28)
@@ -21,4 +21,4 @@ scale = Vector2(6.00014, 6.28538)
 to_level = "hotline"
 
 [node name="enemykolobok2" parent="." instance=ExtResource("3_eb0d2")]
-position = Vector2(470, 227)
+position = Vector2(470, 241)
