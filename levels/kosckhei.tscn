@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://vqj450n4jlqt"]
+
+[ext_resource type="PackedScene" uid="uid://diheyawqcy5jg" path="res://maps/finalmap.tscn" id="1_53hit"]
+[ext_resource type="Script" path="res://scripts/kosckhei.gd" id="1_s5ipy"]
+[ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://maps/player.tscn" id="2_xuxap"]
+[ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="4_gd5dw"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_s5ipy")
+
+[node name="Node2D" parent="." instance=ExtResource("1_53hit")]
+
+[node name="player" parent="." instance=ExtResource("2_xuxap")]
+z_index = -4
+position = Vector2(60, -27)
+
+[node name="portal" parent="." instance=ExtResource("4_gd5dw")]
+position = Vector2(525, 238)
+to_level = "underlevel"

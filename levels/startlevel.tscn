@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgm0ihihdvwyq"]
+
+[ext_resource type="PackedScene" uid="uid://qmuwlitipcbq" path="res://maps/homemap.tscn" id="1_0opm7"]
+[ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://maps/player.tscn" id="2_yvnys"]
+[ext_resource type="Script" path="res://scripts/firstportal.gd" id="3_rmbfv"]
+
+[node name="level" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_0opm7")]
+
+[node name="player" parent="." instance=ExtResource("2_yvnys")]
+position = Vector2(173, 172)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_rmbfv")

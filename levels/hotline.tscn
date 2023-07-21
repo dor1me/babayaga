@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccretw4kxpy8s"]
+
+[ext_resource type="PackedScene" uid="uid://5dbsy4i0ts46" path="res://maps/hotline.tscn" id="1_sbu6r"]
+[ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://maps/player.tscn" id="2_pihjj"]
+[ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="3_dr257"]
+
+[node name="level" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("2_pihjj")]
+position = Vector2(87, 117)
+
+[node name="portal" parent="." instance=ExtResource("3_dr257")]
+position = Vector2(519, 229)
+to_level = "kosckhei"
+
+[node name="Node2D" parent="." instance=ExtResource("1_sbu6r")]

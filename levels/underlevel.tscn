@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4c8f07a80lf4"]
+
+[ext_resource type="PackedScene" uid="uid://boekyiloxljie" path="res://maps/undergroundmap.tscn" id="1_7c3ol"]
+[ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://maps/player.tscn" id="2_lbpf6"]
+[ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_eb0d2"]
+[ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="4_yp610"]
+
+[node name="level" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("2_lbpf6")]
+position = Vector2(255, -52)
+
+[node name="Node2D" parent="." instance=ExtResource("1_7c3ol")]
+
+[node name="enemykolobok" parent="." instance=ExtResource("3_eb0d2")]
+position = Vector2(61, 231)
+scale = Vector2(0.6, 0.6)
+
+[node name="portal" parent="." instance=ExtResource("4_yp610")]
+position = Vector2(522, 232)
+to_level = "hotline"
