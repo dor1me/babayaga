@@ -18,8 +18,9 @@ var x = G.player_posx
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-
+var flying_wave = 0;
+var flying_wave_delta = 1
+var flying_wave_range = 20
 
 #func flying():
 	##	_animated_sprite.play("fly")
@@ -48,7 +49,19 @@ func _physics_process(delta):
 		
 	if flying:
 		_animated_sprite.play("fly")
-		velocity.y = F_SPEED * (Input.get_action_strength("ui_down")-Input.get_action_strength("ui_up"))
+		if Input.is_action_pressed("ui_right"):
+			_animated_sprite.flip_h = false
+			_animated_sprite.play("fly")
+		elif Input.is_action_pressed("ui_left"):
+			_animated_sprite.flip_h = true
+			_animated_sprite.play("flipped fly")
+		
+		if flying_wave > flying_wave_range || flying_wave < -flying_wave_range:
+			flying_wave_delta *=-1
+			
+		flying_wave += flying_wave_delta
+		
+		velocity.y = F_SPEED * (Input.get_action_strength("ui_down")-Input.get_action_strength("ui_up")) + flying_wave
 		velocity.x = F_SPEED * (Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left"))
 		
 	#not flying
