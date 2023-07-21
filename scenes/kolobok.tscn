@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cxeehp7jghrlc"]
+
+[node name="kolobok" type="CharacterBody2D"]
