@@ -132,3 +132,11 @@ limit_top = 0
 limit_right = 547
 limit_bottom = 307
 limit_smoothed = true
+
+[node name="CleanerHP" type="Label" parent="."]
+offset_left = -18.0
+offset_top = -51.0
+offset_right = 22.0
+offset_bottom = -28.0
+text = "100"
+horizontal_alignment = 1
