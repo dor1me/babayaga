@@ -33,18 +33,7 @@ func _physics_process(delta):
 	
 	var flying = Input.is_action_pressed("shift")
 	
-	if Input.is_action_pressed("ui_right"):
-		velocity.x = H_SPEED 
-		_animated_sprite.play("run")
-	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -H_SPEED
-		_animated_sprite.play("flipped run")
-	else: 
-		_animated_sprite.play("idle")
-		velocity.x = 0
 	
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 		
 		
 	if flying:
@@ -67,13 +56,17 @@ func _physics_process(delta):
 	#not flying
 	else: 
 		velocity.x = H_SPEED * (Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left"))
+		if Input.is_action_just_pressed("ui_accept"):
+				velocity.y = JUMP_VELOCITY
+		if Input.is_action_pressed("ui_right"):
+			_animated_sprite.play("run")
+		elif Input.is_action_pressed("ui_left"):
+			_animated_sprite.play("flipped run")
+		else: 
+			_animated_sprite.play("idle")
+			
 		if is_on_floor():
-			if Input.is_action_pressed("ui_right"):
-				_animated_sprite.play("run")
-			elif Input.is_action_pressed("ui_left"):
-				_animated_sprite.play("flipped run")
-			else: 
-				_animated_sprite.play("idle")
+			pass
 			
 		else:	
 			velocity.y += gravity * delta
