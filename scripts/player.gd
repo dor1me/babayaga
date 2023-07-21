@@ -40,10 +40,10 @@ func _physics_process(delta):
 		_animated_sprite.play("fly")
 		if Input.is_action_pressed("ui_right"):
 			_animated_sprite.flip_h = false
-			_animated_sprite.play("fly")
+			
 		elif Input.is_action_pressed("ui_left"):
 			_animated_sprite.flip_h = true
-			_animated_sprite.play("flipped fly")
+			
 		
 		if flying_wave > flying_wave_range || flying_wave < -flying_wave_range:
 			flying_wave_delta *=-1
