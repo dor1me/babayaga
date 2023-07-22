@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://diheyawqcy5jg" path="res://maps/finalmap.tscn" id="1_53hit"]
 [ext_resource type="Script" path="res://scripts/kosckhei.gd" id="1_s5ipy"]
-[ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://maps/player.tscn" id="2_xuxap"]
+[ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="2_xuxap"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="4_gd5dw"]
 
 [node name="level" type="Node2D"]
