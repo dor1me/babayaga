@@ -11,6 +11,7 @@ script = ExtResource("1_ijsyb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_3a2fq")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -21.0
