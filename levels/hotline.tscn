@@ -1,16 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccretw4kxpy8s"]
+[gd_scene load_steps=6 format=3 uid="uid://ccretw4kxpy8s"]
 
 [ext_resource type="PackedScene" uid="uid://5dbsy4i0ts46" path="res://maps/hotline.tscn" id="1_sbu6r"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="2_pihjj"]
 [ext_resource type="PackedScene" uid="uid://s2ah04jlabfq" path="res://components/exit.tscn" id="3_oo41p"]
+[ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="4_0paqj"]
+[ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="5_bos8j"]
 
 [node name="level3" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_sbu6r")]
 
 [node name="player" parent="." instance=ExtResource("2_pihjj")]
 position = Vector2(87, 117)
 
-[node name="Node2D" parent="." instance=ExtResource("1_sbu6r")]
-
 [node name="exit" parent="." instance=ExtResource("3_oo41p")]
 position = Vector2(673, 21)
 scale = Vector2(5.50581, 5.47978)
+
+[node name="portal-dialog" parent="." instance=ExtResource("4_0paqj")]
+position = Vector2(386, 54)
+dialog = "vodyanoy"
+
+[node name="portal" parent="." instance=ExtResource("5_bos8j")]
+position = Vector2(229, 246)
+to_level = "underlevel"

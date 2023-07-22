@@ -29,6 +29,12 @@ var levels = {
 	#"kosckhei": preload("res://levels/kosckhei.tscn"),
 }
 
+var dialogs = {
+	"kolobok": preload("res://levels/dialogs/kolobok_dialog.tscn"),
+	"vodyanoy": preload("res://levels/dialogs/vodyanoy-dialog.tscn"),
+	"irka": preload("res://levels/dialogs/irka_dialog.tscn"),
+}
+
 var loading = preload("res://scenes/loading.tscn")
 var lastloading = preload("res://scenes/lastloading.tscn")
 
@@ -47,6 +53,13 @@ func new_game():
 
 func reload():
 	get_tree().reload_current_scene();
+
+func goto_dialog(to_dialog):
+	if current_level == to_dialog:
+		return
+		
+	if dialogs.has(to_dialog):
+		get_tree().change_scene_to_packed(dialogs[to_dialog])
 
 
 func change_level_quick(to_level):

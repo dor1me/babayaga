@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv68qy6i4d88n"]
 
-[ext_resource type="Script" path="res://levels/dialogs/hotline_dialog.gd" id="1_nit4d"]
-[ext_resource type="Texture2D" uid="uid://cifh6xp4wnmud" path="res://hotline/vodyanoy_dialog.png" id="2_n13ya"]
+[ext_resource type="Script" path="res://levels/dialogs/vodyanoy-dialog.gd" id="1_u5cnd"]
+[ext_resource type="Texture2D" uid="uid://cifh6xp4wnmud" path="res://hotline/vodyanoy_dialog.png" id="2_ebjks"]
 
 [node name="dialog-hotline" type="Node2D"]
-script = ExtResource("1_nit4d")
+script = ExtResource("1_u5cnd")
 
 [node name="background" type="Sprite2D" parent="."]
-texture = ExtResource("2_n13ya")
+texture = ExtResource("2_ebjks")
 centered = false
 
 [node name="Button" type="Button" parent="."]
