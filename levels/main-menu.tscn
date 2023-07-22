@@ -14,22 +14,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3msxw")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 6
+texture = ExtResource("4_4kfnd")
+centered = false
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 486.0
-offset_top = 209.0
-offset_right = 850.0
-offset_bottom = 464.0
+offset_left = 1152.0
+offset_top = 551.0
+offset_right = 1516.0
+offset_bottom = 806.0
 
 [node name="Button" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_lhuy4")
 texture_hover = ExtResource("3_prsau")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(419, 234)
-scale = Vector2(0.528381, 0.528381)
+[node name="Mainmenu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(269, 365)
 texture = ExtResource("4_4kfnd")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
