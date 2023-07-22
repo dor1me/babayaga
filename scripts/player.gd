@@ -90,12 +90,13 @@ func _physics_process(delta):
 		if Input.is_action_pressed("lkm_mouse"):
 			_animated_sprite.play("attack")
 		
-		
+		if not is_on_floor() && Input.is_action_pressed("shift"):
+			flying = true
 		if is_on_floor():
 			if cleaner_hp < 40:
 				cleaner_hp += 0.1
 				
-			if cleaner_hp > 20 && Input.is_action_pressed("shift"):
+			if cleaner_hp > 1 && Input.is_action_pressed("shift"):
 				flying = true
 			
 		else:	
