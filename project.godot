@@ -23,8 +23,14 @@ G="*res://scripts/global.gd"
 
 [display]
 
+<<<<<<< HEAD
+window/size/viewport_width=840
+window/size/viewport_height=460
+window/size/mode=3
+=======
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+>>>>>>> 15682995c2543dbaa11de1438f290982c66e9ee4
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 
