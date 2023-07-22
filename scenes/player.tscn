@@ -3,23 +3,23 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0i1x8"]
 [ext_resource type="Texture2D" uid="uid://cw25hl23v7l47" path="res://animations/flipped_run/1.png" id="2_7k8qh"]
 [ext_resource type="Texture2D" uid="uid://oeoynt1wqymb" path="res://yaga/fly.png" id="2_ae0rp"]
+[ext_resource type="Texture2D" uid="uid://bj4m0k4tk7kkq" path="res://animations/3/5.png" id="2_wfm6b"]
 [ext_resource type="Texture2D" uid="uid://ccjyxtqtla4fw" path="res://animations/flipped_run/2.png" id="3_i0qtd"]
+[ext_resource type="Texture2D" uid="uid://7lltuwsdamit" path="res://animations/3/6.png" id="3_lkssq"]
+[ext_resource type="Texture2D" uid="uid://cx1kuc6xttsyt" path="res://animations/3/7.png" id="4_716s8"]
 [ext_resource type="Texture2D" uid="uid://3pxxqgolejhn" path="res://animations/flipped_run/3.png" id="4_ww0lr"]
 [ext_resource type="Texture2D" uid="uid://r2sbbrkilpbn" path="res://animations/1/1.png" id="5_37ms0"]
 [ext_resource type="Texture2D" uid="uid://cl6b466wlpjyq" path="res://animations/flipped_run/4.png" id="5_witda"]
+[ext_resource type="Texture2D" uid="uid://cxhu7w14vw0b6" path="res://animations/3/8.png" id="5_wlud3"]
 [ext_resource type="Texture2D" uid="uid://ckovu2h7sf6vn" path="res://animations/1/2.png" id="6_31pjn"]
+[ext_resource type="Texture2D" uid="uid://dbq70abmxf7mv" path="res://animations/3/9.png" id="6_wdavp"]
 [ext_resource type="Texture2D" uid="uid://1fp856kxw3sc" path="res://animations/1/3.png" id="7_k1kcp"]
-[ext_resource type="Texture2D" uid="uid://c8hq6um0g8e2l" path="res://Warrior/Warrior/Individual Sprite/Jump/Warrior_Jump_1.png" id="8_tnnl8"]
 [ext_resource type="Texture2D" uid="uid://bsvbqiab3t1va" path="res://animations/1/4.png" id="8_wa0q5"]
-[ext_resource type="Texture2D" uid="uid://grqy7iuujehv" path="res://Warrior/Warrior/Individual Sprite/Jump/Warrior_Jump_2.png" id="9_sw1rf"]
-[ext_resource type="Texture2D" uid="uid://cay32tn4dp4c5" path="res://Warrior/Warrior/Individual Sprite/Jump/Warrior_Jump_3.png" id="10_57yro"]
-[ext_resource type="Texture2D" uid="uid://cba103d4t2mqg" path="res://Warrior/Warrior/Individual Sprite/Fall/Warrior_Fall_1.png" id="11_pc4ha"]
-[ext_resource type="Texture2D" uid="uid://b1ns6baf6j88s" path="res://Warrior/Warrior/Individual Sprite/Fall/Warrior_Fall_2.png" id="12_033ni"]
 [ext_resource type="Texture2D" uid="uid://bmk208qjmuuvq" path="res://animations/2/1.png" id="12_yugwu"]
 [ext_resource type="Texture2D" uid="uid://bn4mmino1xdcb" path="res://animations/2/2.png" id="13_d2417"]
-[ext_resource type="Texture2D" uid="uid://cshxxxwb04lsf" path="res://Warrior/Warrior/Individual Sprite/Fall/Warrior_Fall_3.png" id="13_yn3ob"]
 [ext_resource type="Texture2D" uid="uid://cigxvafi0eb7f" path="res://animations/2/3.png" id="14_icp33"]
 [ext_resource type="Texture2D" uid="uid://by8a3460kterj" path="res://animations/2/4.png" id="15_fpyjq"]
+[ext_resource type="Script" path="res://scripts/Timer.gd" id="20_yiqqf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cd0cc"]
 radius = 21.0
@@ -27,6 +27,26 @@ height = 66.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_db2en"]
 animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("2_wfm6b")
+}, {
+"duration": 0.8,
+"texture": ExtResource("3_lkssq")
+}, {
+"duration": 0.8,
+"texture": ExtResource("4_716s8")
+}, {
+"duration": 0.8,
+"texture": ExtResource("5_wlud3")
+}, {
+"duration": 0.8,
+"texture": ExtResource("6_wdavp")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.2,
 "texture": ExtResource("2_7k8qh")
@@ -70,29 +90,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.3,
-"texture": ExtResource("9_sw1rf")
-}, {
-"duration": 0.2,
-"texture": ExtResource("8_tnnl8")
-}, {
-"duration": 0.1,
-"texture": ExtResource("10_57yro")
-}, {
-"duration": 0.2,
-"texture": ExtResource("11_pc4ha")
-}, {
-"duration": 0.1,
-"texture": ExtResource("12_033ni")
-}, {
-"duration": 0.2,
-"texture": ExtResource("13_yn3ob")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
 "duration": 1.2,
 "texture": ExtResource("12_yugwu")
 }, {
@@ -120,10 +117,12 @@ shape = SubResource("CapsuleShape2D_cd0cc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1, 2)
+position = Vector2(14, 2)
 sprite_frames = SubResource("SpriteFrames_db2en")
-animation = &"jump"
+animation = &"attack"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -140,3 +139,10 @@ offset_right = 22.0
 offset_bottom = -28.0
 text = "100"
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+script = ExtResource("20_yiqqf")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

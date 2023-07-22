@@ -9,6 +9,7 @@ var player_bad_choise = 0
 var player_posx = 200
 var player_posy = 80
 var player_status = "running"
+var player_bullets = 5
 
 
 

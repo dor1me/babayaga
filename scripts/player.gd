@@ -9,12 +9,15 @@ var attack = G.player_attack
 var status =  G.player_status
 var x = G.player_posx
 
+var end_dialog = false
+
 #var y = G.player
 @onready var shape = $CollisionShape2D
 @onready var zindex = $AnimatedSprite2D
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
 @onready var cleaner_label = $CleanerHP
+@onready var timer = $Timer
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -23,8 +26,16 @@ var flying_wave = 0;
 var flying_wave_delta = 1
 var flying_wave_range = 20
 
-var cleaner_hp = 20
+var cleaner_hp = 10
 
+
+func diagonal():
+	if shape.position.x < 820 and shape.position.y < 460 :
+		shape.disabled = true
+		velocity.x += H_SPEED * 1.5
+		velocity.y -= V_SPEED / 7
+	_animated_sprite.play("fly")
+		
 func _physics_process(delta):
 	
 	
@@ -64,7 +75,7 @@ func _physics_process(delta):
 	else: 
 		
 		velocity.x = H_SPEED * (Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left"))
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 				velocity.y = JUMP_VELOCITY
 				
 		_animated_sprite.play("run")
@@ -75,9 +86,13 @@ func _physics_process(delta):
 			
 		else: 
 			_animated_sprite.play("idle")
-			
+		
+		if Input.is_action_pressed("lkm_mouse"):
+			_animated_sprite.play("attack")
+		
+		
 		if is_on_floor():
-			if cleaner_hp < 100:
+			if cleaner_hp < 40:
 				cleaner_hp += 0.1
 				
 			if cleaner_hp > 20 && Input.is_action_pressed("shift"):
@@ -87,9 +102,22 @@ func _physics_process(delta):
 			velocity.y += gravity * delta
 	
 	
+	if Input.is_action_pressed("ui_cancel"):
+		end_dialog = true
+	
+	if end_dialog == true: 
+		diagonal()
+		
+	#shape.disabled = false
+
+	
 	move_and_slide()
 
 	
 
 
 
+
+
+func _on_timer_timeout():
+	pass # Replace with function body.
