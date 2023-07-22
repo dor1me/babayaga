@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://j4rrurtqwrkv"]
+
+[ext_resource type="Texture2D" uid="uid://clunqjbrw6qus" path="res://buttonsTexture/default_start.png" id="1_og6d4"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_rve6b"]
+[ext_resource type="Texture2D" uid="uid://bd3xqwqpmguop" path="res://buttonsTexture/default_hover.png" id="2_eeadh"]
+[ext_resource type="Texture2D" uid="uid://m3y2jkxq1f8g" path="res://maps/mainmenu.png" id="4_g4rw8"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rve6b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 209.0
+offset_right = 850.0
+offset_bottom = 464.0
+
+[node name="Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_og6d4")
+texture_hover = ExtResource("2_eeadh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(419, 234)
+scale = Vector2(0.528381, 0.528381)
+texture = ExtResource("4_g4rw8")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

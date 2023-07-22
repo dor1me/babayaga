@@ -17,7 +17,6 @@ var end_dialog = false
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
 @onready var cleaner_label = $CleanerHP
-@onready var timer = $Timer
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -26,7 +25,7 @@ var flying_wave = 0;
 var flying_wave_delta = 1
 var flying_wave_range = 20
 
-var cleaner_hp = 10
+var cleaner_hp = 20
 
 
 func diagonal():
@@ -90,13 +89,13 @@ func _physics_process(delta):
 		if Input.is_action_pressed("lkm_mouse"):
 			_animated_sprite.play("attack")
 		
-		if not is_on_floor() && Input.is_action_pressed("shift"):
+		if not is_on_floor() && Input.is_action_pressed("shift") && cleaner_hp > 10:
 			flying = true
 		if is_on_floor():
 			if cleaner_hp < 40:
 				cleaner_hp += 0.1
 				
-			if cleaner_hp > 1 && Input.is_action_pressed("shift"):
+			if cleaner_hp > 10 && Input.is_action_pressed("shift"):
 				flying = true
 			
 		else:	
@@ -114,11 +113,3 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
-	
-
-
-
-
-
-func _on_timer_timeout():
-	pass # Replace with function body.
