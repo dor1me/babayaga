@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlubojakhnpqs"]
+
+[ext_resource type="Texture2D" uid="uid://3lu5mns1b1p" path="res://enemies/kolobok/kolobok.png" id="1_jwq1d"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(422.111, 231.5)
+scale = Vector2(0.449074, 0.449074)
+texture = ExtResource("1_jwq1d")

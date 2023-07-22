@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpp24osquds0t"]
+
+[ext_resource type="Texture2D" uid="uid://dkshdulxre6fw" path="res://irka/irka.png" id="1_e054q"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(420.889, 233)
+scale = Vector2(0.442593, 0.442593)
+texture = ExtResource("1_e054q")
