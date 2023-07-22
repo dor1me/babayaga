@@ -26,14 +26,15 @@ var next_level
 var levels = {
 	"underlevel": preload("res://levels/underlevel.tscn"),
 	"hotline": preload("res://levels/hotline.tscn"),
-	"cavelevel": preload("res://levels/cavelevel.tscn"),
-	"kosckhei": preload("res://levels/kosckhei.tscn")
+	#"kosckhei": preload("res://levels/kosckhei.tscn"),
 }
 
 var loading = preload("res://scenes/loading.tscn")
 var lastloading = preload("res://scenes/lastloading.tscn")
 
-var current_level = "underlevel1"
+var current_level = "underlevel"
+var bad_end = preload("res://levels/hotline.tscn")
+var good_end = preload("res://levels/kosckhei.tscn")
 
 func _ready():
 	pass
@@ -56,10 +57,13 @@ func change_level_quick(to_level):
 		current_level = to_level
 		get_tree().change_scene_to_packed(levels[to_level])
 	
-func change_to_next_level():
-	current_level = next_level
-	get_tree().change_scene_to_packed(levels[next_level])
 	
+func change_to_next_level():
+	if current_level == "hotline":
+		ending()
+	else:
+		current_level = next_level
+		get_tree().change_scene_to_packed(levels[next_level])
 func goto_level(to_level):
 	if current_level == to_level:
 		return
@@ -67,9 +71,15 @@ func goto_level(to_level):
 	if levels.has(to_level):
 		next_level = to_level
 		get_tree().change_scene_to_packed(loading)
+	
+func ending():
+	if player_bad_choise <= 1:
+		current_level = good_end
+	else:
+		current_level = bad_end
 		
-func goto_last_level():
-	goto_level("kosckhei")
+#func goto_last_level():
+	#goto_level("kosckhei")
 	
 
 
