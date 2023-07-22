@@ -10919,6 +10919,7 @@ sources/5 = SubResource("TileSetAtlasSource_msu1u")
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(3.4204, 3.4204)
 tile_set = SubResource("TileSet_hnhtg")
 format = 2
 layer_0/name = "возвышенность"

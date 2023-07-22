@@ -3204,6 +3204,7 @@ sources/2 = SubResource("TileSetAtlasSource_uupdm")
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(3.41032, 3.41032)
 tile_set = SubResource("TileSet_l2jov")
 format = 2
 layer_0/name = "тень"

@@ -6030,6 +6030,7 @@ sources/5 = SubResource("TileSetAtlasSource_125tc")
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(3.47253, 3.47253)
 tile_set = SubResource("TileSet_2k46b")
 format = 2
 layer_0/name = "фон"
