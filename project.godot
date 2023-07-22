@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BabaYaga"
-run/main_scene="res://levels/underlevel.tscn"
+run/main_scene="res://scenes/menu_btn_play.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/show_image=false
 boot_splash/fullsize=false
@@ -23,8 +23,8 @@ G="*res://scripts/global.gd"
 
 [display]
 
-window/size/viewport_width=547
-window/size/viewport_height=307
+window/size/viewport_width=820
+window/size/viewport_height=460
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
@@ -71,6 +71,11 @@ jumping={
 shift={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+lkm_mouse={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(167, 25),"global_position":Vector2(171, 68),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 

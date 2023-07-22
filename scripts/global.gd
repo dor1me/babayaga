@@ -11,6 +11,7 @@ var player_posy = 80
 var player_status = "running"
 
 
+
 var small_kolobok_speed = 100
 var small_kolobok_hp = 100
 var small_kolobok_attack = 30
@@ -44,6 +45,15 @@ func new_game():
 
 func reload():
 	get_tree().reload_current_scene();
+
+
+func change_level_quick(to_level):
+	if current_level == to_level:
+		return
+		
+	if levels.has(to_level):
+		current_level = to_level
+		get_tree().change_scene_to_packed(levels[to_level])
 	
 func change_to_next_level():
 	current_level = next_level

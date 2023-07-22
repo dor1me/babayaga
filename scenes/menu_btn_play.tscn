@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://daiodydx4c6gk"]
+
+[ext_resource type="Texture2D" uid="uid://clunqjbrw6qus" path="res://buttonsTexture/default_start.png" id="1_og6d4"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_rve6b"]
+[ext_resource type="Texture2D" uid="uid://bd3xqwqpmguop" path="res://buttonsTexture/default_hover.png" id="2_eeadh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rve6b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 364.0
+offset_bottom = 255.0
+
+[node name="Button" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_og6d4")
+texture_hover = ExtResource("2_eeadh")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
