@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv68qy6i4d88n"]
+
+[ext_resource type="Texture2D" uid="uid://cifh6xp4wnmud" path="res://hotline/vodyanoy_dialog.png" id="1_of27x"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(418, 234)
+scale = Vector2(0.436296, 0.436296)
+texture = ExtResource("1_of27x")
