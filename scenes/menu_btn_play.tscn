@@ -28,6 +28,8 @@ texture_hover = ExtResource("2_eeadh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
+texture_filter = 4
+texture_repeat = 1
 position = Vector2(419, 234)
 scale = Vector2(0.528381, 0.528381)
 texture = ExtResource("4_g4rw8")
