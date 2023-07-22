@@ -23,7 +23,7 @@ var flying_wave = 0;
 var flying_wave_delta = 1
 var flying_wave_range = 20
 
-var cleaner_hp = 100
+var cleaner_hp = 20
 
 func _physics_process(delta):
 	
