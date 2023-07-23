@@ -83,10 +83,10 @@ func create_label(str, alignment):
 		image = image_left
 	else:
 		image = image_right
-		label_offset_x = 100
+		label_offset_x = 200
 		
 	label.visible = false
-	label.horizontal_alignment = alignment
+	#label.horizontal_alignment = alignment
 	
 	
 	
@@ -100,7 +100,7 @@ func create_label(str, alignment):
 	
 	
 	
-	label.size.x = chat.size.x - 240
+	label.size.x = chat.size.x - 340
 	label.size.y = label.get_line_height()
 	
 	var back = NinePatchRect.new();

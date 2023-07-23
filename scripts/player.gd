@@ -111,6 +111,14 @@ func _physics_process(delta):
 		
 	#shape.disabled = false
 
-	
-	move_and_slide()
+	#var collision = move_and_collide(velocity, true)
+	#if collision:
+	#	print("I collided with ", collision.get_collider().name)
 
+	# Using move_and_slide.
+	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		print("I collided with ", collision.get_collider().name)
+	
+	
