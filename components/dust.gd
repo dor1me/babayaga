@@ -1,22 +1,24 @@
 extends Node2D
+class_name Dust
 
 var opacity = 0.7
 var radius = 2
-var velicity = Vector2(-0.4,0)
+var velocity = Vector2(-0.4,0)
+var color = Color(0.5, 0.5, 0.5)
 func _draw():
 	var center = Vector2(0, 0)
 	
-	var color = Color(0.5, 0.5, 0.5, opacity)
+	
 
-	draw_circle( center, radius, color )
+	draw_circle( center, radius, Color(color, opacity) )
 
 func _process(delta):
-	opacity -= 0.2*delta
-	radius += 5*delta
+	opacity -= 0.1*delta
+	radius += 10*delta
 	queue_redraw()
-	velicity.y += 0.05*delta
-	velicity.x += 0.075*delta
-	position += velicity
+	velocity.y += 0.05*delta
+	velocity.x += 0.075*delta
+	position += velocity
 	
 	if opacity <= 0.0:
 		queue_free()
