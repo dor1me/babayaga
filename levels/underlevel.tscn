@@ -32,4 +32,4 @@ to_level = "hotline"
 
 [node name="porta-to-dialog-vodyanoy" parent="." instance=ExtResource("7_c0ip2")]
 position = Vector2(124, 232)
-dialog = "vodyanoy"
+dialog = "kolobok"

@@ -60,34 +60,42 @@ func create_label(str, alignment):
 	
 	return label
 
-var messages = ["Ты откуда здесь, Яга!?", "Да, летела к вам пол дня!", "Где метёлка-то? Сломала?", "Эть те раз! Вот так попала!.../rМётлы — это прошлый век!/rСовременный человек,/rКоль решил гонять всерьёз,/rВыбирает пылесос!", "От меня то чего хочешь?/rЗнаю, что ничто не прочишь...", "Муженька бы моего...", "Не не не, Яга, постой!/rНе покроется с лихвой.../rДа и время, да и силы.../rНе, старушка... Не, на вилы!"]
-
-func generate_text():
-	var x = 0
-	var str = ""
-	var n = String.num(chat.get_child_count(false));
-	for i in randi()%3+1:
-		if str.length() !=0:
-			str += "\r"
-		
-	return str
+var messages = [
+	"Ты откуда здесь, Яга!?",
+	"Да, летела к вам пол дня!", 
+	"Где метёлка-то? Сломала?",
+	"Эть те раз! Вот так попала!...\rМётлы — это прошлый век!\rСовременный человек,\rКоль решил гонять всерьёз,\rВыбирает пылесос!",
+	"От меня то чего хочешь?\rЗнаю, что ничто не прочишь...",
+	"Муженька бы моего...",
+	"Не не не, Яга, постой!\rНе покроется с лихвой...\rДа и время, да и силы...\rНе, старушка... Не, на вилы!"
+]
+	
+	
 var x = 0
-func conversation(x):
-	while x < messages.size():
-		if x%2==0:
-			_on_button_pressed()
-			say1.disabled = false
-		else: 
-			_on_button_2_pressed()
-			say2.disabled = false
-		x+=1
+
+func conversation():
+	if x%2==0:
+		create_label(messages[x],HORIZONTAL_ALIGNMENT_RIGHT)
+		say1.disabled = true
+		say2.disabled = false
+		
+	else: 
+		create_label(messages[x],HORIZONTAL_ALIGNMENT_LEFT)
+		say1.disabled = false
+		say2.disabled = true
+		
+	x+=1
+	
+	if(x > messages.size()-1):
+		say1.disabled = true
+		say2.disabled = true
 
 func _on_button_pressed():
-	conversation(0)
-	create_label(generate_text(),HORIZONTAL_ALIGNMENT_LEFT)
+	conversation()
+	
 	
 
 
 func _on_button_2_pressed():
-	conversation(0)
-	create_label(generate_text(),HORIZONTAL_ALIGNMENT_RIGHT)
+	conversation()
+	
