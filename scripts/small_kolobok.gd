@@ -1,21 +1,22 @@
-extends Area2D
+extends CharacterBody2D
 
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -400.0
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var speed = G.small_kolobok_speed
 var attack = G.small_kolobok_attack
 var hp = G.small_kolobok_hp
 @onready var player = $"../player"
 @onready var body = $CollisionShape2D
 
-
-
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-	if position.x < player.position.x:
-		position.x += SPEED / 100 
-	elif position.x > player.position.x:
-		position.x -= SPEED / 100 
-
+	var direction
+	if position.x > player.position.x:
+		velocity.x = -speed
+	else:
+		velocity.x = speed
+	
+	if ! is_on_floor():
+		velocity.y += gravity * delta
+	
+	move_and_slide()
