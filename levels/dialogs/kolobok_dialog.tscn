@@ -24,6 +24,7 @@ offset_top = 909.0
 offset_right = 1508.0
 offset_bottom = 999.0
 theme_override_font_sizes/font_size = 48
+disabled = true
 text = "say"
 
 [node name="Button2" type="Button" parent="."]
@@ -32,7 +33,6 @@ offset_top = 916.0
 offset_right = 501.0
 offset_bottom = 1006.0
 theme_override_font_sizes/font_size = 48
-disabled = true
 text = "say"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
