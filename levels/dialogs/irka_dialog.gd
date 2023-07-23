@@ -1,5 +1,8 @@
 extends "res://levels/dialogs/base_dialog.gd"
 
+@onready var say1 = $Button
+@onready var say2 = $Button2
+
 var messages = [
 	"Добрый вечер, берегиня!\rМне б вопрос у тебе, княгиня,\rПопытаться отыскать\rМне б Кощея, да не ждать.",
 	"Ой, любовь! Подумать диво!\rМожет сгнил уж твой любимый!\rДа и не моя та сила, чтоб от чувств не воротило!",
@@ -30,3 +33,7 @@ func _on_button_2_pressed():
 func _on_button_pressed():
 	conversation()
 	
+
+
+func _on_button_3_pressed():
+	ask_question(["ssssssss ssss"])
