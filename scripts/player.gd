@@ -112,6 +112,12 @@ func _physics_process(delta):
 	if end_dialog == true: 
 		diagonal()
 		
+		
+	if health == 0:
+		_animated_sprite.play("death")
+		H_SPEED = 0
+		V_SPEED = 0
+		JUMP_VELOCITY = 0
 	#shape.disabled = false
 
 	#var collision = move_and_collide(velocity, true)
