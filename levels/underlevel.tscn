@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4c8f07a80lf4"]
+[gd_scene load_steps=10 format=3 uid="uid://c4c8f07a80lf4"]
 
 [ext_resource type="PackedScene" uid="uid://boekyiloxljie" path="res://maps/undergroundmap.tscn" id="1_7c3ol"]
 [ext_resource type="PackedScene" uid="uid://cgvbfoejytja5" path="res://scenes/vodyanoy.tscn" id="1_ibu0h"]
+[ext_resource type="Script" path="res://levels/underlevel.gd" id="1_spbct"]
 [ext_resource type="Script" path="res://scripts/vodyanoy.gd" id="2_172ey"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="2_lbpf6"]
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_eb0d2"]
@@ -11,6 +12,7 @@
 
 [node name="level" type="Node2D"]
 scale = Vector2(3.43291, 3.43291)
+script = ExtResource("1_spbct")
 
 [node name="Node2Dvodyanoy" parent="." instance=ExtResource("1_ibu0h")]
 position = Vector2(268.286, 365.288)
@@ -61,3 +63,12 @@ position = Vector2(344.897, 42.5295)
 
 [node name="dust8" parent="." instance=ExtResource("8_oxxyl")]
 position = Vector2(331.206, 41.9469)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 36.7036
+offset_top = 11.9432
+offset_right = 89.7036
+offset_bottom = 42.9432
+text = "Пыль"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
