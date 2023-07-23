@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_eb0d2"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="4_yp610"]
 [ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="7_c0ip2"]
-[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/HUD.tscn" id="8_cnr5q"]
+[ext_resource type="PackedScene" uid="uid://c4nban34est88" path="res://components/dust.tscn" id="8_oxxyl"]
 
 [node name="level" type="Node2D"]
 scale = Vector2(3.43291, 3.43291)
@@ -35,4 +35,29 @@ to_level = "hotline"
 position = Vector2(124, 232)
 dialog = "vodyanoy"
 
-[node name="Control" parent="." instance=ExtResource("8_cnr5q")]
+[node name="dust" parent="." instance=ExtResource("8_oxxyl")]
+position = Vector2(338.488, 46.0251)
+
+[node name="dust4" parent="." instance=ExtResource("8_oxxyl")]
+position = Vector2(330.623, 48.6468)
+
+[node name="dust5" parent="." instance=ExtResource("8_oxxyl")]
+position = Vector2(324.215, 45.1512)
+
+[node name="dust2" parent="." instance=ExtResource("8_oxxyl")]
+position = Vector2(335.284, 50.1033)
+
+[node name="dust6" parent="." instance=ExtResource("8_oxxyl")]
+position = Vector2(328.293, 54.1814)
+
+[node name="dust7" parent="." instance=ExtResource("8_oxxyl")]
+position = Vector2(338.197, 44.5686)
+
+[node name="dust3" parent="." instance=ExtResource("8_oxxyl")]
+position = Vector2(336.741, 39.9078)
+
+[node name="dust9" parent="." instance=ExtResource("8_oxxyl")]
+position = Vector2(344.897, 42.5295)
+
+[node name="dust8" parent="." instance=ExtResource("8_oxxyl")]
+position = Vector2(331.206, 41.9469)
