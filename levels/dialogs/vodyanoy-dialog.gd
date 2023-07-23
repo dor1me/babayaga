@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var chat = $chat
+@onready var say1 = $Button
+@onready var say2 = $Button2
 
 var left_texture
 
@@ -58,23 +60,34 @@ func create_label(str, alignment):
 	
 	return label
 
-
+var messages = ["Ты откуда здесь, Яга!?", "Да, летела к вам пол дня!", "Где метёлка-то? Сломала?", "Эть те раз! Вот так попала!.../rМётлы — это прошлый век!/rСовременный человек,/rКоль решил гонять всерьёз,/rВыбирает пылесос!", "От меня то чего хочешь?/rЗнаю, что ничто не прочишь...", "Муженька бы моего...", "Не не не, Яга, постой!/rНе покроется с лихвой.../rДа и время, да и силы.../rНе, старушка... Не, на вилы!"]
 
 func generate_text():
+	var x = 0
 	var str = ""
 	var n = String.num(chat.get_child_count(false));
 	for i in randi()%3+1:
 		if str.length() !=0:
 			str += "\r"
-			
-		str += "das sd fas dfa asd"
 		
 	return str
+var x = 0
+func conversation(x):
+	while x < messages.size():
+		if x%2==0:
+			_on_button_pressed()
+			say1.disabled = false
+		else: 
+			_on_button_2_pressed()
+			say2.disabled = false
+		x+=1
 
 func _on_button_pressed():
+	conversation(0)
 	create_label(generate_text(),HORIZONTAL_ALIGNMENT_LEFT)
 	
 
 
 func _on_button_2_pressed():
+	conversation(0)
 	create_label(generate_text(),HORIZONTAL_ALIGNMENT_RIGHT)

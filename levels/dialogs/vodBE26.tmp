@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv68qy6i4d88n"]
+
+[ext_resource type="Script" path="res://levels/dialogs/vodyanoy-dialog.gd" id="1_u5cnd"]
+[ext_resource type="Texture2D" uid="uid://cifh6xp4wnmud" path="res://hotline/vodyanoy_dialog.png" id="2_ebjks"]
+
+[node name="dialog-hotline" type="Node2D"]
+script = ExtResource("1_u5cnd")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("2_ebjks")
+centered = false
+
+[node name="Button" type="Button" parent="."]
+offset_left = 307.0
+offset_top = 917.0
+offset_right = 486.0
+offset_bottom = 1007.0
+theme_override_font_sizes/font_size = 48
+text = "say"
+
+[node name="chat" type="ColorRect" parent="."]
+clip_contents = true
+offset_left = 539.0
+offset_top = 86.0
+offset_right = 1312.0
+offset_bottom = 1024.0
+color = Color(1, 1, 1, 0.45098)
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1328.0
+offset_top = 899.0
+offset_right = 1507.0
+offset_bottom = 989.0
+theme_override_font_sizes/font_size = 48
+text = "say"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -1,9 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlubojakhnpqs"]
-
-[ext_resource type="Texture2D" uid="uid://3lu5mns1b1p" path="res://enemies/kolobok/kolobok.png" id="1_jwq1d"]
-
-[sub_resource type="GDScript" id="GDScript_vvop3"]
-script/source = "extends Node2D
+extends Node2D
 
 @onready var chat = $chat
 @onready var say1 = $Button
@@ -18,9 +13,9 @@ func create_label(str, alignment):
 	var image
 	var label_offset_x = 0
 	if alignment==HORIZONTAL_ALIGNMENT_LEFT: 
-		image = Image.load_from_file(\"res://maps/chat/left.png\")
+		image = Image.load_from_file("res://maps/chat/left.png")
 	else:
-		image = Image.load_from_file(\"res://maps/chat/right.png\")
+		image = Image.load_from_file("res://maps/chat/right.png")
 		label_offset_x = 100
 		
 	label.horizontal_alignment = alignment
@@ -28,8 +23,8 @@ func create_label(str, alignment):
 	
 	
 	var texture = ImageTexture.create_from_image(image)
-	label.add_theme_font_size_override(\"font_size\", 24)
-	label.add_theme_color_override(\"font_color\", Color.BLACK)
+	label.add_theme_font_size_override("font_size", 24)
+	label.add_theme_color_override("font_color", Color.BLACK)
 	chat.add_child(label)
 	label.position.x = 60+label_offset_x
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART;
@@ -65,15 +60,15 @@ func create_label(str, alignment):
 	
 	return label
 
-var messages = [\"Здравствуйте, круглый мой дружочек!/rНе запрыгнешь на носочек!?\", \"Ой, Яга, не хохочи!/rЯ не тот уж, не свищи -/rЯ теперь 'клубок учёный',/rА не гриб какой моченый!/rВсё, что хочешь вопрошай -/rИ ответов ожидай\", \"Не видал ли...\", \"Ой, видал!/rМного ль, мало ль... Каравай./rИ кровать, и стул и ложку.../rЯ сварил вчера окрошку!\"]
+var messages = ["Здравствуйте, круглый мой дружочек!/rНе запрыгнешь на носочек!?", "Ой, Яга, не хохочи!/r"]
 
 func generate_text():
 	var x = 0
-	var str = \"\"
+	var str = ""
 	var n = String.num(chat.get_child_count(false));
 	for i in randi()%3+1:
 		if str.length() !=0:
-			str += \"\\r\"
+			str += "\r"
 		
 	return str
 var x = 0
@@ -96,12 +91,3 @@ func _on_button_pressed():
 func _on_button_2_pressed():
 	conversation(0)
 	create_label(generate_text(),HORIZONTAL_ALIGNMENT_RIGHT)
-"
-
-[node name="Node2D" type="Node2D"]
-script = SubResource("GDScript_vvop3")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(422.111, 231.5)
-scale = Vector2(0.449074, 0.449074)
-texture = ExtResource("1_jwq1d")
