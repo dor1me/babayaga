@@ -29,7 +29,7 @@ var flying_wave = 0;
 var flying_wave_delta = 1
 var flying_wave_range = 20
 
-var cleaner_hp = 20
+var cleaner_hp = 200
 
 
 func diagonal():
@@ -135,4 +135,15 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		#print("I collided with ", collision.get_collider().name)
 	
+
+
 	
+
+
+func _on_timer_timeout():
+	if flying:
+		if _animated_sprite.flip_h:
+			G.generate_dust(50, (position+Vector2(30,15))*3.5, 1)
+		else:
+			G.generate_dust(50, (position+Vector2(-40,15))*3.5, -1)
+		
