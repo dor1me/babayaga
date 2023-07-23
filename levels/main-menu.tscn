@@ -17,15 +17,18 @@ script = ExtResource("1_3msxw")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 6
+position = Vector2(-114.547, -19)
+scale = Vector2(1.09315, 1.1597)
 texture = ExtResource("4_4kfnd")
 centered = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 1152.0
+offset_left = 1085.0
 offset_top = 551.0
-offset_right = 1516.0
+offset_right = 1449.0
 offset_bottom = 806.0
+scale = Vector2(2.64502, 2.64502)
 
 [node name="Button" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
