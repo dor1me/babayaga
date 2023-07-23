@@ -41,6 +41,22 @@ var lastloading = preload("res://scenes/lastloading.tscn")
 var current_level = ""
 var bad_end = preload("res://levels/hotline.tscn")
 var good_end = preload("res://levels/kosckhei.tscn")
+var dust_class = preload("res://components/dust.tscn")
+
+func generate_dust(count,start_position,direction):
+	for i in count:
+		var dust_node = dust_class.instantiate()
+		
+		dust_node.velocity = Vector2(randi()%10 * 0.1*direction,0.2)
+		dust_node.radius = 15
+		dust_node.opacity = 0.3
+		var color_offset = (randf()-0.5)*0.2
+		dust_node.color = Color(0.5+color_offset, 0.5+color_offset, 0.5+color_offset)
+		var offset = Vector2(randi()%40-20,randi()%40-20)
+		dust_node.position = start_position+offset
+		get_tree().get_root().add_child(dust_node)
+
+
 
 func _ready():
 	pass
