@@ -60,7 +60,7 @@ func ask_question(answers):
 		var button = Button.new()
 		button.text = answer
 		button.size.x = question.size.x - 100
-		
+		git
 		button.position.x = 40
 		button.position.y = 30 + height
 		button.pressed.connect(answer_funcs[i])
