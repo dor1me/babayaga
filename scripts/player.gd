@@ -17,6 +17,8 @@ var end_dialog = false
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
 @onready var cleaner_label = $CleanerHP
+@onready var jumping = $jumping
+
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 1.5
@@ -76,7 +78,8 @@ func _physics_process(delta):
 		
 		velocity.x = H_SPEED * (Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left"))
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-				velocity.y = JUMP_VELOCITY
+			jumping.play()
+			velocity.y = JUMP_VELOCITY
 				
 		_animated_sprite.play("run")
 		if Input.is_action_pressed("ui_right"):

@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bn4mmino1xdcb" path="res://animations/2/2.png" id="13_d2417"]
 [ext_resource type="Texture2D" uid="uid://cigxvafi0eb7f" path="res://animations/2/3.png" id="14_icp33"]
 [ext_resource type="Texture2D" uid="uid://by8a3460kterj" path="res://animations/2/4.png" id="15_fpyjq"]
+[ext_resource type="AudioStream" uid="uid://ckwcidx88looy" path="res://sounds/typing.mp3" id="15_gepbm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cd0cc"]
 radius = 21.0
@@ -161,3 +162,6 @@ offset_right = 22.0
 offset_bottom = -28.0
 text = "100"
 horizontal_alignment = 1
+
+[node name="jumping" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_gepbm")

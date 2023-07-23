@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://daiodydx4c6gk"]
+[gd_scene load_steps=6 format=3 uid="uid://daiodydx4c6gk"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_3msxw"]
 [ext_resource type="Texture2D" uid="uid://clunqjbrw6qus" path="res://buttonsTexture/default_start.png" id="2_lhuy4"]
 [ext_resource type="Texture2D" uid="uid://bd3xqwqpmguop" path="res://buttonsTexture/default_hover.png" id="3_prsau"]
 [ext_resource type="Texture2D" uid="uid://m3y2jkxq1f8g" path="res://maps/mainmenu.png" id="4_4kfnd"]
+[ext_resource type="AudioStream" uid="uid://dbubs0mw23kpo" path="res://sounds/button_hover.wav" id="5_trw1m"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -37,7 +38,11 @@ texture_hover = ExtResource("3_prsau")
 
 [node name="Mainmenu" type="Sprite2D" parent="."]
 visible = false
+texture_filter = 1
 position = Vector2(269, 365)
 texture = ExtResource("4_4kfnd")
+
+[node name="pressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_trw1m")
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpp24osquds0t"]
+[gd_scene load_steps=4 format=3 uid="uid://bpp24osquds0t"]
 
 [ext_resource type="Texture2D" uid="uid://dkshdulxre6fw" path="res://irka/irka.png" id="1_e054q"]
 [ext_resource type="Script" path="res://levels/dialogs/irka_dialog.gd" id="1_psmw1"]
+[ext_resource type="AudioStream" uid="uid://ckwcidx88looy" path="res://sounds/typing.mp3" id="3_l5mlk"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_psmw1")
@@ -34,6 +35,9 @@ offset_bottom = 1006.0
 theme_override_font_sizes/font_size = 48
 disabled = true
 text = "say"
+
+[node name="typing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_l5mlk")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
