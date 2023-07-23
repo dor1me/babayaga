@@ -7536,7 +7536,6 @@ sources/7 = SubResource("TileSetAtlasSource_4b4ti")
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-scale = Vector2(3.75931, 3.75931)
 tile_set = SubResource("TileSet_gpakk")
 format = 2
 layer_0/name = "-7"

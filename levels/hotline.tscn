@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="5_bos8j"]
 
 [node name="level3" type="Node2D"]
+scale = Vector2(3.43709, 3.43709)
 
 [node name="Node2D" parent="." instance=ExtResource("1_sbu6r")]
 

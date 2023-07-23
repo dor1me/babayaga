@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var H_SPEED = G.player_speed
+var H_SPEED =  G.player_speed
 var V_SPEED = G.player_speed
 var F_SPEED = G.player_speed
 var JUMP_VELOCITY = G.jump_velocity
@@ -19,7 +19,8 @@ var end_dialog = false
 @onready var cleaner_label = $CleanerHP
 
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 1.5
+
 var flying = false
 var flying_wave = 0;
 var flying_wave_delta = 1

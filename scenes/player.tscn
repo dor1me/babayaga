@@ -21,6 +21,11 @@ height = 66.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_db2en"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.2,
 "texture": ExtResource("2_7k8qh")
@@ -116,15 +121,15 @@ shape = SubResource("CapsuleShape2D_cd0cc")
 texture_filter = 1
 position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_db2en")
-animation = &"jump"
+animation = &"attack"
 autoplay = "idle"
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-limit_right = 547
-limit_bottom = 307
+limit_right = 1920
+limit_bottom = 1080
 limit_smoothed = true
 
 [node name="CleanerHP" type="Label" parent="."]

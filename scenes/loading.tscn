@@ -4,6 +4,7 @@
 [ext_resource type="VideoStream" path="res://loading.ogv" id="1_ws5kp"]
 
 [node name="loading" type="Node2D"]
+scale = Vector2(3.6, 3.6)
 script = ExtResource("1_tgb8c")
 
 [node name="Button" type="Button" parent="."]

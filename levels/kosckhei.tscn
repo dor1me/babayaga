@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="4_gd5dw"]
 
 [node name="level" type="Node2D"]
+scale = Vector2(3.46044, 3.46044)
 script = ExtResource("1_s5ipy")
 
 [node name="Node2D" parent="." instance=ExtResource("1_53hit")]
