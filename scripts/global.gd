@@ -38,7 +38,7 @@ var dialogs = {
 var loading = preload("res://scenes/loading.tscn")
 var lastloading = preload("res://scenes/lastloading.tscn")
 
-var current_level = "underlevel"
+var current_level = ""
 var bad_end = preload("res://levels/hotline.tscn")
 var good_end = preload("res://levels/kosckhei.tscn")
 
