@@ -16,19 +16,19 @@ position = Vector2(264, 300)
 script = ExtResource("2_172ey")
 
 [node name="player" parent="." instance=ExtResource("2_lbpf6")]
-position = Vector2(257, 40)
+position = Vector2(256.051, 39.9078)
 
 [node name="Node2D" parent="." instance=ExtResource("1_7c3ol")]
 
 [node name="enemykolobok" parent="." instance=ExtResource("3_eb0d2")]
-position = Vector2(73, 241)
+position = Vector2(74.8636, 110.985)
+
+[node name="enemykolobok2" parent="." instance=ExtResource("3_eb0d2")]
+position = Vector2(488.216, 108.945)
 
 [node name="portal" parent="." instance=ExtResource("4_yp610")]
 position = Vector2(412, 233)
 to_level = "hotline"
-
-[node name="enemykolobok2" parent="." instance=ExtResource("3_eb0d2")]
-position = Vector2(470, 241)
 
 [node name="porta-to-dialog-vodyanoy" parent="." instance=ExtResource("7_c0ip2")]
 position = Vector2(124, 232)
