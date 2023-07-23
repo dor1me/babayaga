@@ -30,6 +30,6 @@ to_level = "hotline"
 [node name="enemykolobok2" parent="." instance=ExtResource("3_eb0d2")]
 position = Vector2(470, 241)
 
-[node name="portal-dialog" parent="." instance=ExtResource("7_c0ip2")]
+[node name="porta-to-dialog-vodyanoy" parent="." instance=ExtResource("7_c0ip2")]
 position = Vector2(124, 232)
 dialog = "vodyanoy"

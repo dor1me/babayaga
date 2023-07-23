@@ -20,4 +20,4 @@ offset_right = 19.0
 offset_bottom = 20.0
 color = Color(1, 1, 1, 0.282353)
 
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
