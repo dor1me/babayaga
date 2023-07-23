@@ -1,9 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://c11k2natbln5h"]
+[gd_scene load_steps=7 format=3 uid="uid://c11k2natbln5h"]
 
 [ext_resource type="Texture2D" uid="uid://wjesgv7fdnoj" path="res://tilesetmenu/table.png" id="1_fb123"]
 [ext_resource type="Texture2D" uid="uid://ckttv7pd07vo3" path="res://tilesetmenu/ready.png" id="2_gr15n"]
 [ext_resource type="Texture2D" uid="uid://cv843js6is336" path="res://tilesetmenu/not ready.png" id="3_540hj"]
 [ext_resource type="Texture2D" uid="uid://m3ydqkxjf53v" path="res://tilesetmenu/hp.png" id="4_imqte"]
+
+[sub_resource type="GDScript" id="GDScript_oc8k4"]
+script/source = "extends Label
+
+var health = G.player_hp
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.text = String.num(health)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_o0la1"]
+script/source = "extends Label
+
+var ultimate = G.player_ultimate
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	self.text = String.num(ultimate)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -34,3 +66,20 @@ texture_filter = 1
 position = Vector2(-25, -44)
 rotation = 1.5708
 texture = ExtResource("4_imqte")
+
+[node name="hp_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 26.0
+offset_right = 89.0
+offset_bottom = 49.0
+scale = Vector2(0.7, 0.875)
+script = SubResource("GDScript_oc8k4")
+
+[node name="ultimate_text" type="Label" parent="."]
+offset_left = 101.0
+offset_top = 26.0
+offset_right = 141.0
+offset_bottom = 49.0
+scale = Vector2(0.7, 0.875)
+script = SubResource("GDScript_o0la1")
