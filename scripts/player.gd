@@ -8,6 +8,7 @@ var health = G.player_hp
 var attack = G.player_attack
 var status =  G.player_status
 var x = G.player_posx
+var ultimate = G.player_ultimate
 
 var end_dialog = false
 
@@ -118,6 +119,10 @@ func _physics_process(delta):
 		H_SPEED = 0
 		V_SPEED = 0
 		JUMP_VELOCITY = 0
+	if ultimate >= 100 and Input.is_action_pressed("ultimate") and is_on_floor():
+		G.player_ultimate = 0
+		_animated_sprite.play("ultimate")
+		
 	#shape.disabled = false
 
 	#var collision = move_and_collide(velocity, true)

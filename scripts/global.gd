@@ -2,9 +2,9 @@ extends Node2D
 
 var player_speed = 400
 var jump_velocity = -600
-var player_hp = 0
+var player_hp = 100
 var player_attack = 70
-var player_ultimate = 0
+var player_ultimate = 100
 var player_bad_choise = 0
 var player_posx = 200
 var player_posy = 80
