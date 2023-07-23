@@ -12,7 +12,7 @@
 scale = Vector2(3.43291, 3.43291)
 
 [node name="Node2Dvodyanoy" parent="." instance=ExtResource("1_ibu0h")]
-position = Vector2(264, 300)
+position = Vector2(268.286, 365.288)
 script = ExtResource("2_172ey")
 
 [node name="player" parent="." instance=ExtResource("2_lbpf6")]
@@ -32,4 +32,4 @@ to_level = "hotline"
 
 [node name="porta-to-dialog-vodyanoy" parent="." instance=ExtResource("7_c0ip2")]
 position = Vector2(124, 232)
-dialog = "kolobok"
+dialog = "irka"
