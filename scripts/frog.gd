@@ -9,7 +9,7 @@ func _ready():
 	player = $"../player"
 
 func _init():
-	speed = 0
+	speed = 30
 	attack = G.small_kolobok_attack
 	hp = G.small_kolobok_hp	
 	gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -17,8 +17,21 @@ func _init():
 func get_size():
 	return Vector2(19,18)
 
+
 func process_ai(delta):
-	if position.x > player.position.x:
-		velocity.x = -speed
+	pass
+	
+
+func jump():
+	if !is_on_floor():
+		return
+	if abs(position.x - player.position.x) > 100:
+		return
+	elif position.x > player.position.x:
+		velocity = Vector2(-speed,-30)*10
 	else:
-		velocity.x = speed
+		velocity = Vector2(speed,-30)*10
+	pass
+
+func _on_timer_timeout():
+	jump()
