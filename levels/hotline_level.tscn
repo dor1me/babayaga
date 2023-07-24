@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://levels/hotline_level.gd" id="1_k5ylf"]
 [ext_resource type="PackedScene" uid="uid://5dbsy4i0ts46" path="res://maps/hotline.tscn" id="2_683uh"]
-[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/HUD.tscn" id="3_tof1k"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="3_tof1k"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="4_hpxbe"]
 [ext_resource type="PackedScene" uid="uid://s2ah04jlabfq" path="res://components/exit.tscn" id="5_2d0it"]
 [ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="6_v3s0k"]
@@ -57,5 +57,5 @@ position = Vector2(27.3486, -935.966)
 floor_stop_on_slope = false
 
 [node name="frog7" parent="." instance=ExtResource("8_v0std")]
-position = Vector2(645.604, -258.358)
+position = Vector2(341.277, 246.72)
 floor_stop_on_slope = false

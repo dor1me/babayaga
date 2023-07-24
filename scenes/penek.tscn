@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://31mlfvf6aleu"]
+
+[ext_resource type="Script" path="res://scripts/penek.gd" id="1_i8m0t"]
+[ext_resource type="Texture2D" uid="uid://dwh6rva4bd7lv" path="res://icon.svg" id="2_1empv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0mdf"]
+size = Vector2(19.5, 23)
+
+[node name="penek" type="CharacterBody2D"]
+texture_filter = 1
+collision_layer = 4
+script = ExtResource("1_i8m0t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-5.96048e-08, 9.53674e-07)
+scale = Vector2(0.171875, 0.15625)
+texture = ExtResource("2_1empv")
+
+[node name="collider" type="CollisionShape2D" parent="."]
+position = Vector2(-2.71501e-06, -0.249994)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_w0mdf")

@@ -14,6 +14,14 @@ var player_posy = 80
 var player_status = "running"
 
 
+var small_kolobok_speed = 220
+var small_kolobok_hp = 100
+var small_kolobok_attack = 30
+
+var big_kolobok_speed = 60
+var big_kolobok_hp = 300
+var big_kolobok_attack = 50
+
 
 func _set_player_ultimate(value : float):
 	player_ultimate=value
@@ -42,13 +50,6 @@ func _update_hud():
 			node.update_hud()
 
 
-var small_kolobok_speed = 220
-var small_kolobok_hp = 100
-var small_kolobok_attack = 30
-
-var big_kolobok_speed = 60
-var big_kolobok_hp = 300
-var big_kolobok_attack = 50
 
 var next_level
 
