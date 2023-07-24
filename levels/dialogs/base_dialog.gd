@@ -1,4 +1,5 @@
 extends Node2D
+class_name BaseDialog
 
 @onready var chat = $chat
 
@@ -59,6 +60,7 @@ func ask_question(answers):
 	for answer in answers:
 		var button = Button.new()
 		button.text = answer
+		button.add_theme_font_size_override("font_size", 24)
 		button.size.x = question.size.x - 100
 		button.position.x = 40
 		button.position.y = 30 + height

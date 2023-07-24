@@ -57,13 +57,15 @@ var levels = {
 	"kolobok": preload("res://levels/kolobok_level.tscn"),
 	"underlevel": preload("res://levels/under_level.tscn"),
 	"hotline": preload("res://levels/hotline_level.tscn"),
-	"koshei": preload("res://levels/dialogs/koshei_dialog_bad.gd"),
+	"kosckhei": preload("res://levels/kosckhei_level.tscn"),
 }
 
 var dialogs = {
 	"kolobok": preload("res://levels/dialogs/kolobok_dialog.tscn"),
 	"vodyanoy": preload("res://levels/dialogs/vodyanoy-dialog.tscn"),
 	"irka": preload("res://levels/dialogs/irka_dialog.tscn"),
+	"koshei_bad": preload("res://levels/dialogs/koshei_dialog_bad.tscn"),
+	"koshei_good": preload("res://levels/dialogs/koshei_dialog_good.tscn"),
 }
 
 var loading = preload("res://scenes/loading.tscn")
@@ -104,6 +106,13 @@ func reload():
 func goto_dialog(to_dialog):
 	if current_level == to_dialog:
 		return
+	
+	if to_dialog == "koshei":
+		if player_bad_choise <2:
+			to_dialog = "koshei_good"
+		else:
+			to_dialog = "koshei_bad"
+		
 		
 	if dialogs.has(to_dialog):
 		get_tree().change_scene_to_packed(dialogs[to_dialog])

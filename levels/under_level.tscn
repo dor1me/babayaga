@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4c8f07a80lf4"]
+[gd_scene load_steps=12 format=3 uid="uid://c4c8f07a80lf4"]
 
 [ext_resource type="PackedScene" uid="uid://boekyiloxljie" path="res://maps/undergroundmap.tscn" id="1_7c3ol"]
 [ext_resource type="PackedScene" uid="uid://cgvbfoejytja5" path="res://scenes/vodyanoy.tscn" id="1_ibu0h"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_eb0d2"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="4_yp610"]
 [ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="7_c0ip2"]
-[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/HUD.tscn" id="9_du6v1"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="9_du6v1"]
 [ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="10_asxnk"]
+[ext_resource type="PackedScene" uid="uid://31mlfvf6aleu" path="res://scenes/penek.tscn" id="11_8ferl"]
 
 [node name="level" type="Node2D"]
 scale = Vector2(3.43291, 3.43291)
@@ -35,7 +36,7 @@ position = Vector2(531.619, 233.621)
 to_level = "hotline"
 
 [node name="vodya" parent="." instance=ExtResource("7_c0ip2")]
-position = Vector2(256.051, 221.969)
+position = Vector2(30.0037, 212.648)
 scale = Vector2(1, 2.04867)
 dialog = "vodyanoy"
 
@@ -44,3 +45,6 @@ dialog = "vodyanoy"
 [node name="frog" parent="." instance=ExtResource("10_asxnk")]
 position = Vector2(355.966, 247.603)
 floor_stop_on_slope = false
+
+[node name="penek" parent="." instance=ExtResource("11_8ferl")]
+position = Vector2(279.355, 245.856)

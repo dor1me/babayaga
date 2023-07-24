@@ -1,4 +1,4 @@
-extends "res://levels/dialogs/base_dialog.gd"
+extends BaseDialog
 
 @onready var say1 = $Button
 @onready var say2 = $Button2
@@ -25,7 +25,15 @@ func conversation():
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_RIGHT)
 	else: 
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_LEFT)
-var answers = ["Ну а ты так и остался\rПростаком и оборванцем!\rМожно многое сменить,\rНо души в тебя не вшить!", "Ладно-ладно, полечу -\rЫрку может отыщу.\rА совет благодарю - \rПомощь делу моему."]
+var answers = [
+	"Ну а ты так и остался\rПростаком и оборванцем!\rМожно многое сменить,\rНо души в тебя не вшить!", 
+	"Ладно-ладно, полечу -\rЫрку может отыщу.\rА совет благодарю - \rПомощь делу моему."
+	]
+
+func on_answer_question(index):
+	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
+	if index == 0:
+		G.player_bad_choise += 1
 
 func _on_button_2_pressed():
 	conversation()

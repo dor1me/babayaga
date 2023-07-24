@@ -1,4 +1,4 @@
-extends "res://levels/dialogs/base_dialog.gd"
+extends BaseDialog
 
 @onready var say1 = $Button
 @onready var say2 = $Button2
@@ -26,6 +26,12 @@ func conversation():
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_RIGHT)
 	else: 
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_LEFT)
+
+var answers = []
+
+func on_answer_question(index):
+	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
+	
 
 func _on_button_2_pressed():
 	conversation()

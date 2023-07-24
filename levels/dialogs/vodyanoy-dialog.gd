@@ -1,4 +1,4 @@
-extends "res://levels/dialogs/base_dialog.gd"
+extends BaseDialog
 
 @onready var say1 = $Button
 @onready var say2 = $Button2
@@ -36,12 +36,18 @@ func _on_button_2_pressed():
 func _on_button_pressed():
 	conversation()
 	
-var answers = ["Вот упрямый! Вот наглец!\rПодавись ка, огурец!\rА прохвост... Не изменился...\rТолько с жизнью заблудился!", "Вот те на... Ой, как сложилось...\rНу хоть я не заблудилась.\rЧто ж, касатик, продавай.\rЖаль, что так всё, но бывай."]
+var answers = [
+	"Вот упрямый! Вот наглец!\rПодавись ка, огурец!\rА прохвост... Не изменился...\rТолько с жизнью заблудился!", 
+	"Вот те на... Ой, как сложилось...\rНу хоть я не заблудилась.\rЧто ж, касатик, продавай.\rЖаль, что так всё, но бывай."
+	]
+
+func on_answer_question(index):
+	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
+	if index == 0:
+		G.player_bad_choise += 1
 
 func _on_button_3_pressed():
 		ask_question(answers)
 	
-func on_answer_question(index):
-	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
 	
 	

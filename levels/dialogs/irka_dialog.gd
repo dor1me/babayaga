@@ -25,7 +25,19 @@ func conversation():
 	else: 
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_LEFT)
 
-var answers = ["(почертыхаться)", "молча уйти"]
+var answers = [
+	"(почертыхаться)", 
+	"молча уйти"
+	]
+	
+func on_answer_question(index):
+	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
+	if index == 0:
+		G.player_bad_choise += 1
+
+func _on_button_3_pressed():
+	ask_question(answers)
+			
 func _on_button_2_pressed():
 	conversation()
 
@@ -35,5 +47,4 @@ func _on_button_pressed():
 	
 
 
-func _on_button_3_pressed():
-	ask_question(["ssssssss ssss"])
+
