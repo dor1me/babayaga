@@ -5,8 +5,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8volg"]
 radius = 5.09902
 
-[node name="dust" type="Node2D"]
+[node name="dust" type="Area2D"]
+collision_mask = 7
 script = ExtResource("1_xw8yi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8volg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

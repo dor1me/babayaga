@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 var H_SPEED =  G.player_speed
 var V_SPEED = G.player_speed
@@ -19,18 +20,20 @@ var end_dialog = false
 @onready var camera = $Camera2D
 @onready var cleaner_label = $CleanerHP
 @onready var jumping = $jumping
-
+@onready var attack_collider_right = $attack_collider_right
+@onready var attack_collider_left = $attack_collider_left
+@onready var attack_timer = $AttackTimer
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 1.5
 
+var fighting = false
 var flying = false
 var flying_wave = 0;
 var flying_wave_delta = 1
 var flying_wave_range = 20
 
 var cleaner_hp = 200
-
 
 func diagonal():
 	if shape.position.x < 820 and shape.position.y < 460 :
@@ -44,9 +47,10 @@ func _physics_process(delta):
 	
 	cleaner_label.set_text(String.num(cleaner_hp,0))
 	
+	if fighting:
+		pass	
 		
-		
-	if flying:
+	elif flying:
 		
 		if cleaner_hp <= 0:
 			cleaner_hp = 0
@@ -92,7 +96,11 @@ func _physics_process(delta):
 			_animated_sprite.play("idle")
 		
 		if Input.is_action_pressed("lkm_mouse"):
+			fighting = true
 			_animated_sprite.play("attack")
+			
+				
+			attack_timer.start()
 		
 		if not is_on_floor() && Input.is_action_pressed("shift") && cleaner_hp > 10:
 			flying = true
@@ -131,9 +139,9 @@ func _physics_process(delta):
 
 	# Using move_and_slide.
 	move_and_slide()
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		#print("I collided with ", collision.get_collider().name)
+	#for i in get_slide_collision_count():
+	#	var collision = get_slide_collision(i)
+	#	#print("I collided with ", collision.get_collider().name)
 	
 
 
@@ -143,7 +151,35 @@ func _physics_process(delta):
 func _on_timer_timeout():
 	if flying:
 		if _animated_sprite.flip_h:
-			G.generate_dust(50, (position+Vector2(30,15))*3.5, 1)
+			G.generate_dust(50, (position+Vector2(30,5))*3.5, 1)
 		else:
-			G.generate_dust(50, (position+Vector2(-40,15))*3.5, -1)
+			G.generate_dust(50, (position+Vector2(-40,5))*3.5, -1)
+		
+
+
+func _on_attack_timer_timeout():
+	fighting = false
+	attack_collider_left.monitoring = false
+	attack_collider_right.monitoring = false
+
+
+func _on_attack_collider_right_body_entered(body):
+	var enemy = body as BaseEnemy
+	if enemy and _animated_sprite.frame >=2:
+		enemy.damage(attack)
+
+
+func _on_attack_collider_left_body_entered(body):
+	var enemy = body as BaseEnemy
+	if enemy and _animated_sprite.frame in range(2,4):
+		print("attack left")
+		enemy.damage(attack)
+
+
+func _on_animated_sprite_2d_frame_changed():
+	if fighting and _animated_sprite.frame in range(2,4):
+		if _animated_sprite.flip_h:
+			attack_collider_left.monitoring = true
+		else:
+			attack_collider_right.monitoring = true
 		

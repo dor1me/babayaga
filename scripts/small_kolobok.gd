@@ -1,22 +1,14 @@
-extends CharacterBody2D
+extends BaseEnemy
 
+func _ready():
+	super()
+	player = $"../player"
 
-var speed = G.small_kolobok_speed
-var attack = G.small_kolobok_attack
-var hp = G.small_kolobok_hp
-@onready var player = $"../player"
-@onready var body = $CollisionShape2D
+func _init():
+	speed = G.small_kolobok_speed
+	attack = G.small_kolobok_attack
+	hp = G.small_kolobok_hp	
+	gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-func _physics_process(delta):
-	var direction
-	if position.x > player.position.x:
-		velocity.x = -speed
-	else:
-		velocity.x = speed
-	
-	if ! is_on_floor():
-		velocity.y += gravity * delta
-	
-	move_and_slide()
+func get_size():
+	return Vector2(34,34)
