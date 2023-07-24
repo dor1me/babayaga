@@ -2,10 +2,8 @@ extends CharacterBody2D
 
 class_name BaseEnemy
 
-var speed
-var attack
 var hp
-var player
+
 var hp_progress
 var hp_progress_inner
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -82,12 +80,16 @@ func damage(vector: Vector2, strength: float):
 
 func kick(vector : Vector2):
 	#disable player collision
-	collision_mask -= 2
+	#collision_mask -= 2
 	#position += vector
 	velocity = vector*10
 	kick_vector = vector
 	kick_vector_ratio = 1
 	
+
+func process_ai(delta):
+	pass
+
 
 
 func _physics_process(delta):
@@ -101,21 +103,20 @@ func _physics_process(delta):
 		if kick_vector_ratio<0.5 and is_on_floor():
 			kick_vector = null
 			velocity = Vector2()
-			collision_mask += 2
+			#collision_mask += 2
 		if kick_vector_ratio<0:
 			kick_vector = null
 			velocity = Vector2()
-			collision_mask += 2
+			#collision_mask += 2
 		
 	elif damage_vector:
 		damage_vector_ratio -= delta
 		velocity = damage_vector*damage_vector_ratio
 		if damage_vector_ratio<0:
 			damage_vector = null
-	elif position.x > player.position.x:
-		velocity.x = -speed
 	else:
-		velocity.x = speed
+		process_ai(delta) 
+	
 	
 	if ! is_on_floor():
 		velocity.y += gravity * delta
