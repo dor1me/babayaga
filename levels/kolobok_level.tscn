@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/kolobok_level.gd" id="1_tytpj"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="2_y2y5m"]
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_0m3fm"]
-[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="5_n6r2a"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/HUD.tscn" id="5_n6r2a"]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(3.5, 3.5)
