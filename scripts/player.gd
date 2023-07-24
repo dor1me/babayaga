@@ -33,7 +33,7 @@ var flying = false
 var flying_wave = 0;
 var flying_wave_delta = 1
 var flying_wave_range = 20
-var cleaner_hp = 200
+var cleaner_hp = 40
 
 
 func diagonal():
@@ -51,7 +51,7 @@ func _physics_process(delta):
 	if fighting:
 		pass	
 	
-	elif Input.is_action_pressed("scream") and G.player_ultimate == 100:
+	elif Input.is_action_pressed("scream") and G.player_ultimate >= 100:
 		
 		G.player_ultimate = 0
 		
@@ -59,7 +59,7 @@ func _physics_process(delta):
 			for child in node.get_children(false):
 				if child as BaseEnemy:
 					child.damage(Vector2(0,0), scream_attack)
-					G.player_ultimate == 0
+					G.player_ultimate = 0
 				
 	elif flying:
 		
@@ -106,8 +106,9 @@ func _physics_process(delta):
 		else: 
 			_animated_sprite.play("idle")
 		
-		if Input.is_action_pressed("lkm_mouse"):
+		if Input.is_action_pressed("lkm_mouse") and is_on_floor():
 			fighting = true
+			
 			_animated_sprite.play("attack")
 			
 		if fighting == true:
@@ -115,6 +116,7 @@ func _physics_process(delta):
 			V_SPEED = 0
 			F_SPEED = 0
 			velocity.x = 0
+			velocity.y = 0
 			attack_timer.start()
 		else:
 			H_SPEED = 400
@@ -149,9 +151,10 @@ func _physics_process(delta):
 		H_SPEED = 0
 		V_SPEED = 0
 		JUMP_VELOCITY = 0
-	if ultimate >= 100 and Input.is_action_pressed("ultimate") and is_on_floor():
-		G.player_ultimate = 0
+	if ultimate >= 100 and Input.is_action_pressed("scream") and is_on_floor():
 		_animated_sprite.play("ultimate")
+		G.player_ultimate = 0
+
 
 	# Using move_and_slide.
 	move_and_slide()

@@ -13,7 +13,7 @@ var player_bullets = 5
 
 
 
-var small_kolobok_speed = 200
+var small_kolobok_speed = 220
 var small_kolobok_hp = 100
 var small_kolobok_attack = 30
 
