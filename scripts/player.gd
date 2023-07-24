@@ -7,7 +7,7 @@ var F_SPEED = G.player_speed
 var JUMP_VELOCITY = G.jump_velocity
 var health = G.player_hp
 var attack = G.player_attack
-var scream_attack = 10
+var scream_attack = 70
 var status =  G.player_status
 var x = G.player_posx
 var ultimate = G.player_ultimate
@@ -110,8 +110,19 @@ func _physics_process(delta):
 			fighting = true
 			_animated_sprite.play("attack")
 			
-				
+		if fighting == true:
+			H_SPEED = 0
+			V_SPEED = 0
+			F_SPEED = 0
+			velocity.x = 0
 			attack_timer.start()
+		else:
+			H_SPEED = 400
+			V_SPEED = 400
+			F_SPEED = 400
+
+		
+
 		
 		if not is_on_floor() && Input.is_action_pressed("shift") && cleaner_hp > 10:
 			flying = true
@@ -126,7 +137,7 @@ func _physics_process(delta):
 			velocity.y += gravity * delta
 	
 	
-	if Input.is_action_pressed("ui_cancelrrrrr"):
+	if Input.is_action_pressed("ui_cancel"):
 		end_dialog = true
 	
 	if end_dialog == true: 
