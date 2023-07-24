@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://oxglk3b4d605" path="res://enemies/kolobok/koloboksmall.png" id="1_7xo62"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vjpm"]
-radius = 13.0384
+radius = 15.0
 
 [node name="small_kolobor" type="CharacterBody2D"]
 texture_filter = 1

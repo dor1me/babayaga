@@ -22,6 +22,7 @@ var end_dialog = false
 @onready var cleaner_label = $CleanerHP
 @onready var jumping = $jumping
 @onready var flying_sound = $flying
+@onready var soft_hit = $soft_hit
 @onready var attack_collider_right = $attack_collider_right
 @onready var attack_collider_left = $attack_collider_left
 @onready var attack_timer = $AttackTimer
@@ -109,8 +110,10 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("lkm_mouse") and is_on_floor():
 			fighting = true
+			soft_hit.play()
 			
 			_animated_sprite.play("attack")
+
 			
 		if fighting == true:
 			H_SPEED = 0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bqjpfvt5y6ed3"
+path="res://.godot/imported/Fight, Impact, Punch, Face SND14118.wav-9911e501193369660f9165ed275913bc.sample"
+
+[deps]
+
+source_file="res://levels/dialogs/Fight, Impact, Punch, Face SND14118.wav"
+dest_files=["res://.godot/imported/Fight, Impact, Punch, Face SND14118.wav-9911e501193369660f9165ed275913bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

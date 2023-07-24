@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlubojakhnpqs"]
+[gd_scene load_steps=4 format=3 uid="uid://dlubojakhnpqs"]
 
 [ext_resource type="Script" path="res://levels/dialogs/kolobok_dialog.gd" id="1_deea0"]
 [ext_resource type="Texture2D" uid="uid://3lu5mns1b1p" path="res://enemies/kolobok/kolobok.png" id="1_jwq1d"]
+[ext_resource type="AudioStream" uid="uid://ckwcidx88looy" path="res://sounds/typing.mp3" id="3_syppw"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_deea0")
@@ -34,6 +35,9 @@ offset_right = 501.0
 offset_bottom = 1006.0
 theme_override_font_sizes/font_size = 48
 text = "say"
+
+[node name="typing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_syppw")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

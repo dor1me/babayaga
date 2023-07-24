@@ -51,9 +51,10 @@ var big_kolobok_attack = 50
 var next_level
 
 var levels = {
+	"kolobok": preload("res://levels/kolobok_level.tscn"),
 	"underlevel": preload("res://levels/under_level.tscn"),
 	"hotline": preload("res://levels/hotline_level.tscn"),
-	#"kosckhei": preload("res://levels/kosckhei_level.tscn"),
+	"koshei": preload("res://levels/dialogs/koshei_dialog_bad.gd"),
 }
 
 var dialogs = {
@@ -130,9 +131,9 @@ func goto_level(to_level):
 	
 func ending():
 	if player_bad_choise <= 1:
-		current_level = good_end
+		current_level = "koshei"
 	else:
-		current_level = bad_end
+		current_level = "koshei"
 		
 #func goto_last_level():
 	#goto_level("kosckhei")
