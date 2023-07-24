@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://yx8fvceoibyl"]
+
+[ext_resource type="Script" path="res://levels/cave_level.gd" id="1_t2p1f"]
+[ext_resource type="PackedScene" uid="uid://cxe62sq1gca6c" path="res://maps/cave3.tscn" id="2_etd3m"]
+[ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="3_g7yc0"]
+[ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="4_wdus8"]
+[ext_resource type="Script" path="res://scenes/hud.gd" id="5_h6qnn"]
+
+[node name="cave_level" type="Node2D"]
+scale = Vector2(3.46, 3.46)
+script = ExtResource("1_t2p1f")
+
+[node name="background" parent="." instance=ExtResource("2_etd3m")]
+
+[node name="player" parent="." instance=ExtResource("3_g7yc0")]
+position = Vector2(30, 127)
+
+[node name="portal" parent="." instance=ExtResource("4_wdus8")]
+position = Vector2(516, 213)
+to_level = "kosckhei"
+
+[node name="hud" type="Node2D" parent="."]
+script = ExtResource("5_h6qnn")
