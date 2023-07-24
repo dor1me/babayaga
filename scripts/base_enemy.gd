@@ -100,7 +100,7 @@ func damage(vector: Vector2, strength: float):
 func kick(vector : Vector2):
 	#disable player collision
 	#collision_mask -= 2
-	#position += vector
+	position += vector
 	velocity = vector*10
 	kick_vector = vector
 	kick_vector_ratio = 1

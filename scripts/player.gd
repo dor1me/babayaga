@@ -106,6 +106,7 @@ func _physics_process(delta):
 			
 		else: 
 			_animated_sprite.play("idle")
+			velocity.x = 0
 		
 		if Input.is_action_pressed("lkm_mouse") and is_on_floor():
 			fighting = true
@@ -209,6 +210,8 @@ func _on_enemy_collider_body_entered(body):
 	if body as BaseEnemy:
 		G.player_hp -= body.collision_damage
 		if body.position.x < position.x:
+			#carry enemy out of enemy collider
+			
 			body.kick(Vector2(-20,-20))
 		else:
 			body.kick(Vector2(20,-20))
