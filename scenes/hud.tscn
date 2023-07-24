@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c11k2natbln5h"]
+[gd_scene load_steps=8 format=3 uid="uid://c11k2natbln5h"]
 
+[ext_resource type="Script" path="res://scenes/hud.gd" id="1_e12mw"]
 [ext_resource type="Texture2D" uid="uid://wjesgv7fdnoj" path="res://tilesetmenu/table.png" id="1_fb123"]
 [ext_resource type="Texture2D" uid="uid://ckttv7pd07vo3" path="res://tilesetmenu/ready.png" id="2_gr15n"]
 [ext_resource type="Texture2D" uid="uid://cv843js6is336" path="res://tilesetmenu/not ready.png" id="3_540hj"]
@@ -38,13 +39,8 @@ func _process(delta):
 	pass
 "
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Control" type="Node2D"]
+script = ExtResource("1_e12mw")
 
 [node name="table" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -69,7 +65,6 @@ rotation = 1.5708
 texture = ExtResource("4_imqte")
 
 [node name="hp_text" type="Label" parent="."]
-layout_mode = 0
 offset_left = 49.0
 offset_top = 26.0
 offset_right = 89.0
@@ -78,7 +73,6 @@ scale = Vector2(0.7, 0.875)
 script = SubResource("GDScript_oc8k4")
 
 [node name="ultimate_text" type="Label" parent="."]
-layout_mode = 0
 offset_left = 101.0
 offset_top = 26.0
 offset_right = 141.0

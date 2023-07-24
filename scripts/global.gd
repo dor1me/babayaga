@@ -2,15 +2,42 @@ extends Node2D
 
 var player_speed = 400
 var jump_velocity = -600
-var player_hp = 100
-var player_attack = 20
-var player_ultimate = 100
+
+var player_hp : float = 100 : set = _set_player_hp
+var player_attack : float = 20 : set = _set_player_attack
+var player_ultimate : float = 100 : set = _set_player_ultimate
+var player_bullets : int = 5 : set = _set_player_bullets
+	
 var player_bad_choise = 0
 var player_posx = 200
 var player_posy = 80
 var player_status = "running"
-var player_bullets = 5
 
+
+
+func _set_player_ultimate(value : float):
+	player_ultimate=value
+	_update_hud()
+	
+func _set_player_attack(value : float):
+	player_ultimate=value
+	_update_hud()
+	
+func _set_player_hp(value : float):
+	player_hp=value
+	_update_hud()
+	
+func _set_player_bullets(value : int):
+	player_bullets=value
+	_update_hud()
+
+
+func _update_hud():
+	#find BaseLevel
+	for node in get_tree().get_root().get_children(false):
+		print(node.name)
+		if node as BaseLevel:
+			node.update_hud()
 
 
 var small_kolobok_speed = 220
@@ -24,9 +51,9 @@ var big_kolobok_attack = 50
 var next_level
 
 var levels = {
-	"underlevel": preload("res://levels/underlevel.tscn"),
-	"hotline": preload("res://levels/hotline.tscn"),
-	#"kosckhei": preload("res://levels/kosckhei.tscn"),
+	"underlevel": preload("res://levels/under_level.tscn"),
+	"hotline": preload("res://levels/hotline_level.tscn"),
+	#"kosckhei": preload("res://levels/kosckhei_level.tscn"),
 }
 
 var dialogs = {
@@ -39,8 +66,8 @@ var loading = preload("res://scenes/loading.tscn")
 var lastloading = preload("res://scenes/lastloading.tscn")
 
 var current_level = ""
-var bad_end = preload("res://levels/hotline.tscn")
-var good_end = preload("res://levels/kosckhei.tscn")
+var bad_end = preload("res://levels/hotline_level.tscn")
+var good_end = preload("res://levels/kosckhei_level.tscn")
 var dust_class = preload("res://components/dust.tscn")
 
 func generate_dust(count,start_position,direction):

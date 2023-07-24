@@ -32,4 +32,4 @@ position = Vector2(662.571, 52)
 [node name="small_kolobor5" parent="." instance=ExtResource("3_0m3fm")]
 position = Vector2(-244.286, 106.857)
 
-[node name="Control" parent="." instance=ExtResource("5_n6r2a")]
+[node name="hud" parent="." instance=ExtResource("5_n6r2a")]

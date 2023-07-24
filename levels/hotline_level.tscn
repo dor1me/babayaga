@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://ccretw4kxpy8s"]
+
+[ext_resource type="Script" path="res://levels/hotline_level.gd" id="1_k5ylf"]
+[ext_resource type="PackedScene" uid="uid://5dbsy4i0ts46" path="res://maps/hotline.tscn" id="2_683uh"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="3_tof1k"]
+[ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="4_hpxbe"]
+[ext_resource type="PackedScene" uid="uid://s2ah04jlabfq" path="res://components/exit.tscn" id="5_2d0it"]
+[ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="6_v3s0k"]
+[ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="7_fjsw2"]
+[ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="8_fhba8"]
+
+[node name="level3" type="Node2D"]
+scale = Vector2(3.43709, 3.43709)
+script = ExtResource("1_k5ylf")
+
+[node name="Node2D" parent="." instance=ExtResource("2_683uh")]
+
+[node name="hud" parent="." instance=ExtResource("3_tof1k")]
+
+[node name="player" parent="." instance=ExtResource("4_hpxbe")]
+position = Vector2(87, 117)
+
+[node name="exit" parent="." instance=ExtResource("5_2d0it")]
+position = Vector2(673, 21)
+scale = Vector2(5.50581, 5.47978)
+
+[node name="portal-dialog" parent="." instance=ExtResource("6_v3s0k")]
+position = Vector2(504.787, 45.3872)
+dialog = "vodyanoy"
+
+[node name="portal" parent="." instance=ExtResource("7_fjsw2")]
+position = Vector2(526.899, 243.229)
+to_level = "underlevel"
+
+[node name="small_kolobor" parent="." instance=ExtResource("8_fhba8")]
+position = Vector2(271.742, 239.447)

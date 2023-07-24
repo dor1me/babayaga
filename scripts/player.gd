@@ -57,7 +57,7 @@ func _physics_process(delta):
 		
 		for node in get_tree().get_root().get_children(false):
 			for child in node.get_children(false):
-				if child as BaseEnemy:
+				if child as BaseLevel:
 					child.damage(Vector2(0,0), scream_attack)
 					G.player_ultimate = 0
 				
