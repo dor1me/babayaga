@@ -42,3 +42,4 @@ dialog = "vodyanoy"
 
 [node name="frog" parent="." instance=ExtResource("10_asxnk")]
 position = Vector2(355.966, 247.603)
+floor_stop_on_slope = false

@@ -24,7 +24,10 @@ func _set_player_attack(value : float):
 	_update_hud()
 	
 func _set_player_hp(value : float):
-	player_hp=value
+	player_hp=max(value,0)
+	if player_hp == 0:
+		player_hp = 100
+		
 	_update_hud()
 	
 func _set_player_bullets(value : int):
@@ -35,7 +38,6 @@ func _set_player_bullets(value : int):
 func _update_hud():
 	#find BaseLevel
 	for node in get_tree().get_root().get_children(false):
-		print(node.name)
 		if node as BaseLevel:
 			node.update_hud()
 
