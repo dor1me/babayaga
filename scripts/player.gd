@@ -21,9 +21,11 @@ var end_dialog = false
 @onready var camera = $Camera2D
 @onready var cleaner_label = $CleanerHP
 @onready var jumping = $jumping
+@onready var flying_sound = $flying
 @onready var attack_collider_right = $attack_collider_right
 @onready var attack_collider_left = $attack_collider_left
 @onready var attack_timer = $AttackTimer
+
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 1.5
@@ -94,7 +96,6 @@ func _physics_process(delta):
 		
 		velocity.x = H_SPEED * (Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left"))
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-			jumping.play()
 			velocity.y = JUMP_VELOCITY
 				
 		_animated_sprite.play("run")
@@ -127,7 +128,10 @@ func _physics_process(delta):
 
 		
 		if not is_on_floor() && Input.is_action_pressed("shift") && cleaner_hp > 10:
+			flying_sound.play()
 			flying = true
+		else:
+			flying_sound.stop()
 		if is_on_floor():
 			if cleaner_hp < 40:
 				cleaner_hp += 0.1

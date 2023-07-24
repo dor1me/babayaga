@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d1eoxrkhv1sxm"]
+[gd_scene load_steps=24 format=3 uid="uid://d1eoxrkhv1sxm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0i1x8"]
 [ext_resource type="Texture2D" uid="uid://bj4m0k4tk7kkq" path="res://animations/3/5.png" id="2_82vdh"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://by8a3460kterj" path="res://animations/2/4.png" id="15_fpyjq"]
 [ext_resource type="AudioStream" uid="uid://ckwcidx88looy" path="res://sounds/typing.mp3" id="15_gepbm"]
 [ext_resource type="Texture2D" uid="uid://b8lpap1ik80n6" path="res://yaga/ultimate.png" id="16_ee12l"]
+[ext_resource type="AudioStream" uid="uid://d4bmb76phxoee" path="res://sounds/flying.wav" id="18_0hycr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_db2en"]
 animations = [{
@@ -198,6 +199,9 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_collider_left"]
 position = Vector2(-3.5, -3)
 shape = SubResource("RectangleShape2D_cbvac")
+
+[node name="flying" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_0hycr")
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
