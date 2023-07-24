@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://qmuwlitipcbq"]
+[gd_scene load_steps=25 format=3 uid="uid://qmuwlitipcbq"]
 
 [ext_resource type="Texture2D" uid="uid://ydy7rn2no4pd" path="res://tileset1/Sunny-land-forest-files/PNG/environment/environment-preview.png" id="1_5pyrr"]
 [ext_resource type="Texture2D" uid="uid://bpuf2b5dm68ls" path="res://tileset1/Sunny-land-forest-files/PNG/environment/props/house.png" id="2_8n2ku"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://doua6din4cj7t" path="res://tilesetmenu/Keyboard Extras.png" id="7_l4fgi"]
 [ext_resource type="Texture2D" uid="uid://cg07uchme58pf" path="res://tilesetmenu/Keyboard Letters and Symbols.png" id="8_lgbm7"]
 [ext_resource type="Texture2D" uid="uid://bt4o2u8kq85vc" path="res://enemies/NEwSprSht_CutePump.png" id="9_5ygfp"]
+[ext_resource type="Texture2D" uid="uid://bvsm8ejfwqlv5" path="res://tilesetmenu/lkm.png" id="10_6e6p7"]
+[ext_resource type="Texture2D" uid="uid://bar7t0to3mly3" path="res://tilesetmenu/pkm.png" id="11_7623f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1req0"]
 texture = ExtResource("1_5pyrr")
@@ -11581,7 +11583,7 @@ texture_filter = 1
 scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_agq2r")
 format = 2
-layer_0/tile_data = PackedInt32Array(589832, 1, 2, 589834, 196609, 2, 655370, 196609, 7, 655368, 131073, 7, 589846, 262144, 2, 589847, 327680, 2, 196647, 0, 1, 196648, 65536, 1, 720925, 1, 2, 720926, 131073, 4, 720927, 196609, 2, 655390, 393217, 4, 589853, 0, 1, 589854, 65536, 1)
+layer_0/tile_data = PackedInt32Array(589832, 1, 2, 589834, 196609, 2, 655370, 196609, 7, 655368, 131073, 7, 589846, 262144, 2, 589847, 327680, 2, 196647, 0, 1, 196648, 65536, 1, 720925, 1, 2, 720926, 131073, 4, 720927, 196609, 2, 655390, 393217, 4, 589853, 0, 1, 589854, 65536, 1, 589891, 65537, 4)
 
 [node name="TileMap3" type="TileMap" parent="."]
 z_index = -2
@@ -11589,3 +11591,42 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_rty02")
 format = 2
 layer_0/tile_data = PackedInt32Array(2687352, 327680, 5, 2752888, 327680, 6, 2818424, 327680, 7, 2883960, 327680, 8, 2687353, 393216, 5, 2752889, 393216, 6, 2818425, 393216, 7, 2883961, 393216, 8, 2752890, 458752, 6, 2818426, 458752, 7, 2883962, 458752, 8, 852091, 327680, 5, 917627, 327680, 6, 983163, 327680, 7, 1048699, 327680, 8, 852092, 393216, 5, 917628, 393216, 6, 983164, 393216, 7, 1048700, 393216, 8, 917629, 458752, 6, 983165, 458752, 7, 1048701, 458752, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5779, 911)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_6e6p7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(6050, 914)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_7623f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 10
+offset_left = 4949.0
+offset_top = 881.0
+offset_right = 5837.0
+offset_bottom = 1114.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Каждый раз, нанося урон врагам, вы 
+увеличиваете заряд навыка
+"
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 5850.0
+offset_top = 985.0
+offset_right = 6131.0
+offset_bottom = 1101.0
+theme_override_colors/default_color = Color(0.772549, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Атака"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 6072.0
+offset_top = 881.0
+offset_right = 6703.0
+offset_bottom = 1086.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Нажмите кнопку              для активации  навыка \"Ягание\""
