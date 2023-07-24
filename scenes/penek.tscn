@@ -1,7 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://31mlfvf6aleu"]
+[gd_scene load_steps=8 format=3 uid="uid://31mlfvf6aleu"]
 
 [ext_resource type="Script" path="res://scripts/penek.gd" id="1_i8m0t"]
-[ext_resource type="Texture2D" uid="uid://dwh6rva4bd7lv" path="res://icon.svg" id="2_1empv"]
+[ext_resource type="Texture2D" uid="uid://cjn7xhywnequq" path="res://animations/4/penek1.png" id="3_0hgnw"]
+[ext_resource type="Texture2D" uid="uid://bro3kcovclmsx" path="res://animations/4/penek2.png" id="4_we6hs"]
+[ext_resource type="Texture2D" uid="uid://db3vs0qqvmfaq" path="res://animations/4/penek3.png" id="5_bdmqo"]
+[ext_resource type="Texture2D" uid="uid://15g3ls6yusk0" path="res://animations/4/penek4.png" id="6_uihgk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlfvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0hgnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_we6hs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bdmqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uihgk")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0mdf"]
 size = Vector2(19.5, 23)
@@ -11,13 +34,20 @@ texture_filter = 1
 collision_layer = 4
 script = ExtResource("1_i8m0t")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-5.96048e-08, 9.53674e-07)
-scale = Vector2(0.171875, 0.15625)
-texture = ExtResource("2_1empv")
+[node name="animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_mlfvt")
+animation = &"idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="collider" type="CollisionShape2D" parent="."]
 position = Vector2(-2.71501e-06, -0.249994)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_w0mdf")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdr5w7ojg6de5"]
+[gd_scene load_steps=10 format=3 uid="uid://cdr5w7ojg6de5"]
 
 [ext_resource type="Script" path="res://levels/hotline_level.gd" id="1_k5ylf"]
 [ext_resource type="PackedScene" uid="uid://5dbsy4i0ts46" path="res://maps/hotline.tscn" id="2_683uh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="6_v3s0k"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="7_fjsw2"]
 [ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="8_v0std"]
+[ext_resource type="PackedScene" uid="uid://31mlfvf6aleu" path="res://scenes/penek.tscn" id="9_8ow8i"]
 
 [node name="level3" type="Node2D"]
 scale = Vector2(3.43709, 3.43709)
@@ -59,3 +60,6 @@ floor_stop_on_slope = false
 [node name="frog7" parent="." instance=ExtResource("8_v0std")]
 position = Vector2(414.886, -205.406)
 floor_stop_on_slope = false
+
+[node name="penek" parent="." instance=ExtResource("9_8ow8i")]
+position = Vector2(206.861, 242.356)
