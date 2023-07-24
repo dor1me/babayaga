@@ -15,7 +15,7 @@ var ultimate = G.player_ultimate
 var end_dialog = false
 
 #var y = G.player
-@onready var shape = $CollisionShape2D
+@onready var shape = $shell_collider
 @onready var zindex = $AnimatedSprite2D
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
@@ -159,6 +159,9 @@ func _physics_process(delta):
 	# Using move_and_slide.
 	move_and_slide()
 	
+		
+	
+	
 
 
 func _on_timer_timeout():
@@ -196,4 +199,14 @@ func _on_animated_sprite_2d_frame_changed():
 			attack_collider_left.monitoring = true
 		else:
 			attack_collider_right.monitoring = true
+		
+
+
+func _on_enemy_collider_body_entered(body):
+	if body as BaseEnemy:
+		G.player_hp -= body.collision_damage
+		if body.position.x < position.x:
+			body.kick(Vector2(-20,-20))
+		else:
+			body.kick(Vector2(20,-20))
 		

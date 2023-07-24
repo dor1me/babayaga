@@ -10,8 +10,15 @@ var hp_progress
 var hp_progress_inner
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var timer = Timer.new()
-var damage_vector;
-var damage_vector_ratio;
+var damage_vector
+var damage_vector_ratio
+var kick_vector
+var kick_vector_ratio
+var dead = false
+
+@onready var collider = $collider
+
+@export var collision_damage : float = 1
 
 func update_hp_progres():
 	var hp_ratio = hp/100
@@ -33,18 +40,16 @@ func update_hp_progres():
 
 func disapear_timer_on_timeout():
 	self.modulate.a -= 0.1
-	if self.modulate.a == 0:
+	if self.modulate.a <= 0:
+		print("kill" + name)
 		queue_free()
 	
 func disapear():
+	dead = true
 	timer.timeout.connect(disapear_timer_on_timeout)
 	timer.wait_time = 0.05
 	add_child(timer)
 	timer.start();
-	
-	
-
-	
 
 func _ready():
 	hp_progress = ColorRect.new()
@@ -75,18 +80,39 @@ func damage(vector: Vector2, strength: float):
 	damage_vector = vector*10
 	damage_vector_ratio = 1
 
+func kick(vector : Vector2):
+	#disable player collision
+	collision_mask -= 2
+	#position += vector
+	velocity = vector*10
+	kick_vector = vector
+	kick_vector_ratio = 1
+	
+
+
 func _physics_process(delta):
 	var direction
-	if damage_vector:
+	if dead:
+		return
+		
+	if kick_vector:
+		kick_vector_ratio -= delta
+		#velocity = kick_vector*kick_vector_ratio
+		if kick_vector_ratio<0.5 and is_on_floor():
+			kick_vector = null
+			velocity = Vector2()
+			collision_mask += 2
+		if kick_vector_ratio<0:
+			kick_vector = null
+			velocity = Vector2()
+			collision_mask += 2
+		
+	elif damage_vector:
 		damage_vector_ratio -= delta
 		velocity = damage_vector*damage_vector_ratio
 		if damage_vector_ratio<0:
 			damage_vector = null
-			
-		move_and_slide()
-		return
-	
-	if position.x > player.position.x:
+	elif position.x > player.position.x:
 		velocity.x = -speed
 	else:
 		velocity.x = speed
