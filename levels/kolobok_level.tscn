@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc8kq8cyq2xkf"]
+[gd_scene load_steps=6 format=3 uid="uid://bc8kq8cyq2xkf"]
 
 [ext_resource type="PackedScene" uid="uid://bd6ycud254r0w" path="res://maps/kolobokmap.tscn" id="1_gy5si"]
+[ext_resource type="Script" path="res://scripts/kolobok_level.gd" id="1_tytpj"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="2_y2y5m"]
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_0m3fm"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/HUD.tscn" id="5_n6r2a"]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(3.5, 3.5)
+script = ExtResource("1_tytpj")
 
 [node name="Node2D" parent="." instance=ExtResource("1_gy5si")]
 position = Vector2(0, -16)
@@ -29,3 +32,5 @@ position = Vector2(662.571, 52)
 
 [node name="small_kolobor5" parent="." instance=ExtResource("3_0m3fm")]
 position = Vector2(-244.286, 106.857)
+
+[node name="Control" parent="." instance=ExtResource("5_n6r2a")]
