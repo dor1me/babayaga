@@ -42,6 +42,8 @@ func disapear_timer_on_timeout():
 	if self.modulate.a <= 0:
 		print("kill" + name)
 		queue_free()
+		
+
 	
 func disapear():
 	dead = true
@@ -66,7 +68,7 @@ func _ready():
 	add_child(timer_disapear)
 	
 	timer_freeze = Timer.new()
-	timer_freeze.timeout.connect(disapear_timer_on_timeout)
+	timer_freeze.timeout.connect(freeze_timer_on_timeout)
 	add_child(timer_freeze)
 	
 	update_hp_progres()
@@ -76,9 +78,12 @@ func _ready():
 func get_size():
 	return Vector2(0,0)
 
+func freeze_timer_on_timeout():
+	
+	pass
+
 func freeze(time):
 	timer_freeze.wait_time = time
-	
 	timer_disapear.start();
 	
 
