@@ -7,7 +7,8 @@ var hp
 var hp_progress
 var hp_progress_inner
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var timer = Timer.new()
+var timer_disapear
+var timer_freeze
 var damage_vector
 var damage_vector_ratio
 var kick_vector
@@ -44,10 +45,9 @@ func disapear_timer_on_timeout():
 	
 func disapear():
 	dead = true
-	timer.timeout.connect(disapear_timer_on_timeout)
-	timer.wait_time = 0.05
-	add_child(timer)
-	timer.start();
+	
+	timer_disapear.wait_time = 0.05
+	timer_disapear.start();
 
 func _ready():
 	hp_progress = ColorRect.new()
@@ -61,12 +61,26 @@ func _ready():
 	
 	hp_progress.add_child(hp_progress_inner)
 	
+	timer_disapear = Timer.new()
+	timer_disapear.timeout.connect(disapear_timer_on_timeout)
+	add_child(timer_disapear)
+	
+	timer_freeze = Timer.new()
+	timer_freeze.timeout.connect(disapear_timer_on_timeout)
+	add_child(timer_freeze)
+	
 	update_hp_progres()
 	
 	add_child(hp_progress);
 	
 func get_size():
 	return Vector2(0,0)
+
+func freeze(time):
+	timer_freeze.wait_time = time
+	
+	timer_disapear.start();
+	
 
 func damage(vector: Vector2, strength: float):
 	hp -= strength

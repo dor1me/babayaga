@@ -7,10 +7,9 @@ var F_SPEED = G.player_speed
 var JUMP_VELOCITY = G.jump_velocity
 var health = G.player_hp
 var attack = G.player_attack
-var scream_attack = 70
+var scream_attack = 25
 var status =  G.player_status
 var x = G.player_posx
-var ultimate = G.player_ultimate
 
 var end_dialog = false
 
@@ -60,9 +59,9 @@ func _physics_process(delta):
 		
 		for node in get_tree().get_root().get_children(false):
 			for child in node.get_children(false):
-				if child as BaseLevel:
+				if child as BaseEnemy:
 					child.damage(Vector2(0,0), scream_attack)
-					G.player_ultimate = 0
+					
 				
 	elif flying:
 		
@@ -158,10 +157,7 @@ func _physics_process(delta):
 		H_SPEED = 0
 		V_SPEED = 0
 		JUMP_VELOCITY = 0
-	if ultimate >= 100 and Input.is_action_pressed("scream") and is_on_floor():
-		_animated_sprite.play("ultimate")
-		G.player_ultimate = 0
-
+	
 
 	# Using move_and_slide.
 	move_and_slide()
