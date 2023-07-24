@@ -7,6 +7,7 @@ var F_SPEED = G.player_speed
 var JUMP_VELOCITY = G.jump_velocity
 var health = G.player_hp
 var attack = G.player_attack
+var scream_attack = 10
 var status =  G.player_status
 var x = G.player_posx
 var ultimate = G.player_ultimate
@@ -32,8 +33,8 @@ var flying = false
 var flying_wave = 0;
 var flying_wave_delta = 1
 var flying_wave_range = 20
-
 var cleaner_hp = 200
+
 
 func diagonal():
 	if shape.position.x < 820 and shape.position.y < 460 :
@@ -49,7 +50,17 @@ func _physics_process(delta):
 	
 	if fighting:
 		pass	
+	
+	elif Input.is_action_pressed("scream") and G.player_ultimate == 100:
 		
+		G.player_ultimate = 0
+		
+		for node in get_tree().get_root().get_children(false):
+			for child in node.get_children(false):
+				if child as BaseEnemy:
+					child.damage(Vector2(0,0), scream_attack)
+					G.player_ultimate == 0
+				
 	elif flying:
 		
 		if cleaner_hp <= 0:
@@ -115,7 +126,7 @@ func _physics_process(delta):
 			velocity.y += gravity * delta
 	
 	
-	if Input.is_action_pressed("ui_cancel"):
+	if Input.is_action_pressed("ui_cancelrrrrr"):
 		end_dialog = true
 	
 	if end_dialog == true: 
@@ -153,15 +164,16 @@ func _on_attack_timer_timeout():
 
 func _on_attack_collider_right_body_entered(body):
 	var enemy = body as BaseEnemy
-	if enemy and _animated_sprite.frame >=2:
-		enemy.damage(Vector2(attack,attack))
+	if enemy and _animated_sprite.frame in range(2,4):
+		G.player_ultimate = min(100,G.player_ultimate+30)
+		enemy.damage(Vector2(attack,attack), attack)
 
 
 func _on_attack_collider_left_body_entered(body):
 	var enemy = body as BaseEnemy
 	if enemy and _animated_sprite.frame in range(2,4):
-		print("attack left")
-		enemy.damage(Vector2(-attack,attack))
+		G.player_ultimate = min(100,G.player_ultimate+30)
+		enemy.damage(Vector2(-attack,attack), attack)
 
 
 func _on_animated_sprite_2d_frame_changed():

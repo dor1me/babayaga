@@ -29,7 +29,7 @@ func _process(delta):
 func _on_body_entered(body):
 	var enemy = body as BaseEnemy
 	if enemy:
-		enemy.damage(attack)
+		enemy.damage(Vector2(0,0),attack)
 		attack = attack / 2
 		
 	

@@ -65,14 +65,14 @@ func _ready():
 func get_size():
 	return Vector2(0,0)
 
-func damage(strength: Vector2):
-	hp -= strength.length()
-	if hp < 0:
+func damage(vector: Vector2, strength: float):
+	hp -= strength
+	if hp <= 0:
 		hp = 0
 		disapear()
 	
 	update_hp_progres()
-	damage_vector = strength*10
+	damage_vector = vector*10
 	damage_vector_ratio = 1
 
 func _physics_process(delta):
