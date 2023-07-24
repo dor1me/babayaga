@@ -36,7 +36,7 @@ position = Vector2(531.619, 233.621)
 to_level = "hotline"
 
 [node name="vodya" parent="." instance=ExtResource("7_c0ip2")]
-position = Vector2(256.051, 221.969)
+position = Vector2(30.0037, 212.648)
 scale = Vector2(1, 2.04867)
 dialog = "vodyanoy"
 
