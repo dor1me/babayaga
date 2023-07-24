@@ -54,7 +54,7 @@ func _physics_process(delta):
 		pass	
 	
 	elif Input.is_action_pressed("scream") and G.player_ultimate >= 100:
-		
+		_animated_sprite.play("ultimate")	
 		G.player_ultimate = 0
 		
 		for node in get_tree().get_root().get_children(false):

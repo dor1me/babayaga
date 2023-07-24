@@ -54,7 +54,8 @@ func _update_hud():
 var next_level
 
 var levels = {
-	"kolobok": preload("res://levels/kolobok_level.tscn"),
+	"start": preload("res://levels/startlevel.tscn"),
+	"kolobok": preload("res://levels/under_level.tscn"),
 	"underlevel": preload("res://levels/under_level.tscn"),
 	"hotline": preload("res://levels/hotline_level.tscn"),
 	"kosckhei": preload("res://levels/kosckhei_level.tscn"),
@@ -71,7 +72,7 @@ var dialogs = {
 var loading = preload("res://scenes/loading.tscn")
 var lastloading = preload("res://scenes/lastloading.tscn")
 
-var current_level = ""
+var current_level = "start"
 var bad_end = preload("res://levels/hotline_level.tscn")
 var good_end = preload("res://levels/kosckhei_level.tscn")
 var dust_class = preload("res://components/dust.tscn")

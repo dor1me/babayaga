@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgm0ihihdvwyq"]
+[gd_scene load_steps=4 format=3 uid="uid://dgm0ihihdvwyq"]
 
 [ext_resource type="PackedScene" uid="uid://qmuwlitipcbq" path="res://maps/homemap.tscn" id="1_0opm7"]
 [ext_resource type="PackedScene" uid="uid://ul3j51d0gpjx" path="res://scenes/player_tutorial.tscn" id="3_8dmwf"]
+[ext_resource type="PackedScene" uid="uid://s2ah04jlabfq" path="res://components/exit.tscn" id="3_p1cwb"]
 
 [node name="level" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("1_0opm7")]
 
 [node name="player" parent="." instance=ExtResource("3_8dmwf")]
-position = Vector2(163, 133)
+position = Vector2(471, 640)
 scale = Vector2(3, 3)
+
+[node name="exit" parent="." instance=ExtResource("3_p1cwb")]
+position = Vector2(7817, 175)
+scale = Vector2(8.27892, 8.23978)

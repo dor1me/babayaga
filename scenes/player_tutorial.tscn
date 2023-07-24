@@ -149,9 +149,8 @@ metadata/_edit_group_ = true
 position = Vector2(-2, -6)
 limit_left = 0
 limit_top = 0
-limit_right = 25454
+limit_right = 7650
 limit_bottom = 1080
-limit_smoothed = true
 
 [node name="CleanerHP" type="Label" parent="."]
 offset_left = -18.0

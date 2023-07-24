@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdr5w7ojg6de5"]
+[gd_scene load_steps=11 format=3 uid="uid://cdr5w7ojg6de5"]
 
 [ext_resource type="Script" path="res://levels/hotline_level.gd" id="1_k5ylf"]
 [ext_resource type="PackedScene" uid="uid://5dbsy4i0ts46" path="res://maps/hotline.tscn" id="2_683uh"]
-[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="3_tof1k"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/HUD.tscn" id="3_tof1k"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="4_hpxbe"]
 [ext_resource type="PackedScene" uid="uid://s2ah04jlabfq" path="res://components/exit.tscn" id="5_2d0it"]
 [ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="6_v3s0k"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="7_fjsw2"]
 [ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="8_v0std"]
 [ext_resource type="PackedScene" uid="uid://31mlfvf6aleu" path="res://scenes/penek.tscn" id="9_8ow8i"]
+[ext_resource type="PackedScene" uid="uid://qmuwlitipcbq" path="res://maps/homemap.tscn" id="10_r6ifm"]
 
 [node name="level3" type="Node2D"]
 scale = Vector2(3.43709, 3.43709)
@@ -63,3 +64,6 @@ floor_stop_on_slope = false
 
 [node name="penek" parent="." instance=ExtResource("9_8ow8i")]
 position = Vector2(206.861, 242.356)
+
+[node name="Node2D2" parent="." instance=ExtResource("10_r6ifm")]
+position = Vector2(47.4238, 2012.46)
