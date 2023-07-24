@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_eb0d2"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="4_yp610"]
 [ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="7_c0ip2"]
-[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="9_du6v1"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/HUD.tscn" id="9_du6v1"]
 [ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="10_asxnk"]
 
 [node name="level" type="Node2D"]
@@ -34,8 +34,9 @@ position = Vector2(409.856, 238.282)
 position = Vector2(531.619, 233.621)
 to_level = "hotline"
 
-[node name="porta-to-dialog-vodyanoy" parent="." instance=ExtResource("7_c0ip2")]
-position = Vector2(24.7603, 233.912)
+[node name="vodya" parent="." instance=ExtResource("7_c0ip2")]
+position = Vector2(256.051, 221.969)
+scale = Vector2(1, 2.04867)
 dialog = "vodyanoy"
 
 [node name="hud" parent="." instance=ExtResource("9_du6v1")]
