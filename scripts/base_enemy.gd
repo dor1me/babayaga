@@ -10,7 +10,9 @@ var hp_progress
 var hp_progress_inner
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var timer = Timer.new()
-	
+var damage_vector;
+var damage_vector_ratio;
+
 func update_hp_progres():
 	var hp_ratio = hp/100
 	var hp_color
@@ -42,13 +44,7 @@ func disapear():
 	
 	
 
-func damage(strength: float):
-	hp -= strength
-	if hp < 0:
-		hp = 0
-		disapear()
 	
-	update_hp_progres()
 
 func _ready():
 	hp_progress = ColorRect.new()
@@ -69,8 +65,27 @@ func _ready():
 func get_size():
 	return Vector2(0,0)
 
+func damage(strength: Vector2):
+	hp -= strength.length()
+	if hp < 0:
+		hp = 0
+		disapear()
+	
+	update_hp_progres()
+	damage_vector = strength*10
+	damage_vector_ratio = 1
+
 func _physics_process(delta):
 	var direction
+	if damage_vector:
+		damage_vector_ratio -= delta
+		velocity = damage_vector*damage_vector_ratio
+		if damage_vector_ratio<0:
+			damage_vector = null
+			
+		move_and_slide()
+		return
+	
 	if position.x > player.position.x:
 		velocity.x = -speed
 	else:

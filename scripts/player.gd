@@ -130,21 +130,9 @@ func _physics_process(delta):
 	if ultimate >= 100 and Input.is_action_pressed("ultimate") and is_on_floor():
 		G.player_ultimate = 0
 		_animated_sprite.play("ultimate")
-		
-	#shape.disabled = false
-
-	#var collision = move_and_collide(velocity, true)
-	#if collision:
-	#	print("I collided with ", collision.get_collider().name)
 
 	# Using move_and_slide.
 	move_and_slide()
-	#for i in get_slide_collision_count():
-	#	var collision = get_slide_collision(i)
-	#	#print("I collided with ", collision.get_collider().name)
-	
-
-
 	
 
 
@@ -166,14 +154,14 @@ func _on_attack_timer_timeout():
 func _on_attack_collider_right_body_entered(body):
 	var enemy = body as BaseEnemy
 	if enemy and _animated_sprite.frame >=2:
-		enemy.damage(attack)
+		enemy.damage(Vector2(attack,attack))
 
 
 func _on_attack_collider_left_body_entered(body):
 	var enemy = body as BaseEnemy
 	if enemy and _animated_sprite.frame in range(2,4):
 		print("attack left")
-		enemy.damage(attack)
+		enemy.damage(Vector2(-attack,attack))
 
 
 func _on_animated_sprite_2d_frame_changed():
