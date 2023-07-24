@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccretw4kxpy8s"]
+[gd_scene load_steps=9 format=3 uid="uid://cdr5w7ojg6de5"]
 
 [ext_resource type="Script" path="res://levels/hotline_level.gd" id="1_k5ylf"]
 [ext_resource type="PackedScene" uid="uid://5dbsy4i0ts46" path="res://maps/hotline.tscn" id="2_683uh"]
-[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="3_tof1k"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/HUD.tscn" id="3_tof1k"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="4_hpxbe"]
 [ext_resource type="PackedScene" uid="uid://s2ah04jlabfq" path="res://components/exit.tscn" id="5_2d0it"]
 [ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="6_v3s0k"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="7_fjsw2"]
-[ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="8_fhba8"]
+[ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="8_v0std"]
 
 [node name="level3" type="Node2D"]
 scale = Vector2(3.43709, 3.43709)
@@ -32,5 +32,30 @@ dialog = "vodyanoy"
 position = Vector2(526.899, 243.229)
 to_level = "underlevel"
 
-[node name="small_kolobor" parent="." instance=ExtResource("8_fhba8")]
-position = Vector2(271.742, 239.447)
+[node name="frog" parent="." instance=ExtResource("8_v0std")]
+position = Vector2(42.1869, -1319.72)
+floor_stop_on_slope = false
+
+[node name="frog2" parent="." instance=ExtResource("8_v0std")]
+position = Vector2(327.603, -536.5)
+floor_stop_on_slope = false
+
+[node name="frog3" parent="." instance=ExtResource("8_v0std")]
+position = Vector2(516.425, -1642.09)
+floor_stop_on_slope = false
+
+[node name="frog4" parent="." instance=ExtResource("8_v0std")]
+position = Vector2(227.227, -1645.29)
+floor_stop_on_slope = false
+
+[node name="frog5" parent="." instance=ExtResource("8_v0std")]
+position = Vector2(651.132, -995.319)
+floor_stop_on_slope = false
+
+[node name="frog6" parent="." instance=ExtResource("8_v0std")]
+position = Vector2(27.3486, -935.966)
+floor_stop_on_slope = false
+
+[node name="frog7" parent="." instance=ExtResource("8_v0std")]
+position = Vector2(645.604, -258.358)
+floor_stop_on_slope = false
