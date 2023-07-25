@@ -1,6 +1,7 @@
 extends BaseDialog
 
 @onready var typing_sound = $typing
+@onready var sigh = $sigh
 
 var messages = [
 	"Добрый вечер, берегиня!\rМне б вопрос к тебе, княгиня,\rПопытаться отыскать\rМне б Кощея, да не ждать.",
@@ -15,10 +16,11 @@ var answers = [
 	"молча уйти"
 	]
 	
-var can_click = true
+var can_click = false
 var x = 0
 
 func _ready():
+	sigh.play()
 	super()
 	conversation()
 
