@@ -140,12 +140,18 @@ func show_dialog(to_dialog):
 	if dialogs.has(to_dialog):
 		
 		var l = get_current_level()
+		
+		for node in l.get_children(false):
+			if node as DialogPortal:
+				node.collision_mask = 0
+		
 		var cl = CanvasLayer.new()
 		var d = dialogs[to_dialog].instantiate()
 		cl.add_child(d)
 		l.add_child(cl)
 		
 func close_dialog(node):
+	
 	var cl = node.get_parent();
 	cl.get_parent().remove_child(cl);
 

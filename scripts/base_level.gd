@@ -9,7 +9,8 @@ class_name BaseLevel
 
 func _ready():
 	G.level_enemy_count = get_enemy_count()
-	hud.update()
+	if hud:
+		hud.update()
 
 func update_hud():
 	if hud:
