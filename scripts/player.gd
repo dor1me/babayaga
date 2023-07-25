@@ -7,7 +7,7 @@ var F_SPEED = G.player_speed
 var JUMP_VELOCITY = G.jump_velocity
 var health = G.player_hp
 var attack = G.player_attack
-var scream_attack = 25
+var scream_attack = G.player_scream_attack
 var status =  G.player_status
 var x = G.player_posx
 
@@ -26,7 +26,7 @@ var end_dialog = false
 @onready var attack_collider_left = $attack_collider_left
 @onready var attack_timer = $AttackTimer
 
-
+@onready var current_level : BaseLevel = G.get_current_level()
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 1.5
 
@@ -37,6 +37,8 @@ var flying_wave_delta = 1
 var flying_wave_range = 20
 var cleaner_hp = 40
 
+func _ready():
+	pass
 
 func diagonal():
 	if shape.position.x < 820 and shape.position.y < 460 :
@@ -60,8 +62,10 @@ func _physics_process(delta):
 		for node in get_tree().get_root().get_children(false):
 			for child in node.get_children(false):
 				if child as BaseEnemy:
-					child.damage(Vector2(0,0), scream_attack)
-					
+					child.damage(
+						Vector2(0,0), 
+						scream_attack * _get_player_attack_multiplier()
+						)
 				
 	elif flying:
 		
@@ -128,20 +132,19 @@ func _physics_process(delta):
 			F_SPEED = 400
 
 		
-
-		
-		if not is_on_floor() && Input.is_action_pressed("shift") && cleaner_hp > 10:
+		#try to fly
+		if cleaner_hp >= 10 and current_level.cleaner_enabled and Input.is_action_pressed("shift") :
 			flying_sound.play()
 			flying = true
 		else:
 			flying_sound.stop()
+			flying = false
+			
+			
 		if is_on_floor():
 			if cleaner_hp < 40:
 				cleaner_hp += 0.1
 				
-			if cleaner_hp > 10 && Input.is_action_pressed("shift"):
-				flying = true
-			
 		else:	
 			velocity.y += gravity * delta
 	
@@ -182,20 +185,33 @@ func _on_attack_timer_timeout():
 	attack_collider_left.monitoring = false
 	attack_collider_right.monitoring = false
 
+func _get_player_attack_multiplier():
+	var player_attack_multiplier = 1
+	if current_level:
+		player_attack_multiplier = current_level.player_attack_multiplier
+	
+	return player_attack_multiplier
 
-func _on_attack_collider_right_body_entered(body):
+func _attack_enemy(direction: int, body):
+	#direction 
+	#  1   attack to right
+	# -1   attack to left
+	
 	var enemy = body as BaseEnemy
 	if enemy and _animated_sprite.frame in range(2,4):
 		G.player_ultimate = min(100,G.player_ultimate+30)
-		enemy.damage(Vector2(attack,attack), attack)
+		enemy.damage(
+			Vector2(attack*direction,attack), 
+			attack * _get_player_attack_multiplier()
+			)
+
+func _on_attack_collider_right_body_entered(body):
+	_attack_enemy(1, body)
 
 
 func _on_attack_collider_left_body_entered(body):
-	var enemy = body as BaseEnemy
-	if enemy and _animated_sprite.frame in range(2,4):
-		G.player_ultimate = min(100,G.player_ultimate+30)
-		enemy.damage(Vector2(-attack,attack), attack)
-
+	_attack_enemy(-1, body)
+	
 
 func _on_animated_sprite_2d_frame_changed():
 	if fighting and _animated_sprite.frame in range(2,4):
@@ -211,7 +227,6 @@ func _on_enemy_collider_body_entered(body):
 		G.player_hp -= body.collision_damage
 		if body.position.x < position.x:
 			#carry enemy out of enemy collider
-			
 			body.kick(Vector2(-20,-20))
 		else:
 			body.kick(Vector2(20,-20))

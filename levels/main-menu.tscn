@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://m3y2jkxq1f8g" path="res://maps/mainmenu.png" id="4_4kfnd"]
 [ext_resource type="AudioStream" uid="uid://dbubs0mw23kpo" path="res://sounds/button_hover.wav" id="5_trw1m"]
 
-[node name="Control" type="Control"]
+[node name="main-menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,11 +27,16 @@ centered = false
 layout_mode = 0
 offset_left = 1085.0
 offset_top = 551.0
-offset_right = 1449.0
-offset_bottom = 806.0
+offset_right = 1285.0
+offset_bottom = 768.0
 scale = Vector2(2.64502, 2.64502)
 
-[node name="Button" type="TextureButton" parent="VBoxContainer"]
+[node name="ButtonStart" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_lhuy4")
+texture_hover = ExtResource("3_prsau")
+
+[node name="ButtonTutor" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_lhuy4")
 texture_hover = ExtResource("3_prsau")
@@ -45,4 +50,5 @@ texture = ExtResource("4_4kfnd")
 [node name="pressed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_trw1m")
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonTutor" to="." method="_on_button_tutor_pressed"]

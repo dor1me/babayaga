@@ -1,6 +1,6 @@
 extends Area2D
 
-@export_enum("kolobok","vodyanoy","irka", "koshei") var dialog: String
+@export_enum("kolobok","hotline","underlevel", "koshei") var dialog: String
 
 #@onready var vodyanoy = $vodya
 

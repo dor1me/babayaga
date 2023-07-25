@@ -1,13 +1,38 @@
 extends Node2D
 
+var levels = {
+	"start": preload("res://levels/startlevel.tscn"),
+	"menu": preload("res://levels/main-menu.tscn"),
+	"kolobok": preload("res://levels/under_level.tscn"),
+	"underlevel": preload("res://levels/under_level.tscn"),
+	"hotline": preload("res://levels/hotline_level.tscn"),
+	"kosckhei": preload("res://levels/kosckhei_level.tscn"),
+}
+
+var dialogs = {
+	"kolobok": preload("res://levels/dialogs/kolobok_dialog.tscn"),
+	"vodyanoy": preload("res://levels/dialogs/vodyanoy-dialog.tscn"),
+	"irka": preload("res://levels/dialogs/irka_dialog.tscn"),
+	"koshei_bad": preload("res://levels/dialogs/koshei_dialog_bad.tscn"),
+	"koshei_good": preload("res://levels/dialogs/koshei_dialog_good.tscn"),
+}
+
+var loading = preload("res://scenes/loading.tscn")
+var lastloading = preload("res://scenes/lastloading.tscn")
+
+var current_level = "menu"
+
+var dust_class = preload("res://components/dust.tscn")
+
 var player_speed = 400
 var jump_velocity = -600
 
 var player_hp : float = 100 : set = _set_player_hp
 var player_attack : float = 20 : set = _set_player_attack
+var player_scream_attack : float = 25
 var player_ultimate : float = 100 : set = _set_player_ultimate
 var player_bullets : int = 5 : set = _set_player_bullets
-	
+
 var player_bad_choise = 0
 var player_posx = 200
 var player_posy = 80
@@ -44,38 +69,20 @@ func _set_player_bullets(value : int):
 
 
 func _update_hud():
+	var level = get_current_level()
+	if level:
+		level.update_hud()
+
+func get_current_level():
 	#find BaseLevel
 	for node in get_tree().get_root().get_children(false):
 		if node as BaseLevel:
-			node.update_hud()
-
-
+			return node
+	return null
 
 var next_level
 
-var levels = {
-	"start": preload("res://levels/startlevel.tscn"),
-	"kolobok": preload("res://levels/under_level.tscn"),
-	"underlevel": preload("res://levels/under_level.tscn"),
-	"hotline": preload("res://levels/hotline_level.tscn"),
-	"kosckhei": preload("res://levels/kosckhei_level.tscn"),
-}
 
-var dialogs = {
-	"kolobok": preload("res://levels/dialogs/kolobok_dialog.tscn"),
-	"vodyanoy": preload("res://levels/dialogs/vodyanoy-dialog.tscn"),
-	"irka": preload("res://levels/dialogs/irka_dialog.tscn"),
-	"koshei_bad": preload("res://levels/dialogs/koshei_dialog_bad.tscn"),
-	"koshei_good": preload("res://levels/dialogs/koshei_dialog_good.tscn"),
-}
-
-var loading = preload("res://scenes/loading.tscn")
-var lastloading = preload("res://scenes/lastloading.tscn")
-
-var current_level = "start"
-var bad_end = preload("res://levels/hotline_level.tscn")
-var good_end = preload("res://levels/kosckhei_level.tscn")
-var dust_class = preload("res://components/dust.tscn")
 
 func generate_dust(count,start_position,direction):
 	for i in count:
@@ -140,9 +147,11 @@ func change_to_next_level():
 		ending()
 	else:
 		current_level = next_level
-		get_tree().change_scene_to_packed(levels[next_level])
+		if levels.has(next_level):
+			get_tree().change_scene_to_packed(levels[next_level])
 
-
+func change_to_main_menu():
+	change_level_quick("menu")
 
 func goto_level(to_level):
 	if current_level == to_level:

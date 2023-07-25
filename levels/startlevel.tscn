@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgm0ihihdvwyq"]
+[gd_scene load_steps=6 format=3 uid="uid://dgm0ihihdvwyq"]
 
 [ext_resource type="PackedScene" uid="uid://qmuwlitipcbq" path="res://maps/homemap.tscn" id="1_0opm7"]
+[ext_resource type="Script" path="res://levels/startlevel.gd" id="1_k8u8i"]
 [ext_resource type="PackedScene" uid="uid://ul3j51d0gpjx" path="res://scenes/player_tutorial.tscn" id="3_8dmwf"]
 [ext_resource type="PackedScene" uid="uid://s2ah04jlabfq" path="res://components/exit.tscn" id="3_p1cwb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjbj4"]
+size = Vector2(70, 1314)
+
 [node name="level" type="Node2D"]
+script = ExtResource("1_k8u8i")
+player_attack_multiplier = 0.1
+cleaner_enabled = false
 
 [node name="Node2D" parent="." instance=ExtResource("1_0opm7")]
 
@@ -13,5 +20,14 @@ position = Vector2(471, 640)
 scale = Vector2(3, 3)
 
 [node name="exit" parent="." instance=ExtResource("3_p1cwb")]
-position = Vector2(7817, 175)
+position = Vector2(7851, 182)
 scale = Vector2(8.27892, 8.23978)
+
+[node name="enable_cleaner_area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enable_cleaner_area"]
+position = Vector2(2505, 546)
+shape = SubResource("RectangleShape2D_bjbj4")
+
+[connection signal="body_entered" from="enable_cleaner_area" to="." method="_on_enable_cleaner_area_body_entered"]

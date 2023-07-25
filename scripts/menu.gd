@@ -11,3 +11,7 @@ func _on_button_pressed():
 	pressed.play()
 	G.change_level_quick("underlevel")
 	
+
+
+func _on_button_tutor_pressed():
+	G.change_level_quick("start")
