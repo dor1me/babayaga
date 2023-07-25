@@ -17,7 +17,7 @@ func _ready():
 	super()
 	conversation()
 
-var can_click = true
+var can_click = false
 var x = 0
 func _on_end_typing_message():
 	x+=1

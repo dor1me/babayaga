@@ -17,7 +17,7 @@ var answers = [
 func show_end():
 	end.visibility_visible = true
 
-var can_click = true
+var can_click = false
 var x = 0
 
 func _ready():
