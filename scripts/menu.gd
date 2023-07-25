@@ -9,7 +9,7 @@ var M;
 
 func _on_button_pressed():
 	pressed.play()
-	G.change_level_quick("underlevel")
+	G.change_level_quick("kolobok")
 	
 
 

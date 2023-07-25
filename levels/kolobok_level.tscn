@@ -34,6 +34,6 @@ position = Vector2(1333.43, 214.571)
 [node name="hud" parent="." instance=ExtResource("5_n6r2a")]
 
 [node name="portal-dialog" parent="." instance=ExtResource("6_vnsku")]
-position = Vector2(1922.86, 52)
+position = Vector2(1888.86, 53.1429)
 scale = Vector2(2, 2)
-dialog = "hotline"
+dialog = "dialog-kolobok"

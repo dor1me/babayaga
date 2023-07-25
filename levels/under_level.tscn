@@ -33,7 +33,7 @@ position = Vector2(409.856, 238.282)
 [node name="portal-koschei" parent="." instance=ExtResource("7_c0ip2")]
 position = Vector2(30.0037, 212.648)
 scale = Vector2(1, 2.04867)
-dialog = "koshei"
+dialog = "dialog-irka"
 
 [node name="hud" parent="." instance=ExtResource("9_du6v1")]
 
