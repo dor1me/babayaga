@@ -1,4 +1,5 @@
 extends Area2D
+class_name DialogPortal
 
 @export_enum("dialog-kolobok","dialog-vodyanoy","dialog-irka", "dialog-koshei") var dialog: String
 
