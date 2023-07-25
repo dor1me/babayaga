@@ -39,7 +39,9 @@ func _process(delta):
 	pass
 "
 
-[node name="Control" type="Node2D"]
+[node name="Control" type="CanvasLayer"]
+scale = Vector2(3.5, 3.5)
+transform = Transform2D(3.5, 0, 0, 3.5, 0, 0)
 script = ExtResource("1_e12mw")
 
 [node name="table" type="Sprite2D" parent="."]
@@ -70,18 +72,17 @@ texture = ExtResource("4_imqte")
 
 [node name="hp_text" type="Label" parent="."]
 z_index = 3
-offset_left = 49.0
-offset_top = 26.0
-offset_right = 89.0
-offset_bottom = 49.0
-scale = Vector2(0.7, 0.875)
+offset_left = 49.1429
+offset_top = 24.8571
+offset_right = 79.1429
+offset_bottom = 47.8571
 script = SubResource("GDScript_oc8k4")
 
 [node name="ultimate_text" type="Label" parent="."]
 z_index = 3
-offset_left = 101.0
-offset_top = 26.0
-offset_right = 141.0
-offset_bottom = 49.0
-scale = Vector2(0.7, 0.875)
+texture_filter = 2
+offset_left = 100.286
+offset_top = 24.8571
+offset_right = 130.286
+offset_bottom = 47.8571
 script = SubResource("GDScript_o0la1")

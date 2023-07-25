@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 class_name Hud
 
 @onready var hp = $hp_text

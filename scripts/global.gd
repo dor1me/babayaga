@@ -104,6 +104,15 @@ func new_game():
 func reload():
 	get_tree().reload_current_scene();
 
+func change_level_quick(to_level):
+	if current_level == to_level:
+		return
+		
+	if levels.has(to_level):
+		current_level = to_level
+		get_tree().change_scene_to_packed(levels[to_level])
+
+
 func goto_dialog(to_dialog):
 	if current_level == to_dialog:
 		return
@@ -119,21 +128,22 @@ func goto_dialog(to_dialog):
 		get_tree().change_scene_to_packed(dialogs[to_dialog])
 
 
-func change_level_quick(to_level):
-	if current_level == to_level:
-		return
-		
-	if levels.has(to_level):
-		current_level = to_level
-		get_tree().change_scene_to_packed(levels[to_level])
+func ending():
+	if player_bad_choise <= 1:
+		current_level = "koshei"
+	else:
+		current_level = "koshei"	
 	
-	
+
 func change_to_next_level():
 	if current_level == "hotline":
 		ending()
 	else:
 		current_level = next_level
 		get_tree().change_scene_to_packed(levels[next_level])
+
+
+
 func goto_level(to_level):
 	if current_level == to_level:
 		return
@@ -141,16 +151,3 @@ func goto_level(to_level):
 	if levels.has(to_level):
 		next_level = to_level
 		get_tree().change_scene_to_packed(loading)
-	
-func ending():
-	if player_bad_choise <= 1:
-		current_level = "koshei"
-	else:
-		current_level = "koshei"
-		
-#func goto_last_level():
-	#goto_level("kosckhei")
-	
-
-
-
