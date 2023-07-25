@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://daiodydx4c6gk"]
+[gd_scene load_steps=9 format=3 uid="uid://daiodydx4c6gk"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_3msxw"]
 [ext_resource type="Texture2D" uid="uid://clunqjbrw6qus" path="res://buttonsTexture/default_start.png" id="2_lhuy4"]
 [ext_resource type="Texture2D" uid="uid://bd3xqwqpmguop" path="res://buttonsTexture/default_hover.png" id="3_prsau"]
 [ext_resource type="Texture2D" uid="uid://m3y2jkxq1f8g" path="res://maps/mainmenu.png" id="4_4kfnd"]
 [ext_resource type="AudioStream" uid="uid://dbubs0mw23kpo" path="res://sounds/button_hover.wav" id="5_trw1m"]
+[ext_resource type="Texture2D" uid="uid://dfv3qgdxcwowy" path="res://yaga/1.5.png" id="6_d2hdc"]
+[ext_resource type="Texture2D" uid="uid://jjk6hp6j0nnc" path="res://yaga/Yagalika_Main_Screen.png" id="7_gqask"]
+[ext_resource type="Texture2D" uid="uid://cainvqlqa4ahn" path="res://yaga/title.png" id="8_6o055"]
 
 [node name="main-menu" type="Control"]
 layout_mode = 3
@@ -16,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_3msxw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
 texture_filter = 6
 position = Vector2(-114.547, -19)
@@ -37,6 +41,7 @@ texture_normal = ExtResource("2_lhuy4")
 texture_hover = ExtResource("3_prsau")
 
 [node name="ButtonTutor" type="TextureButton" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("2_lhuy4")
 texture_hover = ExtResource("3_prsau")
@@ -49,6 +54,26 @@ texture = ExtResource("4_4kfnd")
 
 [node name="pressed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_trw1m")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -5
+texture_filter = 1
+position = Vector2(946.326, 529.475)
+scale = Vector2(0.662485, 0.662485)
+texture = ExtResource("6_d2hdc")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -5
+texture_filter = 1
+position = Vector2(398, 1023)
+scale = Vector2(1.09577, 1.09577)
+texture = ExtResource("7_gqask")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1779, 422)
+scale = Vector2(1.07037, 1.07037)
+texture = ExtResource("8_6o055")
 
 [connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonTutor" to="." method="_on_button_tutor_pressed"]

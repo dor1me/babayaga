@@ -1,11 +1,11 @@
 extends Node2D
 
 var levels = {
-	"start": preload("res://levels/startlevel.tscn"),
 	"menu": preload("res://levels/main-menu.tscn"),
+	"start": preload("res://levels/startlevel.tscn"),
 	"kolobok": preload("res://levels/kolobok_level.tscn"),
-	"underlevel": preload("res://levels/under_level.tscn"),
 	"hotline": preload("res://levels/hotline_level.tscn"),
+	"underlevel": preload("res://levels/under_level.tscn"),
 	"kosckhei": preload("res://levels/kosckhei_level.tscn"),
 }
 
@@ -41,7 +41,7 @@ var player_status = "running"
 
 var small_kolobok_speed = 220
 var small_kolobok_hp = 100
-var small_kolobok_attack = 30
+var small_kolobok_attack = 50
 
 var big_kolobok_speed = 60
 var big_kolobok_hp = 300

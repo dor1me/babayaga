@@ -37,7 +37,7 @@ floor_stop_on_slope = false
 position = Vector2(279.355, 245.856)
 
 [node name="portal-dialog" parent="." instance=ExtResource("7_c0ip2")]
-position = Vector2(83.8938, 213.23)
+position = Vector2(98.1674, 215.269)
 scale = Vector2(1, 2.04867)
 dialog = "dialog-vodyanoy"
 
