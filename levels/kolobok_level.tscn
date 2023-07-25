@@ -11,25 +11,24 @@ scale = Vector2(3.5, 3.5)
 script = ExtResource("1_tytpj")
 
 [node name="Node2D" parent="." instance=ExtResource("1_gy5si")]
+texture_filter = 1
 position = Vector2(0, -16)
-scale = Vector2(1, 1)
+scale = Vector2(0.3, 0.3)
 
 [node name="player" parent="." instance=ExtResource("2_y2y5m")]
 position = Vector2(245.714, 50.2857)
 
 [node name="small_kolobor" parent="." instance=ExtResource("3_0m3fm")]
-position = Vector2(-345.143, 123.429)
+position = Vector2(481.714, 266)
 
 [node name="small_kolobor2" parent="." instance=ExtResource("3_0m3fm")]
-position = Vector2(1002, 48.5714)
+position = Vector2(1888, 226.857)
 
 [node name="small_kolobor3" parent="." instance=ExtResource("3_0m3fm")]
-position = Vector2(17.4286, 194.571)
+position = Vector2(17.4286, 123.429)
 
 [node name="small_kolobor4" parent="." instance=ExtResource("3_0m3fm")]
-position = Vector2(662.571, 52)
-
-[node name="small_kolobor5" parent="." instance=ExtResource("3_0m3fm")]
-position = Vector2(-244.286, 106.857)
+position = Vector2(1333.43, 214.571)
 
 [node name="hud" parent="." instance=ExtResource("5_n6r2a")]
+texture_filter = 1

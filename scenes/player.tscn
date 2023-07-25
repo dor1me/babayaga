@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d1eoxrkhv1sxm"]
+[gd_scene load_steps=26 format=3 uid="uid://d1eoxrkhv1sxm"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_0i1x8"]
 [ext_resource type="Texture2D" uid="uid://bj4m0k4tk7kkq" path="res://animations/3/5.png" id="2_82vdh"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b8lpap1ik80n6" path="res://yaga/ultimate.png" id="16_ee12l"]
 [ext_resource type="AudioStream" uid="uid://d4bmb76phxoee" path="res://sounds/flying.wav" id="18_0hycr"]
 [ext_resource type="AudioStream" uid="uid://xxvsvuhba2rh" path="res://sounds/soft hit.wav" id="19_7ehpm"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/HUD.tscn" id="20_7o4vp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_db2en"]
 animations = [{
@@ -148,9 +149,8 @@ metadata/_edit_group_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-limit_right = 1920
+limit_right = 6600
 limit_bottom = 1080
-limit_smoothed = true
 
 [node name="CleanerHP" type="Label" parent="."]
 offset_left = -18.0
@@ -206,6 +206,9 @@ stream = ExtResource("18_0hycr")
 
 [node name="soft_hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("19_7ehpm")
+
+[node name="Control" parent="." instance=ExtResource("20_7o4vp")]
+position = Vector2(6972.51, 3216.84)
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
