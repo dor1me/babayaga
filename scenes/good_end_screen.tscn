@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://exk1qti3shbs" path="res://yaga/ок.png" id="4_v7oq1"]
 
 [node name="Node2D" type="Node2D"]
+visible = false
+z_index = 10
 
 [node name="Бя" type="Sprite2D" parent="."]
 position = Vector2(661, 532)

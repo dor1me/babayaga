@@ -1,6 +1,7 @@
 extends BaseDialog
 
 @onready var typing_sound = $typing
+@onready var end = $ges
 
 var messages = [
 	"Ой, касатик! Ой, любимый!\rТак давно меня покинул!\rНи вороны, ни словечка -\rЯ ж сгораю точно свечка!",
@@ -13,6 +14,8 @@ var messages = [
 
 var answers = [
 	"Понятно."]
+func show_end():
+	end.visibility_visible = true
 
 var can_click = true
 var x = 0
@@ -26,8 +29,6 @@ func _on_end_typing_message():
 	if(x < messages.size()):
 		typing_sound.stop()
 		can_click = true
-	else:
-		ask_question(answers)
 
 func conversation():
 	typing_sound.play()
@@ -40,7 +41,7 @@ func conversation():
 func on_answer_question(index):
 	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
 	
-	close_dialog()
+	show_end()
 	
 func _physics_process(delta):
 	if Input.is_action_pressed("lkm_mouse") and can_click:
