@@ -18,7 +18,7 @@ var answers = [
 	"Вот те на... Ой, как сложилось...\rНу хоть я не заблудилась.\rЧто ж, касатик, продавай.\rЖаль, что так всё, но бывай."
 	]
 
-var can_click = true
+var can_click = false
 var x = 0
 
 func _ready():
