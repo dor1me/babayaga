@@ -17,6 +17,14 @@ var dialogs = {
 	"dialog-koshei_good": preload("res://levels/dialogs/koshei_dialog_good.tscn"),
 }
 
+var sobes = {
+	"kolobok": preload("res://sobes/kolobok.png"),
+	"vodyanoy": preload("res://sobes/vodyanoy.png"),
+	"irka": preload("res://sobes/irka.png"),
+	"koshei": preload("res://sobes/koshei.png"),
+}
+
+
 var loading = preload("res://scenes/loading.tscn")
 var lastloading = preload("res://scenes/lastloading.tscn")
 
@@ -72,7 +80,12 @@ func _set_player_bullets(value : int):
 func on_enemy_die(level : BaseLevel, enemy : BaseEnemy):
 	level_enemy_count -= 1
 	_update_hud()
-	pass
+	
+	if level:
+		level.update_sobes()		
+	
+	
+	
 
 func _update_hud():
 	var level = get_current_level()
@@ -140,11 +153,6 @@ func show_dialog(to_dialog):
 	if dialogs.has(to_dialog):
 		
 		var l = get_current_level()
-		
-		for node in l.get_children(false):
-			if node as DialogPortal:
-				node.collision_mask = 0
-		
 		var cl = CanvasLayer.new()
 		var d = dialogs[to_dialog].instantiate()
 		cl.add_child(d)
@@ -152,8 +160,11 @@ func show_dialog(to_dialog):
 		
 func close_dialog(node):
 	
+	var l = get_current_level()
+	
 	var cl = node.get_parent();
 	cl.get_parent().remove_child(cl);
+	l.on_dialog_close()
 
 
 func change_to_next_level():

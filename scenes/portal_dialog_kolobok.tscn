@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnpyj544e60pl"]
+
+[ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="1_62em5"]
+[ext_resource type="Texture2D" uid="uid://dmbhxmgq16o4s" path="res://sobes/kolobok.png" id="2_ynjcv"]
+
+[node name="portal-dialog" instance=ExtResource("1_62em5")]
+dialog = "dialog-kolobok"
+
+[node name="ColorRect" parent="." index="1"]
+visible = false
+
+[node name="sprite" type="Sprite2D" parent="." index="2"]
+position = Vector2(-1.5, 0.500004)
+scale = Vector2(0.2, 0.195)
+texture = ExtResource("2_ynjcv")

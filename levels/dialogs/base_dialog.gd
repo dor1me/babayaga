@@ -22,7 +22,7 @@ func _ready():
 	
 	timer = Timer.new()
 	timer.timeout.connect(_on_timer_timeout)	
-	timer.wait_time = 0.03
+	timer.wait_time = 0.01
 	self.add_child(timer)
 	
 	question.texture = ImageTexture.create_from_image(image_question)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://chkq5hkh6vnyn"]
+
+[ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="1_m3mhf"]
+[ext_resource type="Texture2D" uid="uid://cwdhoqgcnfwly" path="res://sobes/vodyanoy.png" id="2_h5d73"]
+
+[node name="portal-dialog" instance=ExtResource("1_m3mhf")]
+dialog = "dialog-vodyanoy"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-5, 0.5)
+
+[node name="ColorRect" parent="." index="1"]
+visible = false
+
+[node name="sprite" type="Sprite2D" parent="." index="2"]
+position = Vector2(-7.05, 0.5)
+scale = Vector2(0.154878, 0.154529)
+texture = ExtResource("2_h5d73")

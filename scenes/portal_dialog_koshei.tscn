@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b34desbs7ju6p"]
+
+[ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="1_ngvbw"]
+[ext_resource type="Texture2D" uid="uid://dx7usn7h2yxml" path="res://sobes/koshei.png" id="2_6f7s4"]
+
+[node name="portal-dialog" instance=ExtResource("1_ngvbw")]
+dialog = "dialog-koshei"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 6)
+
+[node name="ColorRect" parent="." index="1"]
+visible = false
+
+[node name="sprite" type="Sprite2D" parent="." index="2"]
+position = Vector2(-1, 1)
+scale = Vector2(0.154878, 0.154529)
+texture = ExtResource("2_6f7s4")

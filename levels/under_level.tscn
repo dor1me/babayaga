@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4c8f07a80lf4"]
+[gd_scene load_steps=11 format=3 uid="uid://c4c8f07a80lf4"]
 
 [ext_resource type="PackedScene" uid="uid://boekyiloxljie" path="res://maps/undergroundmap.tscn" id="1_7c3ol"]
-[ext_resource type="PackedScene" uid="uid://cgvbfoejytja5" path="res://scenes/vodyanoy.tscn" id="1_ibu0h"]
 [ext_resource type="Script" path="res://levels/under_level.gd" id="1_spbct"]
-[ext_resource type="Script" path="res://scripts/vodyanoy.gd" id="2_172ey"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="2_lbpf6"]
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_eb0d2"]
-[ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="7_c0ip2"]
 [ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="9_du6v1"]
+[ext_resource type="PackedScene" uid="uid://chkq5hkh6vnyn" path="res://scenes/portal_dialog_vodyanoy.tscn" id="9_ek0k4"]
 [ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="10_asxnk"]
 [ext_resource type="PackedScene" uid="uid://31mlfvf6aleu" path="res://scenes/penek.tscn" id="11_8ferl"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="11_favfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dik6f"]
+size = Vector2(12.1428, 121.429)
 
 [node name="level" type="Node2D"]
 scale = Vector2(3.43291, 3.43291)
@@ -36,17 +37,19 @@ floor_stop_on_slope = false
 [node name="penek" parent="." instance=ExtResource("11_8ferl")]
 position = Vector2(279.355, 245.856)
 
-[node name="portal-dialog" parent="." instance=ExtResource("7_c0ip2")]
-position = Vector2(98.1674, 215.269)
-scale = Vector2(1, 2.04867)
-dialog = "dialog-vodyanoy"
-
-[node name="vodyanoy" parent="portal-dialog" instance=ExtResource("1_ibu0h")]
-position = Vector2(-3.49557, 3.12816)
-scale = Vector2(1, 0.488122)
-script = ExtResource("2_172ey")
-
 [node name="portal" parent="." instance=ExtResource("11_favfq")]
 position = Vector2(6.11726, 215.561)
 scale = Vector2(1, 2)
 to_level = "kosckhei"
+
+[node name="portal-dialog" parent="." instance=ExtResource("9_ek0k4")]
+position = Vector2(88.8459, 213.521)
+
+[node name="portal_wall" type="CharacterBody2D" parent="."]
+position = Vector2(80.6896, 209.152)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal_wall"]
+position = Vector2(-38.16, -0.582588)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_dik6f")

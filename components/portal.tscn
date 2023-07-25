@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://components/portal.gd" id="1_ws3ag"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3a2fq"]
-radius = 20.025
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8wnq"]
+size = Vector2(44, 40)
 
 [node name="portal" type="Area2D"]
 position = Vector2(2, 0)
@@ -11,10 +11,11 @@ collision_mask = 2
 script = ExtResource("1_ws3ag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
-shape = SubResource("CircleShape2D_3a2fq")
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_r8wnq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -21.0
 offset_top = -20.0
 offset_right = 19.0
