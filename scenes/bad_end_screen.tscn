@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn7bcn8l2lvhy"]
+
+[ext_resource type="Texture2D" uid="uid://c30qk43kprijo" path="res://yaga/БЯ.png" id="1_6kql4"]
+[ext_resource type="Texture2D" uid="uid://b2drnrwbmonea" path="res://yaga/Слой 22.png" id="2_r7u5x"]
+[ext_resource type="Texture2D" uid="uid://bljsd2q4gtmy" path="res://yaga/авыыа.png" id="3_riy5q"]
+[ext_resource type="Texture2D" uid="uid://dtxqrvlqvsimx" path="res://yaga/неок.png" id="4_71432"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Бя" type="Sprite2D" parent="."]
+position = Vector2(525, 532)
+scale = Vector2(-1.282, 1.282)
+texture = ExtResource("1_6kql4")
+
+[node name="Слой22" type="Sprite2D" parent="."]
+position = Vector2(1378, 495)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_r7u5x")
+
+[node name="Авыыа" type="Sprite2D" parent="."]
+z_index = -3
+texture_filter = 1
+position = Vector2(1012, 367)
+scale = Vector2(1.44907, 1.44907)
+texture = ExtResource("3_riy5q")
+
+[node name="Ок" type="Sprite2D" parent="."]
+position = Vector2(942, 244)
+scale = Vector2(0.446296, 0.446296)
+texture = ExtResource("4_71432")
