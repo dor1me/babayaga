@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkly5i0ae5kf"]
+
+[ext_resource type="Script" path="res://levels/comics.gd" id="1_chsqn"]
+[ext_resource type="Texture2D" uid="uid://dirv3o75ch27o" path="res://comics/1.png" id="1_hyq3d"]
+[ext_resource type="Texture2D" uid="uid://dtam1jihj0rqw" path="res://comics/2.png" id="2_f0xb3"]
+[ext_resource type="Texture2D" uid="uid://b2j0le3gfoe01" path="res://comics/3.png" id="3_u3rs3"]
+[ext_resource type="Texture2D" uid="uid://jsn47xvj2bga" path="res://comics/4.png" id="4_2c4vm"]
+[ext_resource type="Texture2D" uid="uid://bew10licdud2e" path="res://comics/5.png" id="5_0dq47"]
+[ext_resource type="Texture2D" uid="uid://drap3on045up2" path="res://comics/6.png" id="6_46y6q"]
+
+[node name="comics" type="Node2D"]
+script = ExtResource("1_chsqn")
+
+[node name="1" type="Sprite2D" parent="."]
+position = Vector2(-30, -13)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("1_hyq3d")
+centered = false
+
+[node name="2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-13, -18)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("2_f0xb3")
+centered = false
+
+[node name="3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-13, -8)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("3_u3rs3")
+centered = false
+
+[node name="4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-28, -3)
+scale = Vector2(0.79, 0.79)
+texture = ExtResource("4_2c4vm")
+centered = false
+
+[node name="5" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.065, 1.017)
+texture = ExtResource("5_0dq47")
+centered = false
+
+[node name="6" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 4
+position = Vector2(0, -86)
+scale = Vector2(0.735, 0.735)
+texture = ExtResource("6_46y6q")
+centered = false
