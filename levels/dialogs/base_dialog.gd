@@ -26,10 +26,10 @@ func _ready():
 	self.add_child(timer)
 	
 	question.texture = ImageTexture.create_from_image(image_question)
-	question.size.x = 600
+	question.size.x = 500
 	question.size.y = 300
-	question.position.x = 400
-	question.position.y = 500
+	question.position.x = 100
+	question.position.y = 400
 	question.patch_margin_bottom = 40
 	question.patch_margin_top = 40
 	question.patch_margin_left = 40
