@@ -86,3 +86,12 @@ offset_top = 24.8571
 offset_right = 130.286
 offset_bottom = 47.8571
 script = SubResource("GDScript_o0la1")
+
+[node name="enemy_count_text" type="Label" parent="."]
+z_index = 3
+texture_filter = 2
+offset_left = 139.714
+offset_top = 27.1429
+offset_right = 169.714
+offset_bottom = 50.1429
+script = SubResource("GDScript_o0la1")

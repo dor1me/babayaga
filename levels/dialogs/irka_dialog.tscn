@@ -19,25 +19,5 @@ offset_right = 1312.0
 offset_bottom = 1024.0
 color = Color(1, 1, 1, 0.45098)
 
-[node name="Button" type="Button" parent="."]
-offset_left = 1329.0
-offset_top = 909.0
-offset_right = 1508.0
-offset_bottom = 999.0
-theme_override_font_sizes/font_size = 48
-text = "say"
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 322.0
-offset_top = 916.0
-offset_right = 501.0
-offset_bottom = 1006.0
-theme_override_font_sizes/font_size = 48
-disabled = true
-text = "say"
-
 [node name="typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_l5mlk")
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

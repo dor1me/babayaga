@@ -1,9 +1,6 @@
 extends BaseDialog
 
-@onready var say1 = $Button
-@onready var say2 = $Button2
 @onready var typing_sound = $typing
-
 
 var messages = [
 	"Здравствуйте, круглый мой дружочек!\rНе запрыгнешь на носочек!?",
@@ -12,41 +9,38 @@ var messages = [
 	"Ой, видал\rМного ль, мало ль... Каравай.\rИ кровать, и стул и ложку...\rЯ сварил вчера окрошку!",
 	"Ой, касатик, мне б Кощея...\rА не то одна идея...",
 	"Эт не знаю, может Ырка!\rВот она то здесь пронырка..."
-	
-	
-	
 ]
 
+var answers = [
+	"Ну а ты так и остался\rПростаком и оборванцем!\rМожно многое сменить,\rНо души в тебя не вшить!", 
+	"Ладно-ладно, полечу -\rЫрку может отыщу.\rА совет благодарю - \rПомощь делу моему."]
+
+var can_click = true
 var x = 0
 func _on_end_typing_message():
 	x+=1
 	if(x < messages.size()):
-		say1.disabled = x%2==0
-		say2.disabled = !x%2==0
-
+		typing_sound.stop()
+		can_click = true
+	else:
+		ask_question(answers)
 
 func conversation():
 	typing_sound.play()
-	say1.disabled = true
-	say2.disabled = true
 	if x%2==1:
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_RIGHT)
 	else: 
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_LEFT)
-	typing_sound.stop()
-var answers = [
-	"Ну а ты так и остался\rПростаком и оборванцем!\rМожно многое сменить,\rНо души в тебя не вшить!", 
-	"Ладно-ладно, полечу -\rЫрку может отыщу.\rА совет благодарю - \rПомощь делу моему."]
+	
 
 func on_answer_question(index):
 	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
 	if index == 0:
 		G.player_bad_choise += 1
-
-func _on_button_2_pressed():
-	conversation()
-
-
-func _on_button_pressed():
-	conversation()
+	close_dialog()
 	
+func _physics_process(delta):
+	if Input.is_action_pressed("lkm_mouse") and can_click:
+		can_click = false
+		conversation()
+		pass		

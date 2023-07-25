@@ -1,7 +1,6 @@
 extends BaseDialog
 
-@onready var say1 = $Button
-@onready var say2 = $Button2
+@onready var typing_sound = $typing
 
 var messages = [
 	"Вот те раз! Какие люди!\rА чего не в Халивуде?\rТы чего здесь позабыл?\rИли от МЕНЯ уплыл!?",
@@ -11,35 +10,36 @@ var messages = [
 	"Нет уж, нет уж! Врешь, чудак!\rЗнаю я таких писак -\rВсюду буквы, всюду речи, а копнешь - \rТо черт излечишь!\rЧто ж, раз так - я ухожу.\rВпредь тобой не дорожу.\rОставайся, убирайся,\rХоть к луне иди слоняйся!",
 ]
 
+var answers = [
+	"Понятно."]
+
+var can_click = true
 var x = 0
 func _on_end_typing_message():
 	x+=1
 	if(x < messages.size()):
-		say1.disabled = x%2==0
-		say2.disabled = !x%2==0
+		typing_sound.stop()
+		can_click = true
+	else:
+		ask_question(answers)
 
 func conversation():
-	say1.disabled = true
-	say2.disabled = true
+	typing_sound.play()
 	if x%2==1:
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_RIGHT)
 	else: 
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_LEFT)
-var answers = [
-	"Ну а ты так и остался\rПростаком и оборванцем!\rМожно многое сменить,\rНо души в тебя не вшить!", 
-	"Ладно-ладно, полечу -\rЫрку может отыщу.\rА совет благодарю - \rПомощь делу моему."
-	]
+	
 
 func on_answer_question(index):
 	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
 	if index == 0:
 		G.player_bad_choise += 1
-
-func _on_button_2_pressed():
-	conversation()
-
-
-func _on_button_pressed():
-	conversation()
+	close_dialog()
 	
+func _physics_process(delta):
+	if Input.is_action_pressed("lkm_mouse") and can_click:
+		can_click = false
+		conversation()
+		pass		
 	

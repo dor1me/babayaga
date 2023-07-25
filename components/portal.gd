@@ -2,7 +2,7 @@ extends Area2D
 
 
 
-@export_enum("underlevel","hotline","cavelevel","kosckhei") var to_level: String
+@export_enum("underlevel","hotline","cavelevel","kosckhei", "start") var to_level: String
 
 
 func _on_body_entered(body):

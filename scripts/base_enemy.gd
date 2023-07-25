@@ -36,13 +36,16 @@ func update_hp_progres():
 	
 	hp_progress_inner.size = Vector2(max(1,hp_progress.size.x*hp_ratio),1)
 
-
 func disapear_timer_on_timeout():
 	self.modulate.a -= 0.1
 	if self.modulate.a <= 0:
-		print("kill" + name)
-		queue_free()
+		var node = self
+		while node and !(node as BaseLevel):
+			node = node.get_parent()
+		if node:
+			node.on_enemy_die(self)
 		
+		queue_free()
 
 	
 func disapear():
@@ -85,7 +88,6 @@ func freeze_timer_on_timeout():
 func freeze(time):
 	timer_freeze.wait_time = time
 	timer_disapear.start();
-	
 
 func damage(vector: Vector2, strength: float):
 	hp -= strength
@@ -104,12 +106,9 @@ func kick(vector : Vector2):
 	velocity = vector*10
 	kick_vector = vector
 	kick_vector_ratio = 1
-	
 
 func process_ai(delta):
 	pass
-
-
 
 func _physics_process(delta):
 	var direction

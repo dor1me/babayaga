@@ -10,4 +10,4 @@ extends Area2D
 #		
 func _on_body_entered(body):
 	if body.name == "player":
-		G.goto_dialog(dialog)
+		G.show_dialog(dialog)

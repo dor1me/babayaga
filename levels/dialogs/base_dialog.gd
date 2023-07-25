@@ -15,6 +15,7 @@ var image_left = Image.load_from_file("res://maps/chat/left.png")
 var image_right = Image.load_from_file("res://maps/chat/right.png")
 var image_question = Image.load_from_file("res://maps/chat/question.png")
 
+
 func _ready():
 	timer = Timer.new()
 	question = NinePatchRect.new()
@@ -35,6 +36,10 @@ func _ready():
 	question.patch_margin_right = 40
 	question.visible = false
 	self.add_child(question)
+
+func close_dialog():
+	G.close_dialog(self)
+	
 
 func ask_question(answers):
 	var answer_funcs = [
@@ -148,6 +153,7 @@ func _on_end_typing_message():
 	pass
 
 func on_answer_question(index):
+	close_dialog()
 	pass
 
 func _on_answer0_pressed():

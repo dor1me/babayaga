@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdr5w7ojg6de5"]
+[gd_scene load_steps=9 format=3 uid="uid://cdr5w7ojg6de5"]
 
 [ext_resource type="Script" path="res://levels/hotline_level.gd" id="1_k5ylf"]
 [ext_resource type="PackedScene" uid="uid://5dbsy4i0ts46" path="res://maps/hotline.tscn" id="2_683uh"]
 [ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="3_tof1k"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="4_hpxbe"]
 [ext_resource type="PackedScene" uid="uid://cfwfefnhix2hv" path="res://components/portal-dialog.tscn" id="6_v3s0k"]
+[ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="8_puygs"]
 [ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="8_v0std"]
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="9_1xepb"]
 
@@ -19,11 +20,6 @@ scale = Vector2(0.3, 0.3)
 
 [node name="player" parent="." instance=ExtResource("4_hpxbe")]
 position = Vector2(118.996, 49.4604)
-
-[node name="portal-under" parent="." instance=ExtResource("6_v3s0k")]
-position = Vector2(1892.01, 57.025)
-scale = Vector2(3, 3)
-dialog = "dialog-vodyanoy"
 
 [node name="frog" parent="." instance=ExtResource("8_v0std")]
 position = Vector2(1592.34, 200.169)
@@ -50,3 +46,13 @@ position = Vector2(-116.378, 237.701)
 
 [node name="small_kolobor2" parent="." instance=ExtResource("9_1xepb")]
 position = Vector2(1675.84, 197.26)
+
+[node name="portal-dialog" parent="." instance=ExtResource("6_v3s0k")]
+position = Vector2(1787.56, 65.7533)
+scale = Vector2(1, 3)
+dialog = "dialog-vodyanoy"
+
+[node name="portal" parent="." instance=ExtResource("8_puygs")]
+position = Vector2(1925.18, 60.5163)
+scale = Vector2(3, 3)
+to_level = "underlevel"

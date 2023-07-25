@@ -47,6 +47,8 @@ var big_kolobok_speed = 60
 var big_kolobok_hp = 300
 var big_kolobok_attack = 50
 
+var level_enemy_count: int = 0
+
 
 func _set_player_ultimate(value : float):
 	player_ultimate=value
@@ -67,6 +69,10 @@ func _set_player_bullets(value : int):
 	player_bullets=value
 	_update_hud()
 
+func on_enemy_die(level : BaseLevel, enemy : BaseEnemy):
+	level_enemy_count -= 1
+	_update_hud()
+	pass
 
 func _update_hud():
 	var level = get_current_level()
@@ -120,7 +126,7 @@ func change_level_quick(to_level):
 		get_tree().change_scene_to_packed(levels[to_level])
 
 
-func goto_dialog(to_dialog):
+func show_dialog(to_dialog):
 	if current_level == to_dialog:
 		return
 	
@@ -132,8 +138,16 @@ func goto_dialog(to_dialog):
 		
 		
 	if dialogs.has(to_dialog):
-		get_tree().change_scene_to_packed(dialogs[to_dialog])
-
+		
+		var l = get_current_level()
+		var cl = CanvasLayer.new()
+		var d = dialogs[to_dialog].instantiate()
+		cl.add_child(d)
+		l.add_child(cl)
+		
+func close_dialog(node):
+	var cl = node.get_parent();
+	cl.get_parent().remove_child(cl);
 
 func ending():
 	if player_bad_choise <= 1:
