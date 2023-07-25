@@ -31,7 +31,6 @@ func _on_end_typing_message():
 		can_click = true
 
 func conversation():
-	typing_sound.play()
 	if x%2==1:
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_RIGHT)
 	else: 
