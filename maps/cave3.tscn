@@ -3689,6 +3689,7 @@ sources/1 = SubResource("TileSetAtlasSource_ea8i6")
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_cw4k3")
 cell_quadrant_size = 1
 format = 2

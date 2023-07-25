@@ -120,16 +120,10 @@ func _physics_process(delta):
 
 			
 		if fighting == true:
-			H_SPEED = 0
-			V_SPEED = 0
-			F_SPEED = 0
-			velocity.x = 0
 			velocity.y = 0
 			attack_timer.start()
-		else:
-			H_SPEED = 400
-			V_SPEED = 400
-			F_SPEED = 400
+
+
 
 		
 		#try to fly
