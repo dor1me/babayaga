@@ -170,7 +170,7 @@ func _on_timer_timeout():
 		if _animated_sprite.flip_h:
 			G.generate_dust(50, (position+Vector2(30,5))*3.5, 1)
 		else:
-			G.generate_dust(50, (position+Vector2(-40,5))*3.5, -1)
+			G.generate_dust(50,(position+Vector2(-40,5))*3.5, -1)
 		
 
 
