@@ -45,7 +45,7 @@ func on_answer_question(index):
 	close_dialog()
 	
 func _physics_process(delta):
-	if Input.is_action_pressed("lkm_mouse") and can_click:
+	if Input.is_action_just_released("lkm_mouse") and can_click:
 		can_click = false
 		conversation()
 		pass		
