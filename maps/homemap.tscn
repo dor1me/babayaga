@@ -11,10 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bt4o2u8kq85vc" path="res://enemies/NEwSprSht_CutePump.png" id="9_5ygfp"]
 [ext_resource type="Texture2D" uid="uid://bvsm8ejfwqlv5" path="res://tilesetmenu/lkm.png" id="10_6e6p7"]
 [ext_resource type="Texture2D" uid="uid://bar7t0to3mly3" path="res://tilesetmenu/pkm.png" id="11_7623f"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="12_byeck"]
-=======
->>>>>>> c006e861fe3a8a10fcd21fdc4d313f972fa9e604
 [ext_resource type="Texture2D" uid="uid://deiwxn834kqr8" path="res://tilesetmenu/arrow.png" id="13_k4fmt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1req0"]
@@ -11686,11 +11682,6 @@ tile_set = SubResource("TileSet_x5cnn")
 format = 2
 layer_0/tile_data = PackedInt32Array(655389, 0, 1, 655390, 65536, 1)
 
-<<<<<<< HEAD
-[node name="Control" parent="." instance=ExtResource("12_byeck")]
-
-=======
->>>>>>> c006e861fe3a8a10fcd21fdc4d313f972fa9e604
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 position = Vector2(5418, 96)
 scale = Vector2(-1, 0.6)

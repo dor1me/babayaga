@@ -155,20 +155,11 @@ func close_dialog(node):
 	var cl = node.get_parent();
 	cl.get_parent().remove_child(cl);
 
-func ending():
-	if player_bad_choise <= 1:
-		current_level = "koshei"
-	else:
-		current_level = "koshei"	
-	
 
 func change_to_next_level():
-	if current_level == "hotline":
-		ending()
-	else:
-		current_level = next_level
-		if levels.has(next_level):
-			get_tree().change_scene_to_packed(levels[next_level])
+	current_level = next_level
+	if levels.has(next_level):
+		get_tree().change_scene_to_packed(levels[next_level])
 
 func change_to_main_menu():
 	change_level_quick("menu")

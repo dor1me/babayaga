@@ -7,4 +7,4 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "player":
-		G.change_to_main_menu()
+		G.goto_level("kolobok")

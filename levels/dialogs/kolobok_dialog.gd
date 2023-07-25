@@ -17,6 +17,11 @@ var answers = [
 
 var can_click = true
 var x = 0
+
+func _ready():
+	super()
+	conversation()
+
 func _on_end_typing_message():
 	x+=1
 	if(x < messages.size()):

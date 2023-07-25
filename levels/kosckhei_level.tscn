@@ -27,4 +27,4 @@ dialog = "dialog-koshei"
 [node name="portal" parent="." instance=ExtResource("4_ro4dp")]
 position = Vector2(1066.19, 216.185)
 scale = Vector2(3, 3)
-to_level = "start"
+to_level = "menu"
