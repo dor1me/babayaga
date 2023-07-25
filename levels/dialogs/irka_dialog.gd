@@ -16,7 +16,7 @@ var answers = [
 	"молча уйти"
 	]
 	
-var can_click = true
+var can_click = false
 var x = 0
 
 func _ready():
