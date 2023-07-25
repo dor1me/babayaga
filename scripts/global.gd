@@ -41,7 +41,7 @@ var player_scream_attack : float = 25
 var player_ultimate : float = 100 : set = _set_player_ultimate
 var player_bullets : int = 5 : set = _set_player_bullets
 
-var player_bad_choise = 0
+var player_bad_choise = 2
 var player_posx = 200
 var player_posy = 80
 var player_status = "running"

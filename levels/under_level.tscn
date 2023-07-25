@@ -51,5 +51,4 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal_wall"]
 position = Vector2(-38.16, -0.582588)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dik6f")
