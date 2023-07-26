@@ -114,9 +114,12 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("lkm_mouse") and is_on_floor():
 			fighting = true
+			soft_hit.play()	
+			_animated_sprite.play("s_attack")
+		if Input.is_action_pressed("pkm_mouse") and is_on_floor():
+			fighting = true
 			soft_hit.play()
-			
-			_animated_sprite.play("attack")
+			_animated_sprite.play("h_attack")
 
 			
 		if fighting == true:

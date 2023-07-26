@@ -9,6 +9,8 @@ func next():
 	if slide == 6:
 		G.change_level_quick("start")
 		#G.goto_level("start")
+	else:
+		slide+=1
 		return
 		
 	set_slide_visiblity(slide, false)

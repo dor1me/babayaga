@@ -2,6 +2,7 @@ extends Node2D
 
 var levels = {
 	"menu": preload("res://levels/main-menu.tscn"),
+	"comics": preload("res://levels/comics.tscn"),
 	"start": preload("res://levels/startlevel.tscn"),
 	"kolobok": preload("res://levels/kolobok_level.tscn"),
 	"hotline": preload("res://levels/hotline_level.tscn"),
