@@ -30,6 +30,7 @@ var sobes = {
 
 var loading = preload("res://scenes/loading.tscn")
 var lastloading = preload("res://scenes/lastloading.tscn")
+var death = preload("res://scenes/death.tscn")
 
 var current_level = "menu"
 
@@ -38,7 +39,7 @@ var dust_class = preload("res://components/dust.tscn")
 var player_speed = 400
 var jump_velocity = -600
 
-var player_hp : float = 100 : set = _set_player_hp
+var player_hp : float = 10 : set = _set_player_hp
 var player_attack : float = 20 : set = _set_player_attack
 var player_scream_attack : float = 25
 var player_ultimate : float = 100 : set = _set_player_ultimate
@@ -72,7 +73,7 @@ func _set_player_attack(value : float):
 func _set_player_hp(value : float):
 	player_hp=max(value,0)
 	if player_hp == 0:
-		player_hp = 100
+		change_to_death()
 		
 	_update_hud()
 	
@@ -178,6 +179,9 @@ func change_to_next_level():
 
 func change_to_main_menu():
 	change_level_quick("menu")
+	
+func change_to_death():
+	get_tree().change_scene_to_packed(death)
 
 func goto_level(to_level):
 	if current_level == to_level:
