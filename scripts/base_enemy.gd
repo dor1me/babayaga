@@ -8,16 +8,19 @@ var hp_progress
 var hp_progress_inner
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var timer_disapear
-var timer_freeze
 var damage_vector
 var damage_vector_ratio
 var kick_vector
 var kick_vector_ratio
+var freezing = false
+var freeze_time = 0
+var freeze_timer : Timer
 var dead = false
 
 @onready var collider = $collider
 
 @export var collision_damage : float = 1
+
 
 func update_hp_progres():
 	var hp_ratio = hp/100
@@ -70,24 +73,20 @@ func _ready():
 	timer_disapear.timeout.connect(disapear_timer_on_timeout)
 	add_child(timer_disapear)
 	
-	timer_freeze = Timer.new()
-	timer_freeze.timeout.connect(freeze_timer_on_timeout)
-	add_child(timer_freeze)
 	
 	update_hp_progres()
 	
 	add_child(hp_progress);
 	
+	freeze_timer = Timer.new()
+	freeze_timer.wait_time = 0.1
+	add_child(freeze_timer)
+	freeze_timer.timeout.connect(on_freeze_timer_timeout)
+	
+		
 func get_size():
 	return Vector2(0,0)
 
-func freeze_timer_on_timeout():
-	
-	pass
-
-func freeze(time):
-	timer_freeze.wait_time = time
-	timer_disapear.start();
 
 func damage(vector: Vector2, strength: float):
 	hp -= strength
@@ -98,6 +97,28 @@ func damage(vector: Vector2, strength: float):
 	update_hp_progres()
 	damage_vector = vector*10
 	damage_vector_ratio = 1
+
+func on_unfreeze():
+	pass
+func on_freeze_tick(delta):
+	pass	
+
+func on_freeze_timer_timeout():
+	freeze_time -= freeze_timer.wait_time
+	if freeze_time <= 0:
+		freezing = false
+		freeze_timer.stop()
+		on_unfreeze()
+	
+	
+
+func on_scream(strength: float):
+	freeze_time += 0.5
+	freezing = true
+	if freeze_timer.is_stopped():
+		freeze_timer.start()
+	else:
+		on_freeze_timer_timeout()
 
 func kick(vector : Vector2):
 	#disable player collision
@@ -114,7 +135,9 @@ func _physics_process(delta):
 	var direction
 	if dead:
 		return
-		
+	if freezing:
+		on_freeze_tick(delta)	
+	
 	if kick_vector:
 		kick_vector_ratio -= delta
 		#velocity = kick_vector*kick_vector_ratio
