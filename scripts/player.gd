@@ -130,6 +130,7 @@ func _physics_process(delta):
 
 		
 		#try to fly
+		
 		if cleaner_hp >= 10 and current_level.cleaner_enabled and Input.is_action_pressed("shift") :
 			flying_sound.play()
 			flying = true
