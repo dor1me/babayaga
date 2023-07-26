@@ -15,7 +15,8 @@ func _ready():
 		hud.update()
 	
 	if G.level_enemy_count>0:
-		dialog_portal.disable()
+		if dialog_portal:
+			dialog_portal.disable()
 
 func update_hud():
 	if hud:

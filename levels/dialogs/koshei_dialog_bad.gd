@@ -19,6 +19,12 @@ func _ready():
 
 var can_click = false
 var x = 0
+
+func show_end():
+	G.change_level_quick("bad_end")
+	pass
+
+
 func _on_end_typing_message():
 	x+=1
 	if(x < messages.size()):
@@ -36,10 +42,8 @@ func conversation():
 	
 
 func on_answer_question(index):
-	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
-	if index == 0:
-		G.player_bad_choise += 1
-	close_dialog()
+	show_end()
+	
 	
 func _physics_process(delta):
 	if Input.is_action_just_released("lkm_mouse") and can_click:

@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://4mfxx5s0ereh"]
+[gd_scene load_steps=6 format=3 uid="uid://4mfxx5s0ereh"]
 
 [ext_resource type="Texture2D" uid="uid://c30qk43kprijo" path="res://yaga/БЯ.png" id="1_3ysi7"]
+[ext_resource type="Script" path="res://scenes/good_end_screen.gd" id="1_nl4su"]
 [ext_resource type="Texture2D" uid="uid://b2drnrwbmonea" path="res://yaga/Слой 22.png" id="2_iwewn"]
 [ext_resource type="Texture2D" uid="uid://bljsd2q4gtmy" path="res://yaga/авыыа.png" id="3_jrp35"]
 [ext_resource type="Texture2D" uid="uid://exk1qti3shbs" path="res://yaga/ок.png" id="4_v7oq1"]
 
 [node name="Node2D" type="Node2D"]
-visible = false
 z_index = 10
+script = ExtResource("1_nl4su")
 
 [node name="Бя" type="Sprite2D" parent="."]
 position = Vector2(661, 532)

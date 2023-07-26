@@ -14,9 +14,11 @@ var messages = [
 
 var answers = [
 	"Понятно."]
+
 func show_end():
-	#end.visibility_visible = true
+	G.change_level_quick("good_end")
 	pass
+	
 
 var can_click = false
 var x = 0
@@ -41,8 +43,6 @@ func conversation():
 	
 
 func on_answer_question(index):
-	create_label(answers[index],HORIZONTAL_ALIGNMENT_LEFT)
-	
 	show_end()
 	
 func _physics_process(delta):

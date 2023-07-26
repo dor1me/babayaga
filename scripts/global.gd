@@ -8,6 +8,8 @@ var levels = {
 	"underlevel": preload("res://levels/under_level.tscn"),
 	"hotline": preload("res://levels/hotline_level.tscn"),
 	"kosckhei": preload("res://levels/kosckhei_level.tscn"),
+	"good_end": preload("res://scenes/good_end_screen.tscn"),
+	"bad_end": preload("res://scenes/bad_end_screen.tscn"),
 }
 
 var dialogs = {
@@ -147,6 +149,7 @@ func show_dialog(to_dialog):
 	if to_dialog == "dialog-koshei":
 		if player_bad_choise <2:
 			to_dialog = "dialog-koshei_good"
+			to_dialog = "dialog-koshei_bad"
 		else:
 			to_dialog = "dialog-koshei_bad"
 		

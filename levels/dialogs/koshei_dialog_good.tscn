@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://oh52vgucvfqm"]
+[gd_scene load_steps=4 format=3 uid="uid://oh52vgucvfqm"]
 
 [ext_resource type="Script" path="res://levels/dialogs/koshei_dialog_good.gd" id="1_yj3kh"]
 [ext_resource type="Texture2D" uid="uid://c87lqnmqd70kc" path="res://enemies/koshei/chat_koshei.png" id="2_5tryp"]
 [ext_resource type="AudioStream" uid="uid://ckwcidx88looy" path="res://sounds/typing.mp3" id="3_53vaw"]
-[ext_resource type="PackedScene" uid="uid://4mfxx5s0ereh" path="res://scenes/good_end_screen.tscn" id="4_dcccg"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yj3kh")
@@ -23,5 +22,3 @@ color = Color(1, 1, 1, 0.45098)
 
 [node name="typing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_53vaw")
-
-[node name="ges" parent="." instance=ExtResource("4_dcccg")]
