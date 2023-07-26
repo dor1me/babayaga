@@ -39,7 +39,7 @@ var dust_class = preload("res://components/dust.tscn")
 var player_speed = 400
 var jump_velocity = -600
 
-var player_hp : float = 10 : set = _set_player_hp
+var player_hp : float = 100 : set = _set_player_hp
 var player_attack : float = 20 : set = _set_player_attack
 var player_scream_attack : float = 25
 var player_ultimate : float = 100 : set = _set_player_ultimate
