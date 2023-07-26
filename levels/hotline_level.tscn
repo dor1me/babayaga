@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdr5w7ojg6de5"]
+[gd_scene load_steps=12 format=3 uid="uid://cdr5w7ojg6de5"]
 
 [ext_resource type="Script" path="res://levels/hotline_level.gd" id="1_k5ylf"]
-[ext_resource type="PackedScene" uid="uid://5dbsy4i0ts46" path="res://maps/hotline.tscn" id="2_683uh"]
 [ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="3_tof1k"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="4_hpxbe"]
 [ext_resource type="PackedScene" uid="uid://mrbd2lk42kic" path="res://scenes/portal_dialog_irka.tscn" id="8_j4s15"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="8_puygs"]
 [ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="8_v0std"]
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="9_1xepb"]
+[ext_resource type="PackedScene" uid="uid://cxe62sq1gca6c" path="res://maps/cave3.tscn" id="9_5486r"]
+[ext_resource type="PackedScene" uid="uid://31mlfvf6aleu" path="res://scenes/penek.tscn" id="9_p3wui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njc66"]
 size = Vector2(12.1428, 121.429)
@@ -19,42 +20,32 @@ size = Vector2(236.446, 20)
 scale = Vector2(3.43709, 3.43709)
 script = ExtResource("1_k5ylf")
 
-[node name="Node2D" parent="." instance=ExtResource("2_683uh")]
-scale = Vector2(0.3, 0.3)
-
 [node name="hud" parent="." instance=ExtResource("3_tof1k")]
 
 [node name="player" parent="." instance=ExtResource("4_hpxbe")]
-position = Vector2(1831.78, 196.678)
+position = Vector2(165.256, 43.0597)
 
 [node name="frog" parent="." instance=ExtResource("8_v0std")]
-position = Vector2(1592.34, 200.169)
+position = Vector2(1292.37, 225.772)
 floor_stop_on_slope = false
 
 [node name="frog2" parent="." instance=ExtResource("8_v0std")]
-position = Vector2(513.516, 154.782)
+position = Vector2(310.437, 107.067)
 floor_stop_on_slope = false
 
 [node name="frog4" parent="." instance=ExtResource("8_v0std")]
-position = Vector2(1763.41, 177.185)
+position = Vector2(1710.17, 123.36)
 floor_stop_on_slope = false
 
 [node name="frog5" parent="." instance=ExtResource("8_v0std")]
-position = Vector2(1021.21, 56.7341)
+position = Vector2(679.645, 221.99)
 floor_stop_on_slope = false
-
-[node name="frog7" parent="." instance=ExtResource("8_v0std")]
-position = Vector2(1118.1, 101.248)
-floor_stop_on_slope = false
-
-[node name="small_kolobor" parent="." instance=ExtResource("9_1xepb")]
-position = Vector2(-116.378, 237.701)
 
 [node name="small_kolobor2" parent="." instance=ExtResource("9_1xepb")]
 position = Vector2(1675.84, 197.26)
 
 [node name="portal" parent="." instance=ExtResource("8_puygs")]
-position = Vector2(1962.42, 65.4624)
+position = Vector2(1924.01, 72.7359)
 scale = Vector2(3, 3)
 to_level = "underlevel"
 
@@ -62,11 +53,11 @@ to_level = "underlevel"
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal_wall"]
-position = Vector2(1878.33, 63.4257)
+position = Vector2(1833.82, 70.1175)
 shape = SubResource("RectangleShape2D_njc66")
 
 [node name="portal-dialog" parent="." instance=ExtResource("8_j4s15")]
-position = Vector2(1841.97, 68.0808)
+position = Vector2(1777.08, 72.1541)
 
 [node name="fix" type="CharacterBody2D" parent="."]
 collision_mask = 3
@@ -74,3 +65,17 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fix"]
 position = Vector2(1910.24, 137.616)
 shape = SubResource("RectangleShape2D_2l8fv")
+
+[node name="Node2D2" parent="." instance=ExtResource("9_5486r")]
+
+[node name="penek" parent="." instance=ExtResource("9_p3wui")]
+position = Vector2(1636.85, 123.651)
+
+[node name="penek2" parent="." instance=ExtResource("9_p3wui")]
+position = Vector2(555.703, 244.393)
+
+[node name="small_kolobor3" parent="." instance=ExtResource("9_1xepb")]
+position = Vector2(20.3661, 216.171)
+
+[node name="small_kolobor" parent="." instance=ExtResource("9_1xepb")]
+position = Vector2(809.988, 248.466)

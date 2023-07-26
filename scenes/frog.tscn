@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxcp78oroieyi" path="res://enemies/frog/frog 1.png" id="2_s6vud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0mdf"]
-size = Vector2(16, 19)
+size = Vector2(19.9999, 34.0001)
 
 [node name="frog" type="CharacterBody2D"]
 texture_filter = 1
@@ -17,7 +17,7 @@ position = Vector2(0, 1)
 texture = ExtResource("2_s6vud")
 
 [node name="collider" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -2.94055e-07)
+position = Vector2(7.00144e-06, -0.999967)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_w0mdf")
 
