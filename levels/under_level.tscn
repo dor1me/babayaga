@@ -28,14 +28,13 @@ position = Vector2(146.523, 240.321)
 position = Vector2(1681.08, 233.912)
 
 [node name="hud" parent="." instance=ExtResource("9_du6v1")]
-visible = false
 
 [node name="portal" parent="." instance=ExtResource("11_favfq")]
 position = Vector2(1894.02, 73.4071)
 scale = Vector2(1, 2)
 to_level = "kosckhei"
 
-[node name="portal-dialog" parent="." instance=ExtResource("9_ek0k4")]
+[node name="portal_dialog" parent="." instance=ExtResource("9_ek0k4")]
 position = Vector2(1778.67, 83.6025)
 
 [node name="portal_wall" type="CharacterBody2D" parent="."]

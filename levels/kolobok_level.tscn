@@ -42,7 +42,7 @@ position = Vector2(1961.71, 49.7143)
 scale = Vector2(3, 3)
 to_level = "hotline"
 
-[node name="portal-dialog-kolobok" parent="." instance=ExtResource("7_yfhu3")]
+[node name="portal_dialog" parent="." instance=ExtResource("7_yfhu3")]
 position = Vector2(1858.29, 85.4286)
 
 [node name="portal_wall" type="CharacterBody2D" parent="."]

@@ -27,7 +27,7 @@ position = Vector2(1066.19, 216.185)
 scale = Vector2(3, 3)
 to_level = "menu"
 
-[node name="portal-dialog" parent="." instance=ExtResource("6_yrx1q")]
+[node name="portal_dialog" parent="." instance=ExtResource("6_yrx1q")]
 position = Vector2(947.399, 217.341)
 
 [node name="portal_wall" type="CharacterBody2D" parent="."]

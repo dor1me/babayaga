@@ -65,7 +65,7 @@ collision_mask = 2
 position = Vector2(1878.33, 63.4257)
 shape = SubResource("RectangleShape2D_njc66")
 
-[node name="portal-dialog" parent="." instance=ExtResource("8_j4s15")]
+[node name="portal_dialog" parent="." instance=ExtResource("8_j4s15")]
 position = Vector2(1841.97, 68.0808)
 
 [node name="fix" type="CharacterBody2D" parent="."]
