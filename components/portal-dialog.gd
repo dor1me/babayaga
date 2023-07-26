@@ -17,6 +17,8 @@ func _on_body_entered(body):
 		disable()
 
 func disable():
+	if sprite:
+		sprite.visible = false
 	collision_mask = 0
 
 func enable():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfk3uebmi6rbc"]
+[gd_scene load_steps=9 format=3 uid="uid://dfk3uebmi6rbc"]
 
 [ext_resource type="Script" path="res://levels/kosckhei_level.gd" id="1_j3iod"]
 [ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="1_y2g6f"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="3_n2fl7"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="4_ro4dp"]
 [ext_resource type="PackedScene" uid="uid://b34desbs7ju6p" path="res://scenes/portal_dialog_koshei.tscn" id="6_yrx1q"]
+[ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="7_uw0a5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy8ly"]
 size = Vector2(15.8979, 254.067)
@@ -23,17 +24,20 @@ z_index = -4
 position = Vector2(56.6402, -38.4344)
 
 [node name="portal" parent="." instance=ExtResource("4_ro4dp")]
-position = Vector2(1066.19, 216.185)
+position = Vector2(907.225, 216.763)
 scale = Vector2(3, 3)
 to_level = "menu"
 
 [node name="portal_dialog" parent="." instance=ExtResource("6_yrx1q")]
-position = Vector2(947.399, 217.341)
+position = Vector2(797.688, 218.208)
 
 [node name="portal_wall" type="CharacterBody2D" parent="."]
 position = Vector2(80.6896, 209.152)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal_wall"]
-position = Vector2(903.271, -63.0434)
+position = Vector2(747.345, -64.9323)
 shape = SubResource("RectangleShape2D_yy8ly")
+
+[node name="frog" parent="." instance=ExtResource("7_uw0a5")]
+position = Vector2(173.41, 252.601)

@@ -7,19 +7,23 @@ class_name BaseLevel
 @onready var hud : Hud = $hud
 @onready var portal : Area2D = $portal
 @onready var portal_wall : CharacterBody2D = $portal_wall
-@onready var dialog_portal = $portal_dialog
+@onready var dialog_portal : DialogPortal = $portal_dialog
 
 func _ready():
 	G.level_enemy_count = get_enemy_count()
 	if hud != null:
 		hud.update()
+	
+	if G.level_enemy_count>0:
+		dialog_portal.disable()
 
 func update_hud():
 	if hud:
 		hud.update()
+	
 
 func update_sobes():
-	if dialog_portal:
+	if dialog_portal and G.level_enemy_count == 0:
 		dialog_portal.enable()
 
 func open_portal():
