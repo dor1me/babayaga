@@ -27,7 +27,7 @@ func _ready():
 	self.add_child(timer)
 	
 	
-	question.texture = ImageTexture.create_from_image(image_question)
+	question.texture = image_question
 	question.size.x = 500
 	question.size.y = 300
 	question.position.x = 100
