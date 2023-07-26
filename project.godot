@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-G="*res://scripts/global.gd"
+G="*res://scenes/game.tscn"
 sound="*res://scenes/back_sound.tscn"
 
 [display]
