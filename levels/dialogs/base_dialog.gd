@@ -11,9 +11,10 @@ var left_texture
 var last_label
 var last_label_back
 var last_label_message
-var image_left = Image.load_from_file("res://maps/chat/left.png")
-var image_right = Image.load_from_file("res://maps/chat/right.png")
-var image_question = Image.load_from_file("res://maps/chat/question.png")
+
+var image_left = load("res://maps/chat/left.png")
+var image_right = load("res://maps/chat/right.png")
+var image_question = load("res://maps/chat/question.png")
 
 
 func _ready():
@@ -24,6 +25,7 @@ func _ready():
 	timer.timeout.connect(_on_timer_timeout)	
 	timer.wait_time = 0.01
 	self.add_child(timer)
+	
 	
 	question.texture = ImageTexture.create_from_image(image_question)
 	question.size.x = 500
@@ -97,7 +99,7 @@ func create_label(str, alignment):
 	
 	
 	
-	var texture = ImageTexture.create_from_image(image)
+	var texture = image
 	label.add_theme_font_size_override("font_size", 24)
 	label.add_theme_color_override("font_color", Color.BLACK)
 	chat.add_child(label)
