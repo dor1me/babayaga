@@ -9,7 +9,7 @@ script = ExtResource("1_swlt4")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 1920.0
-offset_bottom = 1101.0
+offset_bottom = 1088.0
 scale = Vector2(0.3, 0.3)
 stream = ExtResource("1_yonad")
 autoplay = true

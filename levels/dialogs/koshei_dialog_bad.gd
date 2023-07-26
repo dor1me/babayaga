@@ -10,9 +10,6 @@ var messages = [
 	"Нет уж, нет уж! Врешь, чудак!\rЗнаю я таких писак -\rВсюду буквы, всюду речи, а копнешь - \rТо черт излечишь!\rЧто ж, раз так - я ухожу.\rВпредь тобой не дорожу.\rОставайся, убирайся,\rХоть к луне иди слоняйся!",
 ]
 
-var answers = [
-	"Понятно."]
-
 func _ready():
 	super()
 	conversation()
@@ -20,8 +17,16 @@ func _ready():
 var can_click = false
 var x = 0
 
-func show_end():
+func on_timeout():
 	G.change_level_quick("bad_end")
+
+func show_end():
+	var t = Timer.new()
+	t.set_wait_time(4)
+	t.set_one_shot(true)
+	t.connect.timeout(on_timeout)
+	self.add_child(t)
+	t.start()
 	pass
 
 
@@ -31,7 +36,7 @@ func _on_end_typing_message():
 		typing_sound.stop()
 		can_click = true
 	else:
-		ask_question(answers)
+		show_end()
 
 func conversation():
 	typing_sound.play()

@@ -12,13 +12,17 @@ var messages = [
 	"Люба ты моя царица!\rНу прости меня глупицу!\rПылесос я починю,\rДо избушки отвезу!"
 ]
 
-var answers = [
-	"Понятно."]
+func on_timeout():
+	G.change_level_quick("bad_end")
 
 func show_end():
-	G.change_level_quick("good_end")
-	pass
-	
+	var t = Timer.new()
+	t.set_wait_time(4)
+	t.set_one_shot(true)
+	t.connect.timeout(on_timeout)
+	self.add_child(t)
+	t.start()
+	pass	
 
 var can_click = false
 var x = 0
@@ -32,8 +36,7 @@ func _on_end_typing_message():
 	if(x < messages.size()):
 		typing_sound.stop()
 		can_click = true
-	else:
-		ask_question(answers)
+	show_end()
 
 func conversation():
 	if x%2==1:
