@@ -31,6 +31,8 @@ var end_dialog = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 1.5
 
 var fighting = false
+var screaming = false
+var scream_uron = 0
 var flying = false
 var flying_wave = 0;
 var flying_wave_delta = 1
@@ -54,18 +56,43 @@ func _physics_process(delta):
 	
 	if fighting:
 		pass	
+	elif health == 0:
+		_animated_sprite.play("death")
+		H_SPEED = 0
+		V_SPEED = 0
+		JUMP_VELOCITY = 0
+	elif screaming:
+		if Input.is_action_just_released("scream"):
+			_animated_sprite.play("idle")
+			screaming = false
+		else: 
+			scream_uron += 100*delta #percents
+			if scream_uron < 10:
+				pass
+			else:
+				scream_uron = min(G.player_ultimate, scream_uron)
+				G.player_ultimate -= scream_uron
+				if G.player_ultimate == 0:
+					screaming = false
+					
+				var strength = scream_uron / 100 * scream_attack
+				scream_uron = 0
+				for node in get_tree().get_root().get_children(false):
+					for child in node.get_children(false):
+						if child as BaseEnemy:
+							child.damage(
+								Vector2(0,0), 
+								strength * _get_player_attack_multiplier()
+								)
+				
+				
+				
 	
-	elif Input.is_action_pressed("scream") and G.player_ultimate >= 100:
-		_animated_sprite.play("ultimate")	
-		G.player_ultimate = 0
+	elif Input.is_action_pressed("scream") and G.player_ultimate > 0:
+		_animated_sprite.play("ultimate")
+		scream_uron = 0
+		screaming = true
 		
-		for node in get_tree().get_root().get_children(false):
-			for child in node.get_children(false):
-				if child as BaseEnemy:
-					child.damage(
-						Vector2(0,0), 
-						scream_attack * _get_player_attack_multiplier()
-						)
 				
 	elif flying:
 		
@@ -154,11 +181,7 @@ func _physics_process(delta):
 		diagonal()
 		
 		
-	if health == 0:
-		_animated_sprite.play("death")
-		H_SPEED = 0
-		V_SPEED = 0
-		JUMP_VELOCITY = 0
+	
 	
 
 	# Using move_and_slide.
