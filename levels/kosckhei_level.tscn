@@ -20,7 +20,7 @@ script = ExtResource("1_j3iod")
 
 [node name="player" parent="." instance=ExtResource("3_n2fl7")]
 z_index = -4
-position = Vector2(641.04, 85.5491)
+position = Vector2(286.994, 131.214)
 
 [node name="portal" parent="." instance=ExtResource("4_ro4dp")]
 position = Vector2(932.37, 215.896)

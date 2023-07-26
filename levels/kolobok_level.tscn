@@ -21,7 +21,7 @@ position = Vector2(-0.857143, -13.1429)
 scale = Vector2(0.3, 0.3)
 
 [node name="player" parent="." instance=ExtResource("2_y2y5m")]
-position = Vector2(1725.14, 212.857)
+position = Vector2(141.429, 140.286)
 
 [node name="small_kolobor" parent="." instance=ExtResource("3_0m3fm")]
 position = Vector2(481.714, 266)

@@ -22,7 +22,7 @@ script = ExtResource("1_k5ylf")
 [node name="hud" parent="." instance=ExtResource("3_tof1k")]
 
 [node name="player" parent="." instance=ExtResource("4_hpxbe")]
-position = Vector2(1831.78, 196.678)
+position = Vector2(157.401, 48.5876)
 
 [node name="frog" parent="." instance=ExtResource("8_v0std")]
 position = Vector2(1478.58, 253.703)
