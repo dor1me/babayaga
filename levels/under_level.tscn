@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4c8f07a80lf4"]
+[gd_scene load_steps=10 format=3 uid="uid://c4c8f07a80lf4"]
 
 [ext_resource type="PackedScene" uid="uid://boekyiloxljie" path="res://maps/undergroundmap.tscn" id="1_7c3ol"]
 [ext_resource type="Script" path="res://levels/under_level.gd" id="1_spbct"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_eb0d2"]
 [ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="9_du6v1"]
 [ext_resource type="PackedScene" uid="uid://chkq5hkh6vnyn" path="res://scenes/portal_dialog_vodyanoy.tscn" id="9_ek0k4"]
-[ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="10_asxnk"]
 [ext_resource type="PackedScene" uid="uid://31mlfvf6aleu" path="res://scenes/penek.tscn" id="11_8ferl"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="11_favfq"]
 
@@ -26,29 +25,31 @@ position = Vector2(256.051, 39.9078)
 position = Vector2(146.523, 240.321)
 
 [node name="enemykolobok2" parent="." instance=ExtResource("3_eb0d2")]
-position = Vector2(409.856, 238.282)
+position = Vector2(1681.08, 233.912)
 
 [node name="hud" parent="." instance=ExtResource("9_du6v1")]
 
-[node name="frog" parent="." instance=ExtResource("10_asxnk")]
-position = Vector2(355.966, 247.603)
-floor_stop_on_slope = false
-
-[node name="penek" parent="." instance=ExtResource("11_8ferl")]
-position = Vector2(279.355, 245.856)
-
 [node name="portal" parent="." instance=ExtResource("11_favfq")]
-position = Vector2(6.11726, 215.561)
+position = Vector2(1894.02, 73.4071)
 scale = Vector2(1, 2)
 to_level = "kosckhei"
 
 [node name="portal-dialog" parent="." instance=ExtResource("9_ek0k4")]
-position = Vector2(88.8459, 213.521)
+position = Vector2(1778.67, 83.6025)
 
 [node name="portal_wall" type="CharacterBody2D" parent="."]
 position = Vector2(80.6896, 209.152)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="portal_wall"]
-position = Vector2(-38.16, -0.582588)
+position = Vector2(1755.36, -146.232)
 shape = SubResource("RectangleShape2D_dik6f")
+
+[node name="penek2" parent="." instance=ExtResource("11_8ferl")]
+position = Vector2(903.024, 67.2899)
+
+[node name="penek3" parent="." instance=ExtResource("11_8ferl")]
+position = Vector2(1305.02, 245.273)
+
+[node name="enemykolobok3" parent="." instance=ExtResource("3_eb0d2")]
+position = Vector2(630.369, 109.528)
