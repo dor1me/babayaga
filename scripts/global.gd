@@ -5,15 +5,15 @@ var levels = {
 	"comics": preload("res://levels/comics.tscn"),
 	"start": preload("res://levels/startlevel.tscn"),
 	"kolobok": preload("res://levels/kolobok_level.tscn"),
-	"hotline": preload("res://levels/hotline_level.tscn"),
 	"underlevel": preload("res://levels/under_level.tscn"),
+	"hotline": preload("res://levels/hotline_level.tscn"),
 	"kosckhei": preload("res://levels/kosckhei_level.tscn"),
 }
 
 var dialogs = {
 	"dialog-kolobok": preload("res://levels/dialogs/kolobok_dialog.tscn"),
+	"hotline": preload("res://levels/hotline_level.tscn"),
 	"dialog-vodyanoy": preload("res://levels/dialogs/vodyanoy-dialog.tscn"),
-	"dialog-irka": preload("res://levels/dialogs/irka_dialog.tscn"),
 	"dialog-koshei_bad": preload("res://levels/dialogs/koshei_dialog_bad.tscn"),
 	"dialog-koshei_good": preload("res://levels/dialogs/koshei_dialog_good.tscn"),
 }

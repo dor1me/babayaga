@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dv68qy6i4d88n"]
 
 [ext_resource type="Script" path="res://levels/dialogs/vodyanoy-dialog.gd" id="1_u5cnd"]
-[ext_resource type="Texture2D" uid="uid://cifh6xp4wnmud" path="res://hotline/vodyanoy_dialog.png" id="2_ebjks"]
+[ext_resource type="Texture2D" uid="uid://7b61ohmdw5xo" path="res://scenes/лдоавыыа.png" id="2_d3pu1"]
 [ext_resource type="AudioStream" uid="uid://ckwcidx88looy" path="res://sounds/typing.mp3" id="3_ifrts"]
 
 [node name="dialog-vodyanoy" type="Node2D"]
 script = ExtResource("1_u5cnd")
 
 [node name="background" type="Sprite2D" parent="."]
-texture = ExtResource("2_ebjks")
+texture = ExtResource("2_d3pu1")
 centered = false
 
 [node name="chat" type="ColorRect" parent="."]
