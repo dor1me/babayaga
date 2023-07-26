@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://qmuwlitipcbq"]
+[gd_scene load_steps=33 format=3 uid="uid://qmuwlitipcbq"]
 
 [ext_resource type="Texture2D" uid="uid://ydy7rn2no4pd" path="res://tileset1/Sunny-land-forest-files/PNG/environment/environment-preview.png" id="1_5pyrr"]
 [ext_resource type="Texture2D" uid="uid://bpuf2b5dm68ls" path="res://tileset1/Sunny-land-forest-files/PNG/environment/props/house.png" id="2_8n2ku"]
@@ -11,7 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://bt4o2u8kq85vc" path="res://enemies/NEwSprSht_CutePump.png" id="9_5ygfp"]
 [ext_resource type="Texture2D" uid="uid://bvsm8ejfwqlv5" path="res://tilesetmenu/lkm.png" id="10_6e6p7"]
 [ext_resource type="Texture2D" uid="uid://bar7t0to3mly3" path="res://tilesetmenu/pkm.png" id="11_7623f"]
+[ext_resource type="Texture2D" uid="uid://wjesgv7fdnoj" path="res://tilesetmenu/table.png" id="13_dxvan"]
 [ext_resource type="Texture2D" uid="uid://deiwxn834kqr8" path="res://tilesetmenu/arrow.png" id="13_k4fmt"]
+[ext_resource type="Texture2D" uid="uid://ckttv7pd07vo3" path="res://tilesetmenu/ready.png" id="14_w6m43"]
+[ext_resource type="Texture2D" uid="uid://cv843js6is336" path="res://tilesetmenu/not ready.png" id="15_q4v0o"]
+[ext_resource type="Texture2D" uid="uid://m3ydqkxjf53v" path="res://tilesetmenu/hp.png" id="16_1o7f0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1req0"]
 texture = ExtResource("1_5pyrr")
@@ -11541,6 +11545,8 @@ texture = ExtResource("7_l4fgi")
 [sub_resource type="TileSet" id="TileSet_x5cnn"]
 sources/0 = SubResource("TileSetAtlasSource_47ou4")
 
+[sub_resource type="TileSet" id="TileSet_ulihw"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -11595,6 +11601,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(589832, 1, 2, 589834, 196609, 2, 655370, 196609, 7, 655368, 131073, 7, 196647, 0, 1, 196648, 65536, 1, 589891, 65537, 4, 655382, 262144, 2, 655383, 327680, 2, 655395, 196609, 2, 655393, 1, 2, 655394, 131073, 4, 589858, 393217, 4)
 
 [node name="TileMap3" type="TileMap" parent="."]
+visible = false
 z_index = -2
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_rty02")
@@ -11707,3 +11714,53 @@ text = "Здесь ваши показатели здоровья и готов�
 position = Vector2(7461, 232)
 scale = Vector2(1, 0.6)
 texture = ExtResource("13_k4fmt")
+
+[node name="TileMap5" type="TileMap" parent="."]
+position = Vector2(4797, -38)
+scale = Vector2(3.5, 3.5)
+tile_set = SubResource("TileSet_ulihw")
+format = 2
+
+[node name="table" type="Sprite2D" parent="TileMap5"]
+z_index = 3
+texture_filter = 1
+position = Vector2(85, 50)
+scale = Vector2(1.25, 0.938)
+texture = ExtResource("13_dxvan")
+
+[node name="not_ready" type="Sprite2D" parent="TileMap5"]
+z_index = 5
+texture_filter = 1
+position = Vector2(73, 79)
+texture = ExtResource("14_w6m43")
+
+[node name="ready" type="Sprite2D" parent="TileMap5"]
+z_index = 4
+texture_filter = 1
+position = Vector2(105, 79)
+texture = ExtResource("15_q4v0o")
+
+[node name="hp" type="Sprite2D" parent="TileMap5"]
+z_index = 3
+texture_filter = 1
+position = Vector2(-25, -44)
+rotation = 1.5708
+texture = ExtResource("16_1o7f0")
+
+[node name="Label" type="Label" parent="TileMap5"]
+z_index = 10
+offset_left = 98.5714
+offset_top = 23.7143
+offset_right = 138.571
+offset_bottom = 49.7143
+text = "100
+"
+
+[node name="Label2" type="Label" parent="TileMap5"]
+z_index = 10
+offset_left = 48.5713
+offset_top = 24.5714
+offset_right = 88.5713
+offset_bottom = 50.5714
+text = "100
+"

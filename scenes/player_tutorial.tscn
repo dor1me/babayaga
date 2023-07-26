@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ul3j51d0gpjx"]
+[gd_scene load_steps=28 format=3 uid="uid://ul3j51d0gpjx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ptwxh"]
 [ext_resource type="Texture2D" uid="uid://7lltuwsdamit" path="res://animations/3/6.png" id="2_tyd6q"]
@@ -15,13 +15,24 @@
 [ext_resource type="Texture2D" uid="uid://bn4mmino1xdcb" path="res://animations/2/2.png" id="13_3oi77"]
 [ext_resource type="Texture2D" uid="uid://cigxvafi0eb7f" path="res://animations/2/3.png" id="14_yji4u"]
 [ext_resource type="Texture2D" uid="uid://by8a3460kterj" path="res://animations/2/4.png" id="15_5vm8r"]
+[ext_resource type="Texture2D" uid="uid://cr8gw0wb3al" path="res://yaga/1.png" id="16_8xvwy"]
 [ext_resource type="Texture2D" uid="uid://b8lpap1ik80n6" path="res://yaga/ultimate.png" id="16_kwboc"]
+[ext_resource type="Texture2D" uid="uid://b2lrg2vpdatyb" path="res://yaga/9.png" id="17_4o58x"]
 [ext_resource type="AudioStream" uid="uid://ckwcidx88looy" path="res://sounds/typing.mp3" id="17_h0no1"]
+[ext_resource type="Texture2D" uid="uid://cl2vmarhsuqhx" path="res://yaga/11.png" id="18_u5c87"]
 [ext_resource type="AudioStream" uid="uid://d4bmb76phxoee" path="res://sounds/flying.wav" id="18_uqjgf"]
 [ext_resource type="AudioStream" uid="uid://xxvsvuhba2rh" path="res://sounds/soft hit.wav" id="19_dk2vx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_db2en"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jt4wq")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 0.4,
 "texture": ExtResource("2_tyd6q")
@@ -42,16 +53,8 @@ animations = [{
 "texture": ExtResource("7_5uyi4")
 }],
 "loop": false,
-"name": &"attack",
+"name": &"h_attack",
 "speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_jt4wq")
-}],
-"loop": true,
-"name": &"fly",
-"speed": 4.0
 }, {
 "frames": [{
 "duration": 0.85,
@@ -111,6 +114,20 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 0.85,
+"texture": ExtResource("16_8xvwy")
+}, {
+"duration": 0.85,
+"texture": ExtResource("17_4o58x")
+}, {
+"duration": 0.85,
+"texture": ExtResource("18_u5c87")
+}],
+"loop": true,
+"name": &"s_attack",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("16_kwboc")
 }],
@@ -142,7 +159,7 @@ script = ExtResource("1_ptwxh")
 texture_filter = 1
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_db2en")
-animation = &"ultimate"
+animation = &"s_attack"
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

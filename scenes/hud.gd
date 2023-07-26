@@ -7,8 +7,10 @@ class_name Hud
 @onready var enemy_count = $enemy_count_text
 
 func icon():
-	if G.ultimate == 100:
+	if G.ultimate >= 100:
 		not_ready.visible = false
+	else:
+		not_ready.visible = true
 
 func update():
 	hp.text = String.num(G.player_hp)

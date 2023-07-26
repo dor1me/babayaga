@@ -20,7 +20,6 @@ var can_click = false
 var x = 0
 
 func _ready():
-	sigh.play()
 	super()
 	conversation()
 
@@ -33,8 +32,9 @@ func _on_end_typing_message():
 		ask_question(answers)
 
 func conversation():
-	typing_sound.play()
 	if x%2==1:
+		if x==1:
+			sigh.play()
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_RIGHT)
 	else: 
 		create_label(messages[x],HORIZONTAL_ALIGNMENT_LEFT)

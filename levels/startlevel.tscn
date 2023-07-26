@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgm0ihihdvwyq"]
+[gd_scene load_steps=7 format=3 uid="uid://dgm0ihihdvwyq"]
 
 [ext_resource type="PackedScene" uid="uid://qmuwlitipcbq" path="res://maps/homemap.tscn" id="1_0opm7"]
 [ext_resource type="Script" path="res://levels/startlevel.gd" id="1_k8u8i"]
 [ext_resource type="PackedScene" uid="uid://ul3j51d0gpjx" path="res://scenes/player_tutorial.tscn" id="3_8dmwf"]
 [ext_resource type="PackedScene" uid="uid://s2ah04jlabfq" path="res://components/exit.tscn" id="3_p1cwb"]
+[ext_resource type="PackedScene" uid="uid://31mlfvf6aleu" path="res://scenes/penek.tscn" id="5_eq0qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjbj4"]
 size = Vector2(70, 1314)
@@ -29,5 +30,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enable_cleaner_area"]
 position = Vector2(2505, 546)
 shape = SubResource("RectangleShape2D_bjbj4")
+
+[node name="penek" parent="." instance=ExtResource("5_eq0qw")]
+position = Vector2(5957, 733)
+scale = Vector2(3.5, 3.5)
 
 [connection signal="body_entered" from="enable_cleaner_area" to="." method="_on_enable_cleaner_area_body_entered"]

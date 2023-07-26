@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpp24osquds0t"]
 
-[ext_resource type="Texture2D" uid="uid://dkshdulxre6fw" path="res://irka/irka.png" id="1_e054q"]
 [ext_resource type="Script" path="res://levels/dialogs/irka_dialog.gd" id="1_psmw1"]
+[ext_resource type="Texture2D" uid="uid://cx11mug18pwgv" path="res://scenes/авыыа.png" id="2_0yw6s"]
 [ext_resource type="AudioStream" uid="uid://ckwcidx88looy" path="res://sounds/typing.mp3" id="3_l5mlk"]
 [ext_resource type="AudioStream" uid="uid://di05s2364dfn2" path="res://sounds/irka_sigh.mp3" id="4_1008h"]
 
@@ -9,7 +9,7 @@
 script = ExtResource("1_psmw1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_e054q")
+texture = ExtResource("2_0yw6s")
 centered = false
 
 [node name="chat" type="ColorRect" parent="."]

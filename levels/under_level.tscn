@@ -28,6 +28,7 @@ position = Vector2(146.523, 240.321)
 position = Vector2(1681.08, 233.912)
 
 [node name="hud" parent="." instance=ExtResource("9_du6v1")]
+visible = false
 
 [node name="portal" parent="." instance=ExtResource("11_favfq")]
 position = Vector2(1894.02, 73.4071)
