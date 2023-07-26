@@ -24,7 +24,7 @@ func show_end():
 	var t = Timer.new()
 	t.set_wait_time(4)
 	t.set_one_shot(true)
-	t.connect.timeout(on_timeout)
+	t.connect("timeout",on_timeout)
 	self.add_child(t)
 	t.start()
 	pass
