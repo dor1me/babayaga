@@ -25,6 +25,7 @@ var end_dialog = false
 @onready var attack_collider_right = $attack_collider_right
 @onready var attack_collider_left = $attack_collider_left
 @onready var attack_timer = $AttackTimer
+@onready var scream_player = $scream_player
 
 @onready var current_level : BaseLevel = G.get_current_level()
 
@@ -64,6 +65,7 @@ func _physics_process(delta):
 	elif screaming:
 		if Input.is_action_just_released("scream"):
 			_animated_sprite.play("idle")
+			scream_player.stop()
 			screaming = false
 		else: 
 			scream_uron += 100*delta #percents
@@ -80,6 +82,7 @@ func _physics_process(delta):
 				for node in get_tree().get_root().get_children(false):
 					for child in node.get_children(false):
 						if child as BaseEnemy:
+							child.on_scream(strength)
 							child.damage(
 								Vector2(0,0), 
 								strength * _get_player_attack_multiplier()
@@ -90,6 +93,7 @@ func _physics_process(delta):
 	
 	elif Input.is_action_pressed("scream") and G.player_ultimate > 0:
 		_animated_sprite.play("ultimate")
+		scream_player.play()
 		scream_uron = 0
 		screaming = true
 		

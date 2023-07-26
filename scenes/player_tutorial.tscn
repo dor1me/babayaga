@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ul3j51d0gpjx"]
+[gd_scene load_steps=30 format=3 uid="uid://ul3j51d0gpjx"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ptwxh"]
 [ext_resource type="Texture2D" uid="uid://7lltuwsdamit" path="res://animations/3/6.png" id="2_tyd6q"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://d4bmb76phxoee" path="res://sounds/flying.wav" id="18_uqjgf"]
 [ext_resource type="AudioStream" uid="uid://xxvsvuhba2rh" path="res://sounds/soft hit.wav" id="19_dk2vx"]
 [ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="23_ieel8"]
+[ext_resource type="AudioStream" uid="uid://c6y0q6t732at5" path="res://sounds/holnoo.wav" id="24_h2yuw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_db2en"]
 animations = [{
@@ -227,6 +228,9 @@ stream = ExtResource("19_dk2vx")
 
 [node name="Control" parent="." instance=ExtResource("23_ieel8")]
 visible = false
+
+[node name="scream_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_h2yuw")
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed" flags=18]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout" flags=18]
