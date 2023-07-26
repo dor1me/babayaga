@@ -183,6 +183,10 @@ func goto_level(to_level):
 	if current_level == to_level:
 		return
 		
+	var loading_scene = loading
+	if to_level == "kosckhei" and player_bad_choise >=2:
+			loading_scene = lastloading
+		
 	if levels.has(to_level):
 		next_level = to_level
-		get_tree().change_scene_to_packed(loading)
+		get_tree().change_scene_to_packed(loading_scene)
