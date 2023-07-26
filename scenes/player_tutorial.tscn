@@ -226,6 +226,7 @@ stream = ExtResource("18_uqjgf")
 stream = ExtResource("19_dk2vx")
 
 [node name="Control" parent="." instance=ExtResource("23_ieel8")]
+visible = false
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed" flags=18]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout" flags=18]
