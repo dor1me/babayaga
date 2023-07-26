@@ -12,8 +12,11 @@
 script = ExtResource("1_chsqn")
 
 [node name="slide1" type="PanelContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="1" type="Sprite2D" parent="slide1"]
 position = Vector2(-30, -13)
@@ -22,54 +25,69 @@ texture = ExtResource("1_hyq3d")
 centered = false
 
 [node name="slide2" type="PanelContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="2" type="Sprite2D" parent="slide2"]
-visible = false
 position = Vector2(-13, -18)
 scale = Vector2(0.62, 0.62)
 texture = ExtResource("2_f0xb3")
 centered = false
 
 [node name="slide3" type="PanelContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="3" type="Sprite2D" parent="slide3"]
-visible = false
 position = Vector2(-13, -8)
 scale = Vector2(0.797958, 0.797958)
 texture = ExtResource("4_2c4vm")
 centered = false
 
 [node name="slide4" type="PanelContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="4" type="Sprite2D" parent="slide4"]
-visible = false
 position = Vector2(-28, -3)
 scale = Vector2(0.60744, 0.60744)
 texture = ExtResource("3_u3rs3")
 centered = false
 
 [node name="slide5" type="PanelContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="5" type="Sprite2D" parent="slide5"]
-visible = false
 scale = Vector2(1.065, 1.017)
 texture = ExtResource("5_0dq47")
 centered = false
 
 [node name="slide6" type="PanelContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="6" type="Sprite2D" parent="slide6"]
-visible = false
 texture_filter = 4
 position = Vector2(0, -86)
 scale = Vector2(0.735, 0.735)
