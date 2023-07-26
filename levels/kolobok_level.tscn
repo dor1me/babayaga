@@ -40,10 +40,10 @@ position = Vector2(1333.43, 214.571)
 [node name="portal" parent="." instance=ExtResource("7_l5ikv")]
 position = Vector2(1961.71, 49.7143)
 scale = Vector2(3, 3)
-to_level = "hotline"
+to_level = "underlevel"
 
 [node name="portal_dialog" parent="." instance=ExtResource("7_yfhu3")]
-position = Vector2(1858.29, 85.4286)
+position = Vector2(1856, 61.7143)
 
 [node name="portal_wall" type="CharacterBody2D" parent="."]
 collision_mask = 2

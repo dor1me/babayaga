@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://levels/under_level.gd" id="1_spbct"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="2_lbpf6"]
 [ext_resource type="PackedScene" uid="uid://ch6db8vimeuw2" path="res://scenes/small_kolobok.tscn" id="3_eb0d2"]
-[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="9_du6v1"]
-[ext_resource type="PackedScene" uid="uid://chkq5hkh6vnyn" path="res://scenes/portal_dialog_vodyanoy.tscn" id="9_ek0k4"]
+[ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="8_o1ar0"]
+[ext_resource type="PackedScene" uid="uid://mrbd2lk42kic" path="res://scenes/portal_dialog_irka.tscn" id="9_i44xq"]
 [ext_resource type="PackedScene" uid="uid://31mlfvf6aleu" path="res://scenes/penek.tscn" id="11_8ferl"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="11_favfq"]
 
@@ -15,6 +15,8 @@ size = Vector2(12.1428, 121.429)
 [node name="level" type="Node2D"]
 scale = Vector2(3.43291, 3.43291)
 script = ExtResource("1_spbct")
+
+[node name="hud" parent="." instance=ExtResource("8_o1ar0")]
 
 [node name="player" parent="." instance=ExtResource("2_lbpf6")]
 position = Vector2(256.051, 39.9078)
@@ -27,15 +29,10 @@ position = Vector2(146.523, 240.321)
 [node name="enemykolobok2" parent="." instance=ExtResource("3_eb0d2")]
 position = Vector2(1681.08, 233.912)
 
-[node name="hud" parent="." instance=ExtResource("9_du6v1")]
-
 [node name="portal" parent="." instance=ExtResource("11_favfq")]
 position = Vector2(1894.02, 73.4071)
 scale = Vector2(1, 2)
-to_level = "kosckhei"
-
-[node name="portal_dialog" parent="." instance=ExtResource("9_ek0k4")]
-position = Vector2(1778.67, 83.6025)
+to_level = "hotline"
 
 [node name="portal_wall" type="CharacterBody2D" parent="."]
 position = Vector2(80.6896, 209.152)
@@ -53,3 +50,6 @@ position = Vector2(1305.02, 245.273)
 
 [node name="enemykolobok3" parent="." instance=ExtResource("3_eb0d2")]
 position = Vector2(630.369, 109.528)
+
+[node name="portal_dialog" parent="." instance=ExtResource("9_i44xq")]
+position = Vector2(1783.62, 70.4941)

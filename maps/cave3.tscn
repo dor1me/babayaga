@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxe62sq1gca6c"]
+[gd_scene load_steps=6 format=3 uid="uid://cxe62sq1gca6c"]
 
 [ext_resource type="Texture2D" uid="uid://i20b33abblxx" path="res://tileset3/Game-Asset-Carol-Salvato/todos-objetos-hcs.png" id="1_guy0t"]
 [ext_resource type="Texture2D" uid="uid://bykhi3lb66iv1" path="res://tileset3/Game-Asset-Carol-Salvato/wather-green-01.png" id="2_hhjju"]
-[ext_resource type="PackedScene" uid="uid://qmuwlitipcbq" path="res://maps/homemap.tscn" id="3_77onr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rqsyi"]
 texture = ExtResource("1_guy0t")
@@ -3814,6 +3813,3 @@ layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 3
 layer_3/tile_data = PackedInt32Array(917552, 786432, 28, 983088, 786432, 29, 917553, 851968, 28, 983089, 851968, 29, 983090, 917504, 29, 983084, 589824, 29, 983085, 655360, 29, 983065, 589824, 29, 983066, 655360, 29, 852046, 589824, 29, 852047, 655360, 29, 917608, 589824, 29, 917609, 655360, 29, 524393, 524288, 33, 524394, 589824, 33, 524395, 655360, 33, 524396, 720896, 33, 524397, 786432, 33, 524388, 524288, 33, 524389, 589824, 33, 524390, 655360, 33, 524391, 720896, 33, 524392, 786432, 33, 524383, 524288, 33, 524384, 589824, 33, 524385, 655360, 33, 524386, 720896, 33, 524387, 786432, 33, 589919, 589824, 38, 589920, 655360, 38, 589921, 720896, 38, 589922, 786432, 38, 589923, 589824, 38, 589924, 655360, 38, 589925, 720896, 38, 589926, 786432, 38, 589927, 589824, 38, 589928, 655360, 38, 589929, 720896, 38, 589930, 589824, 38, 589931, 655360, 38, 589932, 720896, 38, 589933, 786432, 38)
-
-[node name="Node2D" parent="." instance=ExtResource("3_77onr")]
-position = Vector2(40, 1547)

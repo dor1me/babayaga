@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://boekyiloxljie"]
+[gd_scene load_steps=8 format=3 uid="uid://boekyiloxljie"]
 
 [ext_resource type="Texture2D" uid="uid://dvlngu34kokdg" path="res://Legacy/Legacy Adventure Pack - CEMETERY/Assets/Assets.png" id="1_v1yst"]
 [ext_resource type="Texture2D" uid="uid://dwepbv5bbjtkm" path="res://Legacy/Legacy Adventure Pack - CEMETERY/Assets/Background_1.png" id="2_kte86"]
 [ext_resource type="Texture2D" uid="uid://dik5pw4abb3vg" path="res://Legacy/Legacy Adventure Pack - CEMETERY/Assets/Background_2.png" id="3_d0pcb"]
-[ext_resource type="PackedScene" uid="uid://dgm0ihihdvwyq" path="res://levels/startlevel.tscn" id="4_08tuo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05fyb"]
 texture = ExtResource("1_v1yst")
@@ -3682,7 +3681,3 @@ layer_7/y_sort_enabled = false
 layer_7/y_sort_origin = 0
 layer_7/z_index = 0
 layer_7/tile_data = PackedInt32Array()
-
-[node name="level" parent="." instance=ExtResource("4_08tuo")]
-position = Vector2(0, 609)
-scale = Vector2(0.3, 0.3)

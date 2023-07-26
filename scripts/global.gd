@@ -12,7 +12,7 @@ var levels = {
 
 var dialogs = {
 	"dialog-kolobok": preload("res://levels/dialogs/kolobok_dialog.tscn"),
-	"hotline": preload("res://levels/hotline_level.tscn"),
+	"dialog-irka": preload("res://levels/dialogs/irka_dialog.tscn"),
 	"dialog-vodyanoy": preload("res://levels/dialogs/vodyanoy-dialog.tscn"),
 	"dialog-koshei_bad": preload("res://levels/dialogs/koshei_dialog_bad.tscn"),
 	"dialog-koshei_good": preload("res://levels/dialogs/koshei_dialog_good.tscn"),

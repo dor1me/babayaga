@@ -15,7 +15,8 @@ var messages = [
 var answers = [
 	"Понятно."]
 func show_end():
-	end.visibility_visible = true
+	#end.visibility_visible = true
+	pass
 
 var can_click = false
 var x = 0
@@ -29,6 +30,8 @@ func _on_end_typing_message():
 	if(x < messages.size()):
 		typing_sound.stop()
 		can_click = true
+	else:
+		ask_question(answers)
 
 func conversation():
 	if x%2==1:

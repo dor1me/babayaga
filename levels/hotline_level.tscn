@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/hotline_level.gd" id="1_k5ylf"]
 [ext_resource type="PackedScene" uid="uid://c11k2natbln5h" path="res://scenes/hud.tscn" id="3_tof1k"]
 [ext_resource type="PackedScene" uid="uid://d1eoxrkhv1sxm" path="res://scenes/player.tscn" id="4_hpxbe"]
-[ext_resource type="PackedScene" uid="uid://mrbd2lk42kic" path="res://scenes/portal_dialog_irka.tscn" id="8_j4s15"]
+[ext_resource type="PackedScene" uid="uid://chkq5hkh6vnyn" path="res://scenes/portal_dialog_vodyanoy.tscn" id="8_cfmh5"]
 [ext_resource type="PackedScene" uid="uid://brgpu5h1lu51t" path="res://components/portal.tscn" id="8_puygs"]
 [ext_resource type="PackedScene" uid="uid://cvnitwjw0w4jg" path="res://scenes/frog.tscn" id="8_v0std"]
 [ext_resource type="PackedScene" uid="uid://cxe62sq1gca6c" path="res://maps/cave3.tscn" id="8_x14c1"]
@@ -53,7 +53,7 @@ position = Vector2(1675.84, 197.26)
 [node name="portal" parent="." instance=ExtResource("8_puygs")]
 position = Vector2(1962.42, 65.4624)
 scale = Vector2(3, 3)
-to_level = "underlevel"
+to_level = "kosckhei"
 
 [node name="portal_wall" type="CharacterBody2D" parent="."]
 collision_mask = 2
@@ -62,14 +62,14 @@ collision_mask = 2
 position = Vector2(1878.33, 63.4257)
 shape = SubResource("RectangleShape2D_njc66")
 
-[node name="portal-dialog" parent="." instance=ExtResource("8_j4s15")]
-position = Vector2(1841.97, 68.0808)
-
 [node name="fix" type="CharacterBody2D" parent="."]
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fix"]
-position = Vector2(1910.24, 137.616)
+position = Vector2(1828.58, 150.709)
 shape = SubResource("RectangleShape2D_2l8fv")
 
 [node name="Node2D" parent="." instance=ExtResource("8_x14c1")]
+
+[node name="portal_dialog" parent="." instance=ExtResource("8_cfmh5")]
+position = Vector2(1836.73, 93.9748)
